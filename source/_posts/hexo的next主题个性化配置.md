@@ -253,4 +253,6 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
   * next主题源码是不支持相册的，如果有不懂的地方，可以去查一下[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue，然后再来问我
 
 
-<p id="div-border-top-green"><i>[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
+<br>
+
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>

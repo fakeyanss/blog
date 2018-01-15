@@ -4,6 +4,8 @@ categories: SSM
 tags:
   - SSM
 description: SSM包含持久层Dao和Model，业务层Service和ServiceImpl，表现层Controller和View，本文讲述这些不同层的作用和关系。
+copyright: true
+reward: true
 abbrlink: 457836a3
 date: 2017-07-20 22:10:33
 ---
@@ -62,4 +64,6 @@ D-->E[Dao]
 E-->F[Mapping]
 ```
 
-<p id="div-border-top-green"><i>[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
+<br>
+
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>

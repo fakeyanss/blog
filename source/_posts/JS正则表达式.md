@@ -6,6 +6,7 @@ tags:
   - JavaScrit
   - regexp
 copyright: true
+reward: true
 abbrlink: bf9092f5
 date: 2017-07-26 20:28:15
 password:
@@ -210,4 +211,6 @@ Returned value: null
 | n*   | 匹配任何包含零个或多个n的字符串 |
 | n?   | 匹配任何包含零个或一个n的字符串 |
 
-<p id="div-border-top-green"><i>[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
+<br>
+
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>

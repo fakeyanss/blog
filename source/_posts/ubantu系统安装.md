@@ -23,4 +23,6 @@ password:
     * 我的电脑有两块ssd，c盘是一块小的装的win10系统和开机启动软件，d盘是一块大的安装常用软件和存放一些资料。我把ubantu安装在了D盘上的一个50G分区，这样就要把ubantu的引导器放在D盘，也就是`sdb` （sda对应第一块硬盘，sdb对应第二块硬盘），这样的话电脑开机时会自动进入win10，如果我按F11才会进入grub选择ubantu系统，这样正好符合我的需求。
     * 如果把引导器安装在C盘，每次开机都会手动选择系统。
 
-<p id="div-border-top-green"><i>[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
+<br>
+
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>

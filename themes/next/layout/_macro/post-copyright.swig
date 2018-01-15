@@ -1,3 +1,4 @@
+{% if page.reward %}
 <ul class="post-copyright">
   <li class="post-copyright-author">
     <strong>{{ __('post.copyright.author') + __('symbol.colon') }}</strong>
@@ -12,3 +13,4 @@
     {{ __('post.copyright.license_content', theme.post_copyright.license_url, theme.post_copyright.license) }}
   </li>
 </ul>
+{% endif %}

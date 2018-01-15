@@ -3,7 +3,6 @@ title: Intel上海-大数据实习
 categories:
   - 面经
 description: 这是一篇同学的面试经历
-copyright: true
 abbrlink: 6c9cb4e3
 date: 2017-12-31 11:05:26
 password:
@@ -30,4 +29,6 @@ password:
 3. 如果打进去的类是自己写的（自己写的java类），那么需要重写什么方法？（一个算hash地址的类，叫啥我忘了；一个equal类）。那个算hash地址的类怎么工作的？
 4. 还有个hash地址啥的能不能重，key是不是唯一
 
-<p id="div-border-top-green"><i>[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
+<br>
+
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>

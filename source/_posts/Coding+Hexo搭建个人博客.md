@@ -6,6 +6,7 @@ tags:
   - Hexo
   - Coding
 copyright: true
+reward: true
 abbrlink: 9997094b
 date: 2017-08-07 12:52:44
 password:
@@ -290,4 +291,6 @@ coding+hexo的博客部署操作就是这些了，有问题可以下方留言评
 * [《Github+Appveyor博客云端持续集成》]()
 * [《hexo博客部署到Github》]()
 
-<p id="div-border-top-green"><i>[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
+<br>
+
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>

@@ -4,6 +4,7 @@ categories: SQL
 tags:
   - mysql
 copyright: true
+reward: true
 abbrlink: 929f9824
 date: 2017-07-29 15:12:02
 description:
@@ -58,4 +59,6 @@ select max(field1) as maxvalue from table1
 select min(field1) as minvalue from table1
 ```
 
-<p id="div-border-top-green"><i>[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
+<br>
+
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
