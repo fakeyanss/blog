@@ -251,4 +251,5 @@ https://www.nowcoder.com/discuss/65323
 
 最后，祝有志于AI这个领域的人都能拿到满意的offer.
 
+<h5 style="color:#f63;"><i>最后要说的是：</i></h5>
 <p id="div-border-top-green"><i>[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
