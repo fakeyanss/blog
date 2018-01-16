@@ -1,5 +1,5 @@
 ---
-title: 
+title: 关于
 comments: true
 date: 2017-07-29 15:19:36
 ---
@@ -37,3 +37,4 @@ date: 2017-07-29 15:19:36
 * 添加博客相册，图片处理脚本来自[litten](https://github.com/litten/BlogBackup/tree/master/source/photos)，具体方法可以看[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue
 * 添加[DaoVoice](http://dashboard.daovoice.io/get-started?invite_code=a7abe03a
   ),可以使用我的邀请码
+* [livere](https://livere.com/)加载太慢，更换为[Gitment](https://github.com/imsun/gitment)评论
