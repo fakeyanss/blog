@@ -8,9 +8,8 @@ date: 2017-07-29 15:19:36
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=412016278&auto=0&height=66"></iframe>
 <center><h1>About Me</h1></center>
 
-<center>很惭愧，只是做了一点微小的工作</center>
-
-<blockquote class="blockquote-center">目前还是华中科技大学的软件学院研二菜鸟，日常博客记录一些学习笔记和有用的资料，如果有能帮助到同道的地方，那就再好不过啦。</blockquote>
+<blockquote class="blockquote-center">
+<center>很惭愧，只是做了一点微小的工作</center>目前还是华中科技大学的软件学院研二菜鸟，日常博客记录一些学习笔记和有用的资料，如果有能帮助到同道的地方，那就再好不过啦。</blockquote>
 
 <center><a href="mailto:yans_s@outlook.com">Mail To Me: yans_s@outlook.com</a></center>
 
