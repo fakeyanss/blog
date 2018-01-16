@@ -335,7 +335,7 @@ sidebar:
 
 {% cq %}一般这种样式问题都在`layout`文件夹中找原因。{% endcq %}
 
-在`themes\next\layout\_macro\sidebar.swig`，找到开头的
+<s>在`themes\next\layout\_macro\sidebar.swig`，找到开头的
 ```html
 {% macro render(is_post) %}
   <div class="sidebar-toggle">
@@ -354,6 +354,17 @@ sidebar:
 ```
 {% endif %}
 ```
+</s>
+
+发现这样修改有bug，重新改。在`themes\next\layout\_macro\sidebar.swig`找到这一句
+```
+{% set display_toc = is_post and theme.toc.enable or is_page and theme.toc.enable %}
+```
+改为
+```
+{% set display_toc = is_post and theme.toc.enable or is_page and page.toc or is_page and theme.toc.enable and page.toc %}
+```
+其实就是多加一个判断，判断页面的开头有没有`toc`属性
 
 最后，在需要有sidebar目录的文章前加上`toc: true`即可。
 
