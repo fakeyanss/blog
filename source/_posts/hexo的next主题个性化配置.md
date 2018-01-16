@@ -1,9 +1,10 @@
 ---
-title: hexo的next主题个性化配置
+title: Hexo的next主题个性化配置
 categories:
   - Solution
 copyright: true
 reward: true
+toc: true
 abbrlink: '14046165'
 date: 2017-12-31 21:10:03
 ---
@@ -38,7 +39,7 @@ rss: /atom.xml
 
 打开`\themes\next\source\css\_common\components\sidebar\sidebar-author.styl`，在里面添加如下代码：
 
-```
+```css
 .site-author-image {
   display: block;
   margin: 0 auto;
@@ -132,7 +133,7 @@ final_dict = {"list": list_info}
 * 将本地`Blog_Album`上传到github仓库`Blog_Album`
 * 回到`yourblog\source\photos`目录下，将`index.md`内容修改为
 
-```
+```html
 ---
 title: 我的相册
 date: 2017-12-29 22:32:22
@@ -174,7 +175,7 @@ type: "photos"
 
 `ins.js`中的114行`render()`函数需要修改这两个变量
 
-```
+```js
 var minSrc = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/min_photos/' + data.link[i];
 var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
 ```
@@ -195,14 +196,14 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
 
 `head`内插入
 
-```
+```html
 <script src="{{ url_for(theme.js) }}/src/photoswipe.min.js?v={{ theme.version }}"></script>
 <script src="{{ url_for(theme.js) }}/src/photoswipe-ui-default.min.js?v={{ theme.version }}"></script>
 ```
 
 `body`内插入
 
-```
+```html
 {% if page.type === "photos" %}
 <!-- Root element of PhotoSwipe. Must have class pswp. -->
 <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -253,6 +254,109 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
   * next主题源码是不支持相册的，如果有不懂的地方，可以去查一下[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue，然后再来问我
 
 
-<br>
 
+
+## 添加Gitment评论
+原本是用的livere评论，后来总是加载速度太慢，上了梯子也一样，索性改成了[Gitment](https://github.com/imsun/gitment)评论。
+
+感谢作者[imsun](https://github.com/imsun)，Gitment评论源自github仓库的issue，所以在将博客地址关联了某个github仓库后，在博客下评论其实就是在对应仓库的issue中评论，这创意真是太好了。
+
+我之前的next主题一直是`5.1.0`版本，本来是想在主题中添加gitment的js和css文件，结果没成功。然后在next的[官方文档](http://theme-next.iissnan.com/)中看到已经发行到`5.1.4`了，而且已经集成了gitment评论。这下可方便，干脆直接升级了next主题，然后就改`config`文件就好啦。
+
+以前主题中配置了一些设置项，时间久了还忘了改了哪些文件！！！所以升级版本很痛苦，用的Sublime的一个插件Sublimerge，可以对比两个文件的代码差异，就是这样
+![Sublimerge](http://ouat6a0as.bkt.clouddn.com/hexo个性设置.png)
+就像git pull操作之后改动时一样，这样子把每个有可能改过的文件都对比了一遍，然后升级到了5.1.4，发现集成了很多新功能，其他的有时间再试吧，这里就只说gitment。
+
+首先在[这里](https://github.com/settings/applications/new)注册一个OAuth Application，`Homepage URL`和`Authorization callback URL`填写博客首页地址，也就是站点配置文件中的`url`，其他随意填写即可。
+
+然后会得到一个`Client ID`和`Client Secret`，把这两个值填到主题配置文件的gitment对应位置
+```yaml
+gitment:
+  enable: true
+  mint: true # gitment仓库有两个，这里填true是引用第一个，false引用第二个，具体在layout下的conment文件中可以找到
+  count: true # 评论计数
+  lazy: false # 如果要点击按钮再显示评论就填true
+  cleanly: true # 隐藏底部信息
+  language: # Force language, or auto switch by theme
+  github_user: 填github ID
+  github_repo: 填保存issue的仓库名，一般就用博客发布的仓库名
+  client_id: 刚才的值
+  client_secret: 刚才的值
+  proxy_gateway: # 设置代理，不用填
+  redirect_protocol: # 没搞懂，不用填
+```
+然后重新部署博客(本地调试是没用的，因为url不同)，再打开博客，这时候需要在每一个有评论的页面上使用自己的github长航登录并初始化一遍评论，之后就不用了。文章多的话会有点麻烦，不知道gitment作者有没有做好自动初始化？好像查到了[这个](https://draveness.me/git-comments-initialize)，不过我还没试过。
+这里是成功的样子![gitment](http://ouat6a0as.bkt.clouddn.com/gitment.png)
+
+但是，这个鼠标放上有两条横线什么鬼啊！！！![gitment1](http://ouat6a0as.bkt.clouddn.com/gitment1.png)
+
+还有这里头像下面为什么有一条横线！！！！![gitment2](http://ouat6a0as.bkt.clouddn.com/gitment2.png)
+
+强迫症忍不了，查看了gitment的css定义，没发现什么问题啊，然后在浏览器中调试，发现了这个
+```css
+a{  
+  color: #555;
+  border-bottom: 1px solid #999;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+```
+这里的`border-bottom: 1px solid #999`就是`a`标签下有一条横线的意思，但是这个属性是主题的属性`main.css`啊，显然是不能改的，于是只有在`themes\next\source\css\_common\components\third-party\gitment.styl`下改动了，在这里可以重写前面定义的属性，我是这样改的，在最后面加上
+```css
+.gitment-comment-main a{
+  color: #555;
+  border-bottom: none;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+.gitment-editor-avatar{
+  color: #555;
+  border-bottom: none;
+  text-decoration: none;
+  word-wrap: break-word;
+}
+```
+第一个就是修改的ID下的横线，显示为`none`就好了；第二个是修改编辑框头像下的横线，也是显示为`none`。
+
+这样，算是完成了Gitment的配置了。
+
+## 设置自定义页面不显示Sidebar
+主题配置文件中是这样的
+```yaml
+toc:
+  enable: true
+  number: true
+  wrap: false
+sidebar:
+  position: left
+  display: post
+```
+讲道理这样就是是没有问题的，但是我发现自定义的页面里如果写了太多的`#`或者`<h1>`，就会被识别为`post`类型而不是`page`，也就是博客文章，会被自动加载目录，这就很蛋疼了不是，毕竟有的页面不想要目录啊尴尬！！！
+
+{% cq %}一般这种样式问题都在`layout`文件夹中找原因。{% endcq %}
+
+在`themes\next\layout\_macro\sidebar.swig`，找到开头的
+```html
+{% macro render(is_post) %}
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+```
+在下面加上
+```
+{% if page.toc and theme.toc.enable %}
+```
+然后在倒数第二行加上
+```
+{% endif %}
+```
+
+最后，在需要有sidebar目录的文章前加上`toc: true`即可。
+
+为了以后的方便，可以在`scaffolds\post.md`中加上`toc: true`。
+<br>
 <p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>

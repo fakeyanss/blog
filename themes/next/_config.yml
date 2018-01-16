@@ -48,8 +48,8 @@ index_with_subtitle: false
 menu:
   home: /
   archives: /archives/
-  categories: /categories/
-  tags: /tags/
+  #categories: /categories/
+  #tags: /tags/
   photos: /photos/
   about: /about/
   #sitemap: /sitemap.xml
@@ -124,9 +124,9 @@ social_icons:
   Weibo: weibo
 
 # Blog rolls
-links_title: Links
-links_layout: block
-#links_layout: inline
+links_title: Others
+#links_layout: block
+links_layout: inline
 links:
   #Title: http://example.com/
   Berry: https://kuangyuyu.github.io/
@@ -174,13 +174,13 @@ sidebar:
   offset_float: 0
 
   # Back to top in sidebar
-  b2t: false
+  b2t: true
 
   # Scroll percent label in b2t button
-  scrollpercent: false
+  scrollpercent: true
   
   # Enable sidebar on narrow view
-  onmobile: false
+  onmobile: true
 
 
 # ---------------------------------------------------------------

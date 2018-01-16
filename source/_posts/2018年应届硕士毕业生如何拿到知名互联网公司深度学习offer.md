@@ -4,7 +4,7 @@ categories:
   - 面经
 tags:
   - 面经
-top: 100
+toc: true
 description: 'AI方向面试经历，转自https://www.zhihu.com/people/xiongfengcherish'
 abbrlink: 70b5d312
 date: 2017-12-24 12:40:33

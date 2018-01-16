@@ -6,7 +6,7 @@
       <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
     </div>
   </div>
-
+{% if page.toc and theme.toc.enable %}
   <aside id="sidebar" class="sidebar">
     {% if theme.sidebar.onmobile %}
       <div id="sidebar-dimmer"></div>
@@ -162,4 +162,5 @@
 
     </div>
   </aside>
+{% endif %}
 {% endmacro %}

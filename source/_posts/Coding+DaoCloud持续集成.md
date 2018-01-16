@@ -7,6 +7,7 @@ tags:
   - Coding
 copyright: true
 reward: true
+toc: true
 description: 如何在多终端发布coding博客，比如部署好的hexo+coding博客，我换了电脑，有方便的方法可以继续发博客吗？答案是————有，请看我下面。
 abbrlink: 93b24b01
 date: 2017-08-07 22:38:23

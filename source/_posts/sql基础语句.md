@@ -5,6 +5,7 @@ tags:
   - mysql
 copyright: true
 reward: true
+toc: true
 abbrlink: 929f9824
 date: 2017-07-29 15:12:02
 description:

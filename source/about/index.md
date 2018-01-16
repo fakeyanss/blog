@@ -1,11 +1,11 @@
 ---
-title: 关于
+title: 
 comments: true
+type: "about"
 date: 2017-07-29 15:19:36
 ---
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=412016278&auto=0&height=66"></iframe>
-
 <center><h1>About Me</h1></center>
 
 <center>很惭愧，只是做了一点微小的工作</center>
@@ -15,9 +15,6 @@ date: 2017-07-29 15:19:36
 <center><a href="mailto:yans_s@outlook.com">Mail To Me: yans_s@outlook.com</a></center>
 
 <center>最下方也可留言↓↓↓</center>
-
-<br/>
-
 <br/>
 
 <center><h1>About the Site</h1></center>
