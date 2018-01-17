@@ -5,12 +5,12 @@ categories:
 tags:
   - Java
   - HashMap
-copyright: true
-reward: true
 toc: true
 abbrlink: a73d4680
 date: 2017-11-16 15:43:33
 ---
+
+本文转发为了方便查看，[原文地址](https://github.com/francistao/LearningNotes/blob/master/Part2/JavaSE/HashMap%E6%BA%90%E7%A0%81%E5%89%96%E6%9E%90.md)
 ### HashMap简介 
 HashMap是基于哈希表实现的，每一个元素都是一个key-value对，其内部通过单链表解决冲突问题，容量不足（超过了阈值）时，同样会自动增长。
 
