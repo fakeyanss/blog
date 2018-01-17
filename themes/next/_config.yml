@@ -482,8 +482,9 @@ busuanzi_count:
 # tencent_mta:
 
 # Online contact 
-daovoice: true
-daovoice_app_id: a7abe03a
+daovoice: 
+  enable: true
+  app_id: a7abe03a
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
 baidu_push: true
