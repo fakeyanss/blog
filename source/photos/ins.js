@@ -117,11 +117,12 @@
           var data = res.list[j].arr;
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
-            var minSrc = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/min_photos/' + data.link[i];
-            var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
+            var minSrc = 'http://p1ju2a9a7.bkt.clouddn.com/min_photos/' + data.link[i] + '?imageMogr2/auto-orient';
+            //var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
+            var src = 'http://p1ju2a9a7.bkt.clouddn.com/' + data.link[i];
             var type = data.type[i];
             var target = src + (type === 'video' ? '.mp4' : '.jpg');
-            src += '';
+            src += '?imageMogr2/auto-orient';
   
             liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                   <a href="' + src + '" itemprop="contentUrl" data-size="1080x1080" data-type="' + type + '" data-target="' + src + '">\
@@ -231,7 +232,7 @@
         }
   
         function lazyload(opts) {
-            console.log("lazyload")
+            //console.log("lazyload")
           opts = merge({
             'offset': 333,
             'src': 'data-src',
