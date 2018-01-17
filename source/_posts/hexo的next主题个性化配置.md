@@ -187,7 +187,7 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
 
 * 在`yourBlog/themes/next/layout/_scripts/pages/post-details.swig`中添加
 
-```
+```html
 <script type="text/javascript" src="{{ url_for(theme.js) }}/src/photoswipe.min.js?v={{ theme.version }}"></script>
 <script type="text/javascript" src="{{ url_for(theme.js) }}/src/photoswipe-ui-default.min.js?v={{ theme.version }}"></script>
 ```
