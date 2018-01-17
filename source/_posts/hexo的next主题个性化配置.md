@@ -103,8 +103,8 @@ img:hover {
 ```
 
 ## 添加相册
-<div id="album"></div>
-我的[相册](http://yanss.top/photos/)。原理很简单，就是建立一个github仓库存储用于存储图片，然后将每个图片的路径保存到一个json文件里，在hexo博客中解析这个json文件，渲染成html页面后就可以在显示图片了。当然这里肯定要有页面的样式和图片的裁剪压缩，原理简单，实际操作起来有一些坑，我并不懂css样式，还是要感谢[litten](https://github.com/litten/BlogBackup/tree/master/source/photos)提供的方法。
+<div id="album">我的[相册](http://yanss.top/photos/)。</div>
+原理很简单，就是建立一个github仓库存储用于存储图片，然后将每个图片的路径保存到一个json文件里，在hexo博客中解析这个json文件，渲染成html页面后就可以在显示图片了。当然这里肯定要有页面的样式和图片的裁剪压缩，原理简单，实际操作起来有一些坑，我并不懂css样式，还是要感谢[litten](https://github.com/litten/BlogBackup/tree/master/source/photos)提供的方法。
 
 * 首先在github上新建一个仓库，命名`Blog_Album`
 * 然后本地新建一个文件夹`Blog_Album`，进入文件夹新建两个子文件夹`photos`，`min_photos`，然后下载这两个文件[ImageProcess.py](https://github.com/fakeYanss/Blog_Album/blob/master/ImageProcess.py)，[tool.py](https://github.com/fakeYanss/Blog_Album/blob/master/tool.py)到`Blog_Album`
