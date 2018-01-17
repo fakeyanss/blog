@@ -34,3 +34,4 @@ date: 2017-07-29 15:19:36
 * 添加[DaoVoice](http://dashboard.daovoice.io/get-started?invite_code=a7abe03a
   ),可以使用我的邀请码
 * [livere](https://livere.com/)加载太慢，更换为[Gitment](https://github.com/imsun/gitment)评论
+* 相册图片源改为[七牛云](https://portal.qiniu.com/create)，加载速度更快，空间更大
