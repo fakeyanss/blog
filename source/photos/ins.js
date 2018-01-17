@@ -110,7 +110,7 @@
         for (var i = 0, len = $videoImg.length; i < len; i++) {
           addMask($videoImg[i]);
         }
-      };
+      }; 
       var render = function render(res) {
         var ulTmpl = "";
         for (var j = 0, len2 = res.list.length; j < len2; j++) {
