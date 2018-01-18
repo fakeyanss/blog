@@ -11,6 +11,8 @@ test:
         - cnpm install hexo-abbrlink --save
         - cnpm install hexo-wordcount --save
         - cnpm install hexo-generator-searchdb --save
+        - cnpm install hexo-generator-baidu-sitemap --save
+        - cnpm install hexo-generator-sitemap --save
         
     before_script:
         # 新建存放私钥目录

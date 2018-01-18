@@ -13,6 +13,8 @@ install:
   - npm install hexo-cli -g
   - npm install --save hexo-generator-feed
   - npm install hexo-baidu-url-submit --save
+  - npm install hexo-generator-baidu-sitemap --save
+  - npm install hexo-generator-sitemap --save
   - npm install hexo-abbrlink --save
   - npm install hexo-wordcount --save
   - npm install hexo-generator-searchdb --save

@@ -79,10 +79,10 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
 #scheme: Pisces
-#scheme: Gemini
+scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -98,7 +98,7 @@ social:
   Stackoverflow: https://stackoverflow.com/users/8373196/yanss
   Zhihu: https://www.zhihu.com/people/tf1213/activities
   Weibo: http://weibo.com/tf121
-  E-Mail: yans_s@outlook.com
+  E-Mail: mailyo:yans_s@outlook.com
 
 # Social Links Icons
 # Icon Mapping:
