@@ -35,6 +35,8 @@ feed:
 rss: /atom.xml
 ```
 
+---
+
 ## 修改作者头像并旋转
 
 打开`\themes\next\source\css\_common\components\sidebar\sidebar-author.styl`，在里面添加如下代码：
@@ -102,7 +104,10 @@ img:hover {
 }
 ```
 
+---
+
 ## 添加相册
+
 <div id="album">我的[相册](http://yanss.top/photos/)。</div>
 原理很简单，就是建立一个github仓库存储用于存储图片，然后将每个图片的路径保存到一个json文件里，在hexo博客中解析这个json文件，渲染成html页面后就可以在显示图片了。当然这里肯定要有页面的样式和图片的裁剪压缩，原理简单，实际操作起来有一些坑，我并不懂css样式，还是要感谢[litten](https://github.com/litten/BlogBackup/tree/master/source/photos)提供的方法。
 
@@ -252,9 +257,10 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
   * 相册图片的命名请遵循`yyyy-mm-dd_abc.efg`格式
   * 最后的不足是，相片的裁剪算法不算好，比如会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/photos/2017-9-17_ICIP2017.JPG)，还有的会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/photos/2017-9-19_%E8%83%A1%E5%90%8C1302.JPG)
   * next主题源码是不支持相册的，如果有不懂的地方，可以去查一下[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue，然后再来问我
+* *2018.1.20修改*：由于从github仓库读取图片，在html页面中会发生ios手机竖持拍照的照片90度旋转问题（图片的EXIF的orientaion信息在裁剪压缩后发生改变），找了一些办法都没效果，所以将相片源仓库转移到七牛云，利用七牛云外链后加上`?imageMogr2/auto-orient`的方式，可以将照片正常角度显示。
 
 
-
+---
 
 ## 添加Gitment评论
 原本是用的livere评论，后来总是加载速度太慢，上了梯子也一样，索性改成了[Gitment](https://github.com/imsun/gitment)评论。
@@ -320,7 +326,10 @@ a{
 
 这样，算是完成了Gitment的配置了。
 
+---
+
 ## 设置自定义页面不显示Sidebar
+
 主题配置文件中是这样的
 ```yaml
 toc:
