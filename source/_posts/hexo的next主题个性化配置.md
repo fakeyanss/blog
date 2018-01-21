@@ -255,9 +255,9 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
 * 重新生成博客内容即可看到相册内容。
   * 如果py脚本不能运行，先安装python环境，再安装`Pillow`库`pip install Pillow`
   * 相册图片的命名请遵循`yyyy-mm-dd_abc.efg`格式
-  * 最后的不足是，相片的裁剪算法不算好，比如会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/photos/2017-9-17_ICIP2017.JPG)，还有的会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/photos/2017-9-19_%E8%83%A1%E5%90%8C1302.JPG)
+  * 最后的不足是，相片的裁剪算法不算好，比如会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/album/photos/2017-09-17_ICIP2017.JPG)，还有的会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/album/photos/2017-09-19_%E8%83%A1%E5%90%8C1302.JPG)
   * next主题源码是不支持相册的，如果有不懂的地方，可以去查一下[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue，然后再来问我
-* *2018.1.20修改*：由于从github仓库读取图片，在html页面中会发生ios手机竖持拍照的照片90度旋转问题（图片的EXIF的orientaion信息在裁剪压缩后发生改变），找了一些办法都没效果，所以将相片源仓库转移到七牛云，利用七牛云外链后加上`?imageMogr2/auto-orient`的方式，可以将照片正常角度显示。
+* **2018.1.20修改**：由于从github仓库读取图片，在html页面中会发生ios手机竖持拍照的照片90度旋转问题（图片的EXIF的orientaion信息在裁剪压缩后发生改变），找了一些办法都没效果，所以将相片源仓库转移到七牛云，利用七牛云外链后加上`?imageMogr2/auto-orient`的方式，可以将照片正常角度显示。
 
 
 ---
