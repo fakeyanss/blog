@@ -1,5 +1,4 @@
 {% if theme.daovoice.enable %}
-   <script>
      (function(i,s,o,g,r,a,m){
      i["DaoVoiceObject"]=r;
      i[r]=i[r]||function(){
@@ -16,5 +15,4 @@
      app_id: "{{ theme.daovoice.app_id }}"
      });
      daovoice('update');
-   </script>
  {% endif %}
