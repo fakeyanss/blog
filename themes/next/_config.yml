@@ -79,9 +79,9 @@ menu_icons:
 # ---------------------------------------------------------------
 
 # Schemes
-scheme: Muse
+#scheme: Muse
 #scheme: Mist
-#scheme: Pisces
+scheme: Pisces
 #scheme: Gemini
 
 
@@ -98,7 +98,7 @@ social:
   Stackoverflow: https://stackoverflow.com/users/8373196/yanss
   Zhihu: https://www.zhihu.com/people/tf1213/activities
   Weibo: http://weibo.com/tf121
-  E-Mail: mailyo:yans_s@outlook.com
+  #E-Mail: mailyo:yans_s@outlook.com
 
 # Social Links Icons
 # Icon Mapping:
@@ -151,7 +151,7 @@ toc:
 # Creative Commons 4.0 International License.
 # http://creativecommons.org/
 # Available: by | by-nc | by-nc-nd | by-nc-sa | by-nd | by-sa | zero
-creative_commons: by-nc-sa
+#creative_commons: by-nc-sa
 #creative_commons:
 
 sidebar:
@@ -253,7 +253,7 @@ android_chrome_color: "#222"
 #   image: url-of-image   - Images's url
 custom_logo:
   enabled: false
-  image:
+  image: 
 
 # Code Highlight theme
 # Available value:
