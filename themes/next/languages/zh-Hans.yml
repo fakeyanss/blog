@@ -32,8 +32,8 @@ post:
   untitled: 未命名
   toc_empty: 此文章未包含目录
   visitors: 阅读量：
-  wordcount: 字数统计
-  min2read: 阅读时长
+  wordcount: 字数：
+  min2read: 时长：
   totalcount: Site words total count
   copyright:
     author: 本文作者
@@ -64,7 +64,7 @@ counter:
   archive_posts:
     zero: 暂无日志。
     one: 目前共计 1 篇日志。
-    other: "目前共计 %d 篇日志。"
+    other: "目前共计 %d 篇文章。"
 
 
 state:

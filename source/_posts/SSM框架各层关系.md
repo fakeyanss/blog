@@ -1,14 +1,13 @@
 ---
--title: SSM框架各层关系
- -categories: SSM
- -tags:
- -  - SSM
- -description: SSM包含持久层Dao和Model，业务层Service和ServiceImpl，表现层Controller和View，本文讲述这些不同层的作用和关系。
- -copyright: true
- -reward: true
- -toc: true
- -abbrlink: 457836a3
- -date: 2017-07-20 22:10:33
+title: SSM框架各层关系
+categories: SSM
+tags: SSM
+description: SSM包含持久层Dao和Model，业务层Service和ServiceImpl，表现层Controller和View，本文讲述这些不同层的作用和关系。
+copyright: true
+reward: true
+toc: true
+abbrlink: 457836a3
+date: 2017-07-20 22:10:33
 ---
 > SSM包含持久层Dao和Model，业务层Service和ServiceImpl，表现层Controller和View，本文讲述这些不同层的作用和关系。
 
