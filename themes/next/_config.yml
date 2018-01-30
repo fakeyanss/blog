@@ -95,7 +95,7 @@ scheme: Gemini
 social:
   #LinkLabel: Link
   GitHub: https://github.com/fakeYanss
-  Stackoverflow: https://stackoverflow.com/users/8373196/yanss
+  StackOverflow: https://stackoverflow.com/users/8373196/yanss
   Zhihu: https://www.zhihu.com/people/tf1213/activities
   Weibo: http://weibo.com/tf121
   #E-Mail: mailyo:yans_s@outlook.com
@@ -122,6 +122,7 @@ social_icons:
   Instagram: instagram
   StackOverflow: stack-overflow
   Weibo: weibo
+  Zhihu: book
 
 # Blog rolls
 links_title: Others
