@@ -20,6 +20,8 @@ password:
 
 [下载](http://ouat6a0as.bkt.clouddn.com/2018_SPRING_DEV.pdf)
 
+![ThoughtWorks2018Spring](http://ouat6a0as.bkt.clouddn.com/ThoughtWorks2018Spring.png)
+
 ## 解决思路
 
 - 首先需要一个逐行读取文件内容的方法， 构造文件输入流，再构造Scanner类输入即可。然后将读取的逐行信息切分为一个数组，保存到ArrayList1中；再以ArrayList2嵌套ArrayList1即可
