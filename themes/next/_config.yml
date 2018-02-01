@@ -497,8 +497,8 @@ baidu_push: true
 # https://developers.google.com/google-apps/calendar/v3/reference/events/list
 calendar:
   enable: false
-  calendar_id: <required>
-  api_key: <required>
+  calendar_id: 
+  api_key: 
   orderBy: startTime
   offsetMax: 24
   offsetMin: 4

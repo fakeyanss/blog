@@ -9,16 +9,18 @@ mathjax: false
 copyright: true
 reward: true
 toc: true
-date: 2018-01-31 23:06:04
 kewords: LeetCode
-description: 
+abbrlink: bc89f3b9
+date: 2018-01-31 23:06:04
+description:
 password:
 ---
 
-![LeetCode Algorithms_Java题解1](http://ouat6a0as.bkt.clouddn.com/LeetCode Algorithms_Java题解1.webp)
-<!-- more -->
+<img src="http://ouat6a0as.bkt.clouddn.com/LeetCode Algorithms_Java题解1.webp" height="80%" width="80%">
 
-以下是做过的LeetCode算法题，Java语言书写。全部题解是一个Java Project, 环境jdk 1.8.0，可直接运行。
+<center>以下是做过的LeetCode算法题，Java语言书写。全部题解是一个Java Project, 环境jdk 1.8.0，可直接运行。</center>
+
+<!-- more -->
 
 # 1-100
 
