@@ -15,8 +15,10 @@ description: 做过的LeetCode算法题，全部用Java语言解决
 password:
 ---
 
- 全部题解是一个Java Project, 环境jdk 1.8.0，可直接运行。
+全部题解是一个Java Project, 环境jdk 1.8.0，可直接运行。
 
+![LeetCode Algorithms_Java题解1](http://ouat6a0as.bkt.clouddn.com/LeetCode Algorithms_Java题解1.webp)
+<!-- more -->
 # 1-100
 
 [1. Two Sum](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q1/Two_Sum)
