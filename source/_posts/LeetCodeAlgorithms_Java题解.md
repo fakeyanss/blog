@@ -11,14 +11,14 @@ reward: true
 toc: true
 date: 2018-01-31 23:06:04
 kewords: LeetCode
-description: 做过的LeetCode算法题，全部用Java语言解决
+description: 
 password:
 ---
 
 ![LeetCode Algorithms_Java题解1](http://ouat6a0as.bkt.clouddn.com/LeetCode Algorithms_Java题解1.webp)
 <!-- more -->
 
-全部题解是一个Java Project, 环境jdk 1.8.0，可直接运行。
+以下是做过的LeetCode算法题，Java语言书写。全部题解是一个Java Project, 环境jdk 1.8.0，可直接运行。
 
 # 1-100
 
