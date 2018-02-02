@@ -18,6 +18,7 @@ install:
   - npm install hexo-abbrlink --save
   - npm install hexo-wordcount --save
   - npm install hexo-generator-searchdb --save
+  - npm install hexo-lazyload-image --save
 
 build_script:
   - hexo generate

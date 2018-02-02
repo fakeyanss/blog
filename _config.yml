@@ -87,6 +87,12 @@ feed:
   path: atom.xml   #rss 路径
   limit: 0        #在 rss 中最多生成的文章数(0显示所有)
 
+#Image Lazyload
+lazyload:
+  enable: true 
+  onlypost: true
+  loadingImg: # eg. ./images/loading.png
+
 # hexo sitemap网站地图
 sitemap:
   path: sitemap.xml
