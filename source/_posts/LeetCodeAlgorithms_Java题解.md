@@ -16,7 +16,7 @@ description:
 password:
 ---
 
-<img src="http://ouat6a0as.bkt.clouddn.com/markus-spiske-445253.jpg" height="80%" width="80%">
+<img src="http://ouat6a0as.bkt.clouddn.com/markus-spiske-445253.jpg" width="80%">
 
 <center>以下是做过的LeetCode算法题，Java语言书写。全部题解是一个Java Project, 环境jdk 1.8.0，可直接运行。</center>
 
