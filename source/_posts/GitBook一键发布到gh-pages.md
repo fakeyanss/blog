@@ -15,6 +15,8 @@ description:
 password:
 ---
 
+# 背景
+
 这段时间在读一本英文书，读的很慢，可以说是逐词翻译了。
 
 然而读的时候总是会忘了前面的生词是什么意思，也没有纸质打印版，所以想到边读边做笔记，主要就是生词注释一下。
@@ -31,7 +33,7 @@ password:
 
 而且重要的是gitbook服务器加载速度不稳定，慢的时候都打不开了，所以想着直接把gitbook的Markdown文件内容编译成静态页面，发布到github仓库中，利用gh-pages直接访问，速度快多了。
 
----
+# 连接github仓库
 
 现在说说怎么部署到gh-pages。
 
@@ -50,7 +52,7 @@ password:
 
 如果不用gh-pages生成页面的话，上述的操作就已经够了。
 
----
+# 提交gh-pages分支
 
 接下来介绍如何提交静态页面到gh-pages。<br><br>
 
@@ -89,7 +91,15 @@ git add .
 git commit -m 'publish gh-pages'
 git push origin gh-pages
 ```
+提交完成后到github仓库的设置中看一下，gh-pages服务是否自动开启，如果没有的话在`Source`中选择`gh-pages branch`，保存刷新，等待几分钟就好了。
+
+![hadoopbook5](http://ouat6a0as.bkt.clouddn.com/hadoopbook5.png)
+
 全部操作已经完成，接下来每次在本地更新书籍内容后，先生成静态页面，然后提交master分支，再提交gh-pages分支就可以了。
+
+之后每次查看线上gitbook书籍，可以直接输入url `https://name.github.io/书籍仓库名`查看。
+
+---
 
 最后，为了每次的提交操作不用手打一遍，我写了一个bash脚本[publish.sh](https://github.com/fakeYanss/Hadoop-The-Definitive-Guide-4th/blob/master/publish.sh)，[点击下载](http://ouat6a0as.bkt.clouddn.com/publish.sh)，自行更改第一行的文件夹地址即可。windows系统安装过git环境的可以直接双击运行，要查看日志的话可以在git bash中输入`./publish.sh`运行。
 
