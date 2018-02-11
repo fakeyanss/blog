@@ -1,7 +1,7 @@
 ---
 title: SSM框架各层关系
-categories: SSM
-tags: SSM
+categories: Java
+tags: [Spring, SpringMVC, MyBatis]
 description: SSM包含持久层Dao和Model，业务层Service和ServiceImpl，表现层Controller和View，本文讲述这些不同层的作用和关系。
 copyright: true
 reward: true

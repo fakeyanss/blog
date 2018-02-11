@@ -1,7 +1,7 @@
 ---
 title: JS正则表达式
 categories:
-  - JavaScript
+  - Front-End
 tags:
   - JavaScrit
   - regexp

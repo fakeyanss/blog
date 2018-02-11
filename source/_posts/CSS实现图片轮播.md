@@ -1,7 +1,7 @@
 ---
 title: css实现图片轮播
 categories:
-  - CSS
+  - Front-End
 tags:
   - css3
   - animation

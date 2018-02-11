@@ -8,9 +8,10 @@ mathjax: false
 copyright: false
 reward: false
 toc: true
-date: 2018-02-10 15:18:05
 kewords: Hadoop
 description: Understanding Hadoop Clusters and the Network
+abbrlink: '67914616'
+date: 2018-02-10 15:18:05
 password:
 ---
 
