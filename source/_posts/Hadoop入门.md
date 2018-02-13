@@ -17,10 +17,8 @@ password:
 
 # Understanding Hadoop Clusters and the Network
 
-Author: Brad Hedlund
-
-Link: [original text](http://bradhedlund.com/2011/09/10/understanding-hadoop-clusters-and-the-network/)
-
+Author: Brad Hedlund<br>
+Link: [original text](http://bradhedlund.com/2011/09/10/understanding-hadoop-clusters-and-the-network/)<br>
 Translator: Yanss
 
 This article is Part 1 in series that will take a closer look at the architecture and methods of a Hadoop cluster, and how it relates to the network and server infrastructure. The content presented here is largely based on academic work and conversations I’ve had with customers running real production clusters. If you run production Hadoop clusters in your data center, I’m hoping you’ll provide your valuable insight in the comments below. Subsequent articles to this will cover the server and network architecture options in closer detail. Before we do that though, lets start by learning some of the basics about how a Hadoop cluster works. OK, let’s get started!
