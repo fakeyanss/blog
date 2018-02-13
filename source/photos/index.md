@@ -11,7 +11,7 @@ comments: false
   <a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="external">Photos</a><a class="photos-btn" target="_blank" href="http://wp.yanss.top/" style="color:#08c; border-bottom:1px #999">Gallery</a>
 </div>
 <div class="instagram itemscope">
-  <a href="http://yanss.top" target="_blank" class="open-ins">图片正在加载中…</a>
+  <a href="http://blog.yanss.top" target="_blank" class="open-ins">图片正在加载中…</a>
 </div>
  
 <script>
