@@ -366,7 +366,7 @@ gitment:
   cleanly: true # Hide 'Powered by ...' on footer, and more
   language: # Force language, or auto switch by theme
   github_user: fakeYanss # MUST HAVE, Your Github ID
-  github_repo: fakeYanss.github.io # MUST HAVE, The repo you use to store Gitment comments
+  github_repo: blog # MUST HAVE, The repo you use to store Gitment comments
   client_id: 5e6b31c324f768611da6 # MUST HAVE, Github client id for the Gitment
   client_secret: d674530a3a057c0ee03e3175f04a418772bc3bfd # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect
@@ -386,6 +386,8 @@ jiathis: true
 
 # Share
 #duoshuo_share: true
+
+baidu_site_verification: 7fUQ7s0poC
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/
