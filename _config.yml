@@ -115,6 +115,6 @@ search:
 deploy:
   - type: git
     repo:
-      github: git@github.com:fakeYanss/fakeYanss.github.io.git,master
-      coding: git@git.coding.net:fakeYanss/fakeYanss.git,coding-pages
+      github: git@github.com:fakeYanss/blog.git,gh-pages
+      coding: git@git.coding.net:fakeYanss/blog.git,coding-pages
   - type: baidu_url_submitter
