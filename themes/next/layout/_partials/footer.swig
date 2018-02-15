@@ -41,7 +41,7 @@
         function fixCount() {
             if ($("#busuanzi_container_site_uv").css("display") != "none") {
                 clearInterval(int);
-                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
+                $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + busuanziSiteOffset);
             }
         }
     });
