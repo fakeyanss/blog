@@ -164,7 +164,13 @@ java PositionOfPlane
 
 ## 题目
 
-[PDF download](https://ws4.sinaimg.cn/large/006tKfTcgy1fog487gbuyj30oy0xcwpv.jpg)
+[PDF download](http://otzlyqzo6.bkt.clouddn.com//作业题_武汉_AOUJYEHN.pdf)
+![](http://otzlyqzo6.bkt.clouddn.com//tw0001.jpg width="50%")
+![](http://otzlyqzo6.bkt.clouddn.com//tw0002.jpg width="50%")
+![](http://otzlyqzo6.bkt.clouddn.com//tw0003.jpg width="50%")
+![](http://otzlyqzo6.bkt.clouddn.com//tw0004.jpg width="50%")
+![](http://otzlyqzo6.bkt.clouddn.com//tw0005.jpg width="50%")
+
 
 <br>
 <p id="div-border-top-green"><i>最后要说的是：博客源码 ， 欢迎 star</i></p>
