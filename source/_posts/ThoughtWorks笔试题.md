@@ -165,17 +165,17 @@ java PositionOfPlane
 ## 题目
 
 [PDF download](http://otzlyqzo6.bkt.clouddn.com/作业题_武汉_AOUJYEHN.pdf)
-![](http://otzlyqzo6.bkt.clouddn.com/tw0001.jpg width="50%")
-![](http://otzlyqzo6.bkt.clouddn.com/tw0002.jpg width="50%")
-![](http://otzlyqzo6.bkt.clouddn.com/tw0003.jpg width="50%")
-![](http://otzlyqzo6.bkt.clouddn.com/tw0004.jpg width="50%")
-![](http://otzlyqzo6.bkt.clouddn.com/tw0005.jpg width="50%")
+![](http://otzlyqzo6.bkt.clouddn.com/tw0001.jpg)
+![](http://otzlyqzo6.bkt.clouddn.com/tw0002.jpg)
+![](http://otzlyqzo6.bkt.clouddn.com/tw0003.jpg)
+![](http://otzlyqzo6.bkt.clouddn.com/tw0004.jpg)
+![](http://otzlyqzo6.bkt.clouddn.com/tw0005.jpg)
 
 ## 思路
 主要是对字符串的切分处理。其中为了调试方便，将控制台输入数据转为json数据，然后再io流和gson包读取
 
 ## 题解
-下载全部[eclipse项目文件](http://otzlyqzo6.bkt.clouddn.com/sbadmintonCourt.zip)
+下载全部[eclipse项目文件](http://otzlyqzo6.bkt.clouddn.com/badmintonCourt.zip)
 
 代码ReadJson.java
 ```java
