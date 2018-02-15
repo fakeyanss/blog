@@ -21,30 +21,9 @@
     <span id="busuanzi_value_site_pv"></span>
   </div>-->
   <div class="powered-by">
-    <span id="busuanzi_container_site_pv">
-    您是第<span id="busuanzi_value_site_pv"></span>个访问者
-    </span>
+    您是第<span id="busuanzi_value_site_uv"></span>个访问者
   </div>
   <div class="theme-info">
     <span class="post-count">全站共{{ totalcount(site) }}字</span>
   </div>
 </div>
-
-{% if theme.busuanzi %}
-<!-- 不蒜子 -->
-<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<!-- 不蒜子计数初始值纠正 -->
-<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-        var int = setInterval(fixCount, 100);
-        var busuanziSiteOffset = parseInt({{ theme.busuanzi_site_offset }});
-        function fixCount() {
-            if ($("#busuanzi_container_site_pv").css("display") != "none") {
-                clearInterval(int);
-                $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + busuanziSiteOffset);
-            }
-        }
-    });
-</script>
-{% endif %}

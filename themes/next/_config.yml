@@ -460,10 +460,6 @@ leancloud_visitors:
   app_id: 1fMz6FF7S9UdRvzXr5urKCr5-gzGzoHsz
   app_key: BlH2BEhKJaPnQG0hBHbH4cQf
 
-# busuanzi偏移计数
-busuanzi: true
-busuanzi_site_offset: 10000
-
 # Show PV/UV of the website/page with busuanzi.
 # Get more information on http://ibruce.info/2015/04/04/busuanzi/
 busuanzi_count:
