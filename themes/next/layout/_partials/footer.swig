@@ -21,7 +21,6 @@
     <span id="busuanzi_value_site_pv"></span>
   </div>-->
   <div class="powered-by">
-    <!--<span class="with-love"><i class="fa fa-user"></i></span>-->
     您是第<span id="busuanzi_value_site_uv"></span>个访问者
   </div>
   <div class="theme-info">
