@@ -124,6 +124,7 @@
             var target = src + '.' +type;
             src = src + (type === 'mp4' ? '.jpg' : '.' + type) + '?imageMogr2/auto-orient';
             minSrc = minSrc + (type === 'mp4' ? '.jpg' : '.' + type) + '?imageMogr2/auto-orient';
+            type = (type === 'mp4' ? 'video' : 'image')
   
             liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                   <a href="' + src + '" itemprop="contentUrl" data-size="1080x1080" data-type="' + type + '" data-target="' + target + '">\
