@@ -265,6 +265,7 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
 **[所有文件的下载](https://github.com/fakeYanss/Hexo-Album)**
 
 其实啊，相册源文件和博客相册只是用一个json文件关联起来了，可以在实际处理中把相册源文件和博客分离开。也就是说我hexo博客不用管你图片怎么处理的，你的图片裁不裁剪压不压缩都没关系的，存在哪里也没关系的，我只要有一个json数据，并且json数据的格式和ins.js中的处理能对应上就行。
+
 ---
 
 ## 添加Gitment评论
