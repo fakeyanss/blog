@@ -121,7 +121,7 @@
             //var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
             var src = 'http://p1ju2a9a7.bkt.clouddn.com/' + data.link[i];
             var type = data.type[i];
-            var target = src + type;
+            var target = src + '.' +type;
             src = src + (type === 'mp4' ? '.jpg' : '.' + type) + '?imageMogr2/auto-orient';
             minSrc = minSrc + (type === 'mp4' ? '.jpg' : '.' + type) + '?imageMogr2/auto-orient';
   
