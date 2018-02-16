@@ -108,11 +108,13 @@ img:hover {
 
 ## 添加相册
 
-<div id="album">我的[相册](http://yanss.top/photos/)。</div>
-原理很简单，就是建立一个github仓库存储用于存储图片，然后将每个图片的路径保存到一个json文件里，在hexo博客中解析这个json文件，渲染成html页面后就可以在显示图片了。当然这里肯定要有页面的样式和图片的裁剪压缩，原理简单，实际操作起来有一些坑，我并不懂css样式，还是要感谢[litten](https://github.com/litten/BlogBackup/tree/master/source/photos)提供的方法。
+<div id="album">我的[相册](http://blog.yanss.top/photos/)。</div>
+原理很简单，就是建立一个github仓库存储用于存储图片，然后将每个图片的路径保存到一个json文件里，在hexo博客中解析这个json文件，渲染成html页面后就可以在显示图片了。当然这里肯定要有页面的样式和图片的裁剪压缩，原理简单，实际操作起来有一些坑，我并不懂css样式，还是要感谢[litten](http://litten.me/)提供的方法。
+
+### 相册源
 
 * 首先在github上新建一个仓库，命名`Blog_Album`
-* 然后本地新建一个文件夹`Blog_Album`，进入文件夹新建两个子文件夹`photos`，`min_photos`，然后下载这两个文件[ImageProcess.py](https://github.com/fakeYanss/Blog_Album/blob/master/ImageProcess.py)，[tool.py](https://github.com/fakeYanss/Blog_Album/blob/master/tool.py)到`Blog_Album`
+* 然后本地新建一个文件夹`Blog_Album`，进入文件夹新建两个子文件夹`photos`，`min_photos`，然后下载这两个文件[ImageProcess.py](https://github.com/fakeYanss/Hexo-Album/blob/master/Album-Github/ImageProcess.py)，[tool.py](https://github.com/fakeYanss/Hexo-Album/blob/master/Album-Github/tool.py)到`Blog_Album`
 
 记住之后要上传的相片就放到`photos`文件夹内。
 
@@ -134,8 +136,11 @@ final_dict = {"list": list_info}
 
 * 添加一些图片到`Blog_Album`的`photos`文件夹中
 * 将本地`Blog_Album`与github仓库`Blog_Album关联`
-* 运行`tool.py`脚本（因为脚本中有上传到github的函数，所以不用手动git push）
+* 运行`tool.py`脚本（因为脚本中有上传到github的函数，所以不用手动git push），如果不能运行请看文章下面的说明
 * 将本地`Blog_Album`上传到github仓库`Blog_Album`
+
+### 博客相册页
+
 * 回到`yourblog\source\photos`目录下，将`index.md`内容修改为
 
 ```html
@@ -174,11 +179,9 @@ type: "photos"
 
 ![TIM截图20171231214306](http://ouat6a0as.bkt.clouddn.com/TIM截图20171231214306.png)
 
+文件这里[下载](https://github.com/fakeYanss/Hexo-Album/tree/master/Hexo/Source/photos)，`data.json`是图片的数据信息，运行python脚本后会生成
 
-
-文件这里[下载](https://github.com/fakeYanss/fakeYanss.github.io.source/tree/master/source/photos)，`data.json`是图片的数据信息，运行python脚本后会生成
-
-`ins.js`中的114行`render()`函数需要修改这两个变量
+`ins.js`中的114行的`render()`函数需要修改这两个变量
 
 ```js
 var minSrc = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/min_photos/' + data.link[i];
@@ -187,7 +190,7 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
 
 如果你的仓库名和我相同，只用把这里的`fakeYanss`改为你自己的github name即可
 
-* 在`yourBlog/themes/next/source/js/src`下加入两个js文件[photoswipe.min.js](https://github.com/fakeYanss/fakeYanss.github.io.source/blob/master/themes/next/source/js/src/photoswipe.min.js) 和[photoswipe-ui-default.min.js](https://github.com/fakeYanss/fakeYanss.github.io.source/blob/master/themes/next/source/js/src/photoswipe-ui-default.min.js)
+* 在`yourBlog/themes/next/source/js/src`下加入两个js文件[photoswipe.min.js](https://github.com/fakeYanss/Hexo-Album/blob/master/Hexo/photoswipe.min.js) 和[photoswipe-ui-default.min.js](https://github.com/fakeYanss/Hexo-Album/blob/master/Hexo/photoswipe-ui-default.min.js)
 
 
 * 在`yourBlog/themes/next/layout/_scripts/pages/post-details.swig`中添加
@@ -254,12 +257,14 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
 
 * 重新生成博客内容即可看到相册内容。
   * 如果py脚本不能运行，先安装python环境，再安装`Pillow`库`pip install Pillow`
-  * 相册图片的命名请遵循`yyyy-mm-dd_abc.efg`格式
+  * 相册图片的命名请遵循`yyyy-mm-dd_abc.jpg`格式，虽然脚本里写了其他格式的处理，但实际情况似乎只能对jpg裁剪压缩
   * 最后的不足是，相片的裁剪算法不算好，比如会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/album/photos/2017-09-17_ICIP2017.JPG)，还有的会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/album/photos/2017-09-19_%E8%83%A1%E5%90%8C1302.JPG)
-  * next主题源码是不支持相册的，如果有不懂的地方，可以去查一下[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue，然后再来问我
-* **2018.1.20修改**：由于从github仓库读取图片，在html页面中会发生ios手机竖持拍照的照片90度旋转问题（图片的EXIF的orientaion信息在裁剪压缩后发生改变），找了一些办法都没效果，所以将相片源仓库转移到七牛云，利用七牛云外链后加上`?imageMogr2/auto-orient`的方式，可以将照片正常角度显示。
+  * next主题源码是不支持相册的，如果有不懂的地方，可以看看评论的相似情况，或者查一下[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue，然后再来问我
+* **2018.1.20修改**：由于从github仓库读取图片，在html页面中会发生ios手机竖持拍照的照片90度旋转问题（图片的EXIF的orientaion信息在裁剪压缩后发生改变），找了一些办法都没效果，所以将相片源仓库转移到七牛云，利用七牛云外链后加上`?imageMogr2/auto-orient`的方式，可以将照片正常角度显示。如果要用七牛云做图床，可以看我的设置。
 
+**[所有文件的下载](https://github.com/fakeYanss/Hexo-Album)**
 
+其实啊，相册源文件和博客相册只是用一个json文件关联起来了，可以在实际处理中把相册源文件和博客分离开。也就是说我hexo博客不用管你图片怎么处理的，你的图片裁不裁剪压不压缩都没关系的，存在哪里也没关系的，我只要有一个json数据，并且json数据的格式和ins.js中的处理能对应上就行。
 ---
 
 ## 添加Gitment评论
