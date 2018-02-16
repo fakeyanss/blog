@@ -344,7 +344,7 @@ sidebar:
 
 {% cq %}一般这种样式问题都在`layout`文件夹中找原因。{% endcq %}
 
-<s>在`themes\next\layout\_macro\sidebar.swig`，找到开头的
+<s>在`themes\next\layout\_macro\sidebar.swig`，找到开头的</s>
 ```html
 {% macro render(is_post) %}
   <div class="sidebar-toggle">
@@ -355,15 +355,15 @@ sidebar:
     </div>
   </div>
 ```
-在下面加上
+<s>在下面加上</s>
 ```
 {% if page.toc and theme.toc.enable %}
 ```
-然后在倒数第二行加上
+<s>然后在倒数第二行加上</s>
 ```
 {% endif %}
 ```
-</s>
+
 
 发现这样修改有bug，重新改。在`themes\next\layout\_macro\sidebar.swig`找到这一句
 ```
