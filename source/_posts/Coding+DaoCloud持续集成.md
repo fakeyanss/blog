@@ -192,4 +192,4 @@ coding+DaoCloud持续集成到此结束，有问题可以下方留言评论，�
 
 <br>
 
-<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/blog) ， 欢迎 star</i></p>

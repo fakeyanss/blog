@@ -253,4 +253,4 @@ https://www.nowcoder.com/discuss/65323
 
 <br>
 
-<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/fakeYanss.github.io.source) ， 欢迎 star</i></p>
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/blog) ， 欢迎 star</i></p>
