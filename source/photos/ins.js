@@ -124,7 +124,7 @@
             var target = src + '.' +type;
             var size = data.size[i];
             src = src + (type === 'mp4' ? '.jpg' : '.' + type) + '?imageMogr2/auto-orient';
-            minSrc = minSrc + (type === 'mp4' ? '.jpg' : '.' + type) + '?imageMogr2/auto-orient';
+            minSrc = minSrc + (type === 'mp4' ? '.jpg' : '.' + type);
             type = (type === 'mp4' ? 'video' : 'image')
   
             liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
