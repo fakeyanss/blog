@@ -1,7 +1,7 @@
 ---
-title: MIUI����
+title: MIUI面试
 categories:
-  - �澭
+  - 面经
 description: 
 toc: true
 mathjax: false
@@ -12,26 +12,26 @@ date: 2017-08-20 17:22:33
 password:
 ---
 
-## ���ݽṹ
+## 数据结构
 
-* ���ݽṹ����
-* �����������ظ�Ԫ��
-* ���������ҶԳƽ���λ��
+* 数据结构类型
+* 链表找两个重复元素
+* 二叉树左右对称交换位置
 
-## ����ϵͳ
+## 操作系统
 
-* ���̺��̵߳�����
-* linuxϵͳ�ĳ��ò���
-* linux�ļ��ڲ���
+* 进程和线程的区别
+* linux系统的常用操作
+* linux文件内查找
 
-## ����
+## 网络
 
-* TCP UDP���� �������ֵ�ϸ�ڣ����ݱ�����ô����
+* TCP UDP区别， 三次握手的细节，数据报文怎么传输
 
-## ���ݿ�
+## 数据库
 
-* ��������
-* ����
+* 基本操作
+* 索引
 
 ## Java
 
@@ -41,4 +41,4 @@ password:
 
 <br>
 
-<p id="div-border-top-green"><i>���Ҫ˵���ǣ�[����Դ��](https://github.com/fakeYanss/blog) �� ��ӭ star</i></p>
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/blog) ， 欢迎 star</i></p>
