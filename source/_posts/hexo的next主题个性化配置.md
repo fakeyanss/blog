@@ -258,9 +258,36 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
 * 重新生成博客内容即可看到相册内容。
   * 如果py脚本不能运行，先安装python环境，再安装`Pillow`库`pip install Pillow`
   * 相册图片的命名请遵循`yyyy-mm-dd_abc.jpg`格式，虽然脚本里写了其他格式的处理，但实际情况似乎只能对jpg裁剪压缩
-  * 最后的不足是，相片的裁剪算法不算好，比如会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/album/photos/2017-09-17_ICIP2017.JPG)，还有的会[这样](https://github.com/fakeYanss/Blog_Album/blob/master/album/photos/2017-09-19_%E8%83%A1%E5%90%8C1302.JPG)
+  * 最后的不足是，相片的裁剪算法，可能会把一张图片中的人体头部裁剪掉
   * next主题源码是不支持相册的，如果有不懂的地方，可以看看评论的相似情况，或者查一下[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue，然后再来问我
-* **2018.1.20修改**：由于从github仓库读取图片，在html页面中会发生ios手机竖持拍照的照片90度旋转问题（图片的EXIF的orientaion信息在裁剪压缩后发生改变），找了一些办法都没效果，所以将相片源仓库转移到七牛云，利用七牛云外链后加上`?imageMogr2/auto-orient`的方式，可以将照片正常角度显示。如果要用七牛云做图床，可以看我的设置。
+
+* **2018.1.20修改**：由于从github仓库读取图片，在html页面中会发生ios手机竖持拍照的照片90度旋转问题（图片的EXIF的orientaion信息在裁剪压缩后发生改变），找了一些办法都没效果，所以将相片源仓库转移到七牛云，利用七牛云外链后加上`?imageMogr2/auto-orient`的方式，可以将照片正常角度显示。如果要用七牛云做图床，可以看我的[设置](https://github.com/fakeYanss/Hexo-Album)。
+
+* **2018.2.23修改：**发现ios设备拍摄的正方形照片的压缩图上传后仍然有orientation值为6即偏转90度问题，索性修改了整个裁剪切割和生成json的脚本。在压缩同时修改偏转值，并且在生成json时获取图片尺寸，在前端显示图片原图时在`data-size`中设置json中的对应图片尺寸，这样可以不切割原图，修改后的设置方法在
+
+  *  [生成缩略图和json数据并上传七牛云](https://github.com/fakeYanss/Blog_Album)，
+
+  * 对于修改后的相册的[ins.js](https://github.com/fakeYanss/blog/blob/master/source/photos/ins.js)，需要做一些修改，以适应修改后的脚本生成的json数据，在render()方法中，注意内层`<img>`标签为缩略图，`<a>`标签为原图，在对应的属性处设为对应值。
+
+```js
+var minSrc = 'http://p1ju2a9a7.bkt.clouddn.com/min_photos/' + data.link[i];
+//var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
+var src = 'http://p1ju2a9a7.bkt.clouddn.com/' + data.link[i];
+var type = data.type[i];
+var target = src + '.' +type;
+var size = data.size[i];
+src = src + (type === 'mp4' ? '.jpg' : '.' + type) + '?imageMogr2/auto-orient';
+minSrc = minSrc + (type === 'mp4' ? '.jpg' : '.' + type);
+type = (type === 'mp4' ? 'video' : 'image')
+
+liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
+               <a href="' + src + '" itemprop="contentUrl" data-size="' + size + '" data-type="' + type + '" data-target="' + target + '">\
+                   <img class="reward-img" data-type="' + type + '" data-src="' + minSrc + '" src="./assets/empty.png" itemprop="thumbnail" onload="lzld(this)">\
+               </a>\
+               <figcaption style="display:none" itemprop="caption description">' + data.text[i] + '</figcaption>\
+           </figure>';
+```
+
 
 **[所有文件的下载](https://github.com/fakeYanss/Hexo-Album)**
 
