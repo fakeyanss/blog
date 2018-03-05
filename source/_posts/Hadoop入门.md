@@ -9,7 +9,7 @@ copyright: false
 reward: false
 toc: true
 kewords: Hadoop
-description: Understanding Hadoop Clusters and the Network
+description: 之前看的一直记不住，名词太多，索性翻译一遍，很烂，见笑了。
 abbrlink: '67914616'
 date: 2018-02-10 15:18:05
 password:
@@ -23,20 +23,28 @@ Translator: Yanss
 
 This article is Part 1 in series that will take a closer look at the architecture and methods of a Hadoop cluster, and how it relates to the network and server infrastructure. The content presented here is largely based on academic work and conversations I’ve had with customers running real production clusters. If you run production Hadoop clusters in your data center, I’m hoping you’ll provide your valuable insight in the comments below. Subsequent articles to this will cover the server and network architecture options in closer detail. Before we do that though, lets start by learning some of the basics about how a Hadoop cluster works. OK, let’s get started!
 
-本文是系列的第1部分，将带你详细了解Hadoop集群的架构和方法，以及它如何将网络和服务器基础设施相关联。这里介绍的内容主要是基于学术研究和我与在实际产品中运行集群的客户的交流。如果你在你的数据中心中运行Hadoop集群生产，
+本文是系列的第1部分，将带你详细了解Hadoop集群的架构和方法，以及它如何将网络和服务器基础设施相关联。这里介绍的内容主要是基于学术研究和我与在实际产品中运行集群的客户的交流。如果你在你的数据中心中运行Hadoop集群生产，我期待你在下面的评论中提供有价值的见解。接下来的文章将会包含服务器和网络结构的详细细节。然而在此之前，让我了解一些Hadoop集群工作的基础。
 ![Hadoop-Server-Roles](http://ouat6a0as.bkt.clouddn.com/Hadoop-Server-Roles.png)
 
 The three major categories of machine roles in a Hadoop deployment are Client machines, Masters nodes, and Slave nodes. The Master nodes oversee the two key functional pieces that make up Hadoop: storing lots of data (HDFS), and running parallel computations on all that data (Map Reduce). The Name Node oversees and coordinates the data storage function (HDFS), while the Job Tracker oversees and coordinates the parallel processing of data using Map Reduce. Slave Nodes make up the vast majority of machines and do all the dirty work of storing the data and running the computations. Each slave runs both a Data Node and Task Tracker daemon that communicate with and receive instructions from their master nodes. The Task Tracker daemon is a slave to the Job Tracker, the Data Node daemon a slave to the Name Node.
 
+Hadoop部署的三个主要分类分别是Client machines、Masters nodes和Slave nodes。主节点监督两个重要的功能块形成Hadoop：存储大量数据(HDFS)，在所有数据上并行计算(Map Reduce)。Name Node监督协调数据存储功能(HDFS)，同时Job Tracker监督协调使用Map Reduce进行数据的并行处理。Slave Nodes形成大多数的机构，做着所有的存储数据和运行计算的脏活。每个slave同时运行着Data Node和Task Tracker的后台程序——用以传递和接收来自他们的master nodes的命令。Task Tracker后台程序是Job Tracker的slave，Data node后台程序是Name Node的slave。
+
 Client machines have Hadoop installed with all the cluster settings, but are neither a Master or a Slave. Instead, the role of the Client machine is to load data into the cluster, submit Map Reduce jobs describing how that data should be processed, and then retrieve or view the results of the job when its finished. In smaller clusters (~40 nodes) you may have a single physical server playing multiple roles, such as both Job Tracker and Name Node. With medium to large clusters you will often have each role operating on a single server machine.
 
+Client machines的Hadoop安装了所有的集群设置，但不包含Master或Slave。相应的，Client machine的作用是加载数据到集群，提交Map Reduce工作，描述数据应该怎么处理，然后在公众完成时取回或查看结果。在小一些的集群（约40个节点）中，你可能只有一个实体服务器运行多任务，例如Job Tracker和Name Node一样。在中大型集群你可能会在单个服务器中进行单个任务运转。
+
 In real production clusters there is no server virtualization, no hypervisor layer. That would only amount to unnecessary overhead impeding performance. Hadoop runs best on Linux machines, working directly with the underlying hardware. That said, Hadoop does work in a virtual machine. That’s a great way to learn and get Hadoop up and running fast and cheap. I have a 6-node cluster up and running in VMware Workstation on my Windows 7 laptop.
+
+在实际生产集群中没有服务器虚拟化，没有虚拟机监视器。那只会产生大量不必要的性能开支。Hadoop在Linux机器上运行得最好，直接在底层硬件上工作。也就是说，Hadoop在虚拟机上工作。那是了解和搭建Hadoop的好办法，并且运行的又快又便宜。我有一个6节点的集群，运行在我的Windows 7笔记本的VMware工作台上。
 
 ------
 
 ![Hadoop-Cluster](http://ouat6a0as.bkt.clouddn.com/Hadoop-Cluster.png)
 
 This is the typical architecture of a Hadoop cluster. You will have rack servers (not blades) populated in racks connected to a top of rack switch usually with 1 or 2 GE boned links. 10GE nodes are uncommon but gaining interest as machines continue to get more dense with CPU cores and disk drives. The rack switch has uplinks connected to another tier of switches connecting all the other racks with uniform bandwidth, forming the cluster. The majority of the servers will be Slave nodes with lots of local disk storage and moderate amounts of CPU and DRAM. Some of the machines will be Master nodes that might have a slightly different configuration favoring more DRAM and CPU, less local storage. In this post, we are not going to discuss various detailed network design options. Let’s save that for another discussion (stay tuned). First, lets understand how this application works…
+
+这是一个Hadoop集群的典型结构。
 
 ------
 

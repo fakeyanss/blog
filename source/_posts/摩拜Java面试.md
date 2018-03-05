@@ -2,13 +2,14 @@
 title: 摩拜单车Java面试
 categories:
   - 面经
-tags:
 mathjax: false
 copyright: true
 reward: true
 toc: true
-date: 2018-01-18 23:09:00
 kewords: 摩拜Java
+abbrlink: 3769b1
+date: 2018-01-18 23:09:00
+tags:
 description:
 password:
 ---
