@@ -44,7 +44,7 @@ In real production clusters there is no server virtualization, no hypervisor lay
 
 This is the typical architecture of a Hadoop cluster. You will have rack servers (not blades) populated in racks connected to a top of rack switch usually with 1 or 2 GE boned links. 10GE nodes are uncommon but gaining interest as machines continue to get more dense with CPU cores and disk drives. The rack switch has uplinks connected to another tier of switches connecting all the other racks with uniform bandwidth, forming the cluster. The majority of the servers will be Slave nodes with lots of local disk storage and moderate amounts of CPU and DRAM. Some of the machines will be Master nodes that might have a slightly different configuration favoring more DRAM and CPU, less local storage. In this post, we are not going to discuss various detailed network design options. Let’s save that for another discussion (stay tuned). First, lets understand how this application works…
 
-这是一个Hadoop集群的典型结构。
+这是一个Hadoop集群的典型结构。你将使用机架服务器(不是刀锋服务器)，搭建在机架中，连接一个顶部机架开关，通常使用1或2 GE(Gigabit Ethernet千兆以太网)。10 GE节点是不常有的，但当机器使用CPU核心和磁盘驱动获取更大的密度时收益更多。机架开关上行传输被连接到连接所有其他相同带宽机架的另一层开关，构成集群。大多数服务器是Slave nodes，使用大量的本地磁盘存储和中量的CPU和DRAM。一些机器是Master nodes，可能有轻微不同的配置，使用更多的DRAM和CPU，较少的本地存储。在这片文章中，我们不讨论许多详细的网络设计选择，让我们将它保留到另一个讨论(在调试中)中。首先，让我们理解这个应用怎么工作的。
 
 ------
 
@@ -52,13 +52,19 @@ This is the typical architecture of a Hadoop cluster. You will have rack servers
 
 Why did Hadoop come to exist? What problem does it solve? Simply put, businesses and governments have a tremendous amount of data that needs to be analyzed and processed very quickly. If I can chop that huge chunk of data into small chunks and spread it out over many machines, and have all those machines processes their portion of the data in parallel – I can get answers extremely fast – and that, in a nutshell, is what Hadoop does. In our simple example, we’ll have a huge data file containing emails sent to the customer service department. I want a quick snapshot to see how many times the word “Refund” was typed by my customers. This might help me to anticipate the demand on our returns and exchanges department, and staff it appropriately. It’s a simple word count exercise. The Client will load the data into the cluster (File.txt), submit a job describing how to analyze that data (word count), the cluster will store the results in a new file (Results.txt), and the Client will read the results file.
 
+Hadoop为何诞生？它解决了什么问题？简言之，商业和政府有一个极大量的数据需要非常快地分析和处理。如果我可以分离这个巨大的数据到很多小的部分，铺开到大量的机器中，让这些机器并行处理它们各自的那一部分——我就可以极快的获取结果——这就是Hadoop做的事情。在我们的简单例子中，我们将用一个巨大的数据文件，它包含了发送到客户服务部门的邮件。我想要一个数据快照，来查看单词“Refund”被客户输入了多少次。这将有助于我预测退还和交换部门的需求，并且合理地安排职员。这是一个简单的词条计数训练。Clients将会加载数据到集群(File.txt)，提交一个工作描述，如何分析数据(单词计数)，集群会存储结果到一个新的文件(Results.txt)，然后Clients会读取结果文件。
+
 ------
 
 ![Writing-Files-to-HDFS](http://ouat6a0as.bkt.clouddn.com/Writing-Files-to-HDFS.png)
 
 Your Hadoop cluster is useless until it has data, so we’ll begin by loading our huge File.txt into the cluster for processing. The goal here is fast parallel processing of lots of data. To accomplish that I need as many machines as possible working on this data all at once. To that end, the Client is going to break the data file into smaller “Blocks”, and place those blocks on different machines throughout the cluster. The more blocks I have, the more machines that will be able to work on this data in parallel. At the same time, these machines may be prone to failure, so I want to insure that every block of data is on multiple machines at once to avoid data loss. So each block will be replicated in the cluster as its loaded. The standard setting for Hadoop is to have (3) copies of each block in the cluster. This can be configured with the **dfs.replication** parameter in the file **hdfs-site.xml**.
 
+你的Hadoop集群直到有数据才有用，所以我们开始于加载超大的File.txt到集群中处理。这里的目标是快速并行处理大量数据。为此我需要尽可能多的机器同时处理这些数据。在那结束后，Client将会打断这个数据文件为许多小的块，将这些块放到遍及集群的不同的机器上。分成的块越多，能并行工作的机器就越多。在同一时间，这些机器可能容易失败，所以为了避免数据丢失，我会确信每个数据块在多台机器上存在。所以每个块会在加载到集群时复制。Hadoop的标准设置是集群中每个块有3个复制。这个可以在hdfs-site.xml文件的dfs.replication参数中设置。
+
 The Client breaks File.txt into (3) Blocks. For each block, the Client consults the Name Node (usually TCP 9000) and receives a list of (3) Data Nodes that should have a copy of this block. The Client then writes the block directly to the Data Node (usually TCP 50010). The receiving Data Node replicates the block to other Data Nodes, and the cycle repeats for the remaining blocks. The Name Node is not in the data path. The Name Node only provides the map of where data is and where data should go in the cluster (file system metadata).
+
+
 
 ------
 
