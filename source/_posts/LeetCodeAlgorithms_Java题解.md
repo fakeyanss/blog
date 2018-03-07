@@ -26,7 +26,13 @@ password:
 
 [1. Two Sum](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q1/Two_Sum)
 
+[3. Longest_Substring_Without_Repeating_Characters](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q3/Longest_Substring_Without_Repeating_Characters)
+
+[8. String to Integer(atoi)](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q8/String_to_Integer)
+
 [28. Implement_strStr](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q28/Implement_strStr)
+
+[65. Valid Number](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q65/Valid_Number)
 
 # 101-200
 
@@ -37,6 +43,8 @@ password:
 [167. Two_Sum_II](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q167/Two_Sum_II)
 
 [170. Two_Sum_III](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q170/Two_Sum_III)
+
+[186. Reverse Words in a String II](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q186/Reverse_Words_in_a_String_II)
 
 # 201-300
 
