@@ -64,7 +64,7 @@ Your Hadoop cluster is useless until it has data, so we’ll begin by loading ou
 
 The Client breaks File.txt into (3) Blocks. For each block, the Client consults the Name Node (usually TCP 9000) and receives a list of (3) Data Nodes that should have a copy of this block. The Client then writes the block directly to the Data Node (usually TCP 50010). The receiving Data Node replicates the block to other Data Nodes, and the cycle repeats for the remaining blocks. The Name Node is not in the data path. The Name Node only provides the map of where data is and where data should go in the cluster (file system metadata).
 
-
+Client将File.txt拆分为3个块。对每个块，Client查看Name Node(通常用TCP 9000)并接收一个3个Data Nodes的list，每个Data Node都是一个块的复制。Client将块直接写入到Data Node(通常用TCP 50010)。收到的Data Node将块复制到其他Data Nodes，剩下的块也循环这个重复过程。Name Node不是数据路径。在集群中(文件系统云数据)Name Node只提供数据的位置和数据应该去哪。
 
 ------
 
@@ -72,11 +72,19 @@ The Client breaks File.txt into (3) Blocks. For each block, the Client consults 
 
 Hadoop has the concept of “Rack Awareness”. As the Hadoop administrator you can **manually** define the rack number of each slave Data Node in your cluster. Why would you go through the trouble of doing this? There are two key reasons for this: Data loss prevention, and network performance. Remember that each block of data will be replicated to multiple machines to prevent the failure of one machine from losing all copies of data. Wouldn’t it be unfortunate if all copies of data happened to be located on machines in the same rack, and that rack experiences a failure? Such as a switch failure or power failure. That would be a mess. So to avoid this, somebody needs to know where Data Nodes are located in the network topology and use that information to make an intelligent decision about where data replicas should exist in the cluster. That “somebody” is the Name Node.
 
+Hadoop有“机架意识”的概念。作为Hadoop管理员，你可以手动定义集群中每个slave Data Noded的机架数量。为什么你要做这个麻烦的事情呢？有两个关键原因：防止数据丢失和网络性能。记住每个块的数据需要复制到多个机器以防止一个机器失败是丢失所有的数据。如果所有的数据复制碰巧位于同意机架的机器上，并且机架发生失败，会发生这样的事情吗？比如一个开关失败或者是供电问题。那将会一团糟。所以为了避免这样，“某物”需要知道网络拓扑中Data Nodes在哪，以此做一个关于数据复制品应该存放在集群何处的智能的决定。这个“某物”是Name Node。
+
 There is also an assumption that two machines in the same rack have more bandwidth and lower latency between each other than two machines in two different racks. This is true most of the time. The rack switch uplink bandwidth is usually (but not always) less than its downlink bandwidth. Furthermore, in-rack latency is usually lower than cross-rack latency (but not always). If at least one of those two basic assumptions are true, wouldn’t it be cool if Hadoop can use the same Rack Awareness that protects data to also optimally place work streams in the cluster, improving network performance? Well, it does! Cool, right?
+
+有一个假设关于在同一机架的两个机器之间比起不同机架的两个机器有更多的带宽和更低的等待时间。大多是时候这是正确的。机架开关的上行带宽通常(不总是)比下行带宽小。而且，在机架内的等待时间通常比机架见的等待时间低(不总是)。如果这两个基础假设中至少一个是对的，如果Hadoop能用同一个机架意识，保护数据到工作流也就是集群中最适宜的位置，提高网络性能，不会更好吗？当然会。
 
 What is **NOT** cool about Rack Awareness at this point is the [manual work required to define it the first time](http://developer.yahoo.com/hadoop/tutorial/module2.html#rack), continually update it, and keep the information accurate. If the rack switch could auto-magically provide the Name Node with the list of Data Nodes it has, that would be cool. Or vice versa, if the Data Nodes could auto-magically tell the Name Node what switch they’re connected to, that would be cool too.
 
+在这一点关于机架意识不好的地方是，[manual work required to define it the first time](http://developer.yahoo.com/hadoop/tutorial/module2.html#rack)，持续的更新它，保持信息准确。如果机架可以自动提供Data Nodes list的Name Node，那将会很好。反过来也是，如果Data Nodes可以自动告诉Name Node它们连接的什么开关，也会很好。
+
 Even more interesting would be a [OpenFlow network](http://www.bradhedlund.com/2011/04/21/data-center-scale-openflow-sdn/), where the Name Node could query the OpenFlow controller about a Node’s location in the topology.
+
+甚至更有趣的是一个[OpenFlow network](http://www.bradhedlund.com/2011/04/21/data-center-scale-openflow-sdn/)，Name Node可以在哪查询OpenFlow控制器关于一个Nodez的拓扑位置。
 
 ------
 
@@ -84,9 +92,15 @@ Even more interesting would be a [OpenFlow network](http://www.bradhedlund.com/2
 
 The Client is ready to load File.txt into the cluster and breaks it up into blocks, starting with Block A. The Client consults the Name Node that it wants to write File.txt, gets permission from the Name Node, and receives a list of (3) Data Nodes for each block, a unique list for each block. The Name Node used its Rack Awareness data to influence the decision of which Data Nodes to provide in these lists. The key rule is that **for every block of data, two copies will exist in one rack, another copy in a different rack.** So the list provided to the Client will follow this rule.
 
+Client准备好加载文件到集群中，将它打断到不同的块，开始块A。Client查询Name Node，想写入File.txt，从Name Node获取许可，接收一个包含每个块的Data Node的list，一个包含每个块独有的list。Name Node用它的机架意识数据去影响这些list中提供哪个Data Nodes的决定。重要规则是**对数据的每个块，两个复制存在一个机架中，另一个复制在其他机架中**。所以这个list提供Client将遵循这个规则。
+
 Before the Client writes “Block A” of File.txt to the cluster it wants to know that all Data Nodes which are expected to have a copy of this block are ready to receive it. It picks the first Data Node in the list for Block A (Data Node 1), opens a TCP 50010 connection and says, “Hey, get ready to receive a block, and here’s a list of (2) Data Nodes, Data Node 5 and Data Node 6. Go make sure they’re ready to receive this block too.” Data Node 1 then opens a TCP connection to Data Node 5 and says, “Hey, get ready to receive a block, and go make sure Data Node 6 is ready is receive this block too.” Data Node 5 will then ask Data Node 6, “Hey, are you ready to receive a block?”
 
+在Client写入块到File.txt之前，它想知道所有的Data Nodes哪个期望准备接收一个这个块的复制。它在list中为块A挑选第一个Data Node(Data Node 1)，打开TCP 50010连接，然后说，“嘿，准备好接收一个块，这是两个Data Node的list，Data Node 5和Data Node 6。去确信它们也准备好接收这个块。”然后Data Node 1打开一个TCP连接到Data Node 5然后说，“嘿，准备好接收一个块，去确信Data Node 6也准备好接收这个块。”Data Node 5将问Data Node 6，“嘿，你准备好接收一个块了吗？”
+
 The acknowledgments of readiness come back on the same TCP pipeline, until the initial Data Node 1 sends a “Ready” message back to the Client. At this point the Client is ready to begin writing block data into the cluster.
+
+准备就绪的确认通知在同一TCP管道返回，直到初始的Data Node 1发送一个“Ready”信息给Client。这样，Client就准备好开始写入块数据到集群中。
 
 ------
 
