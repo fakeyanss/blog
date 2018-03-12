@@ -1,0 +1,106 @@
+---
+title: Thymeleaf的简单使用
+categories:
+  - Front-End
+tags:
+  - Thymeleaf
+mathjax: false
+copyright: true
+reward: true
+toc: true
+date: 2018-03-12 20:09:44
+kewords: Thymeleaf
+description:
+password:
+---
+[Thymeleaf](http://www.thymeleaf.org/)是一款用于渲染XML/XHTML/HTML5内容的Java模板引擎库，可以通过HTML的标签属性渲染标签内容。
+
+举个例子，
+```html
+<p th:text="#{home.welcome}">Welcome to our grocery store!</p>
+```
+这里的`th:text`的内容就是需要后台渲染的，假如没有后台渲染，html会将无法识别的部分直接过滤掉，那么输出就是
+```html
+<p >Welcome to our grocery store!</p>
+```
+假如后台传过来的`home.welcome`的值是`Welcome, Yanss!`，那么输出就是
+```html
+<p >Welcome, Yanss!</p>
+```
+这就是Thymeleaf的用法和作用了，其他的地方也差不多。
+
+记录几个常用的语法。
+
+**URL**
+```html
+<a th:href="@{http://www.thymeleaf.org}">Thymeleaf</a>
+```
+传参
+```html
+<a th:href="@{http://www.thymeleaf.org(id=${id})}">Thymeleaf</a>
+<a th:href="@{http://www.thymeleaf.org(id=${id},name=${name})}">Thymeleaf</a>
+```
+
+**字符串替换**
+```html
+<span th:text="'Welcome to our application, ' + ${user.name} + '!'">
+```
+
+**条件选择式**
+类似于java的三元表达式
+```html
+<p th:text="true?'真':'假'"></p>
+```
+
+**循环**
+* 创建表格
+```html
+<table>
+    <tr>
+      <th>NAME</th>
+      <th>PRICE</th>
+      <th>IN STOCK</th>
+    </tr>
+    <tr th:each="prod : ${prods}">
+      <td th:text="${prod.name}">Onions</td>
+      <td th:text="${prod.price}">2.41</td>
+      <td th:text="${prod.inStock}? #{true} : #{false}">yes</td>
+    </tr>
+  </table>
+```
+
+* 创建下拉框
+在项目启动访问index页面的时候，把要需要的列表集合存到session作用域
+```java
+@RequestMapping("index")
+public String index(HttpSession session){
+    List<Classes> list = userService.findAllClasses();
+    session.setAttribute("list",list);
+    return "index";
+}
+```
+前台取值
+```html
+<select name="className" class="form-control">
+    <option>请选择班级</option>
+    <option th:each="list:${session.list}" th:value="$${list.cid}" th:text="${list.cname}"></option>
+</select>
+```
+
+**if/unless, switch/case**
+下面`<a>`标签只有在`th:if`中条件成立时才显示，`th:unless`只有不成立时才显示
+```html
+<a th:href="@{/login}" th:if=${session.user != null}>Login</a>
+```
+
+switch/case也很好理解，默认属性default可以用*表示
+```html
+<div th:switch="${user.role}">
+  <p th:case="'admin'">User is an administrator</p>
+  <p th:case="#{roles.manager}">User is a manager</p>
+  <p th:case="*">User is some other thing</p>
+</div>
+```
+
+<br>
+<p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/blog) ， 欢迎 star</i></p>
