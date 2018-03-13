@@ -31,28 +31,28 @@ password:
 
 记录几个常用的语法。
 
-**URL**
+## URL
 ```html
 <a th:href="@{http://www.thymeleaf.org}">Thymeleaf</a>
 ```
-传参
+如果需要传参
 ```html
 <a th:href="@{http://www.thymeleaf.org(id=${id})}">Thymeleaf</a>
 <a th:href="@{http://www.thymeleaf.org(id=${id},name=${name})}">Thymeleaf</a>
 ```
 
-**字符串替换**
+## 字符串替换
 ```html
 <span th:text="'Welcome to our application, ' + ${user.name} + '!'">
 ```
 
-**条件选择式**
+## 条件选择式
 类似于java的三元表达式
 ```html
 <p th:text="true?'真':'假'"></p>
 ```
 
-**循环**
+## 循环
 * 创建表格
 ```html
 <table>
@@ -87,7 +87,7 @@ public String index(HttpSession session){
 </select>
 ```
 
-**if/unless, switch/case**
+## if/unless, switch/case
 下面`<a>`标签只有在`th:if`中条件成立时才显示，`th:unless`只有不成立时才显示
 ```html
 <a th:href="@{/login}" th:if=${session.user != null}>Login</a>
@@ -102,7 +102,7 @@ switch/case也很好理解，默认属性default可以用*表示
 </div>
 ```
 
-**inline**
+## inline
 举个例子, 当我想在一个两层的标签中同时渲染外层和内层的属性, 可能会出现下面这种错误.
 ```html
 <p th:text="${Hello.world}"><span th:if="${user == 'yanss'}">yanss</span></p>
