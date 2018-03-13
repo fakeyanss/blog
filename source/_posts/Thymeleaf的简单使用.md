@@ -102,5 +102,28 @@ switch/case也很好理解，默认属性default可以用*表示
 </div>
 ```
 
+**inline**
+举个例子, 当我想在一个两层的标签中同时渲染外层和内层的属性, 可能会出现下面这种错误.
+```html
+<p th:text="${Hello.world}"><span th:if="${user == 'yanss'}">yanss</span></p>
+```
+
+这种写法等同于
+```html
+<p th:text="${Hello.world}"></p>
+```
+
+因为外层的th:text会将内层的覆盖掉, 如果要同时渲染, 可以使用inline属性, 也可以将内外层隔离开.
+```html
+<p th:inline="text">[[${Hello.world}]]<span th:if="${user == 'yanss'}">yanss</span></p>
+
+<!-- or -->
+<p >
+  <span th:text="${Hello.world}"></span>
+  <span th:if="${user == 'yanss'}">yanss</span>
+</p>
+```
+
+
 <br>
 <p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/blog) ， 欢迎 star</i></p>
