@@ -84,7 +84,7 @@ What is **NOT** cool about Rack Awareness at this point is the [manual work requ
 
 Even more interesting would be a [OpenFlow network](http://www.bradhedlund.com/2011/04/21/data-center-scale-openflow-sdn/), where the Name Node could query the OpenFlow controller about a Node’s location in the topology.
 
-甚至更有趣的是一个[OpenFlow network](http://www.bradhedlund.com/2011/04/21/data-center-scale-openflow-sdn/)，Name Node可以在哪查询OpenFlow控制器关于一个Nodez的拓扑位置。
+甚至更有趣的是一个[OpenFlow network](http://www.bradhedlund.com/2011/04/21/data-center-scale-openflow-sdn/)，Name Node可以在哪查询OpenFlow控制器关于一个Node的拓扑位置。
 
 ------
 
@@ -108,7 +108,11 @@ The acknowledgments of readiness come back on the same TCP pipeline, until the i
 
 As data for each block is written into the cluster a replication pipeline is created between the (3) Data Nodes (or however many you have configured in dfs.replication). This means that as a Data Node is receiving block data it will at the same time push a copy of that data to the next Node in the pipeline.
 
+当每个块的数据被写入集群时, 三个Data Nodes之间(或者无论多少个你在dfs.replication中设置的)会创建一个复制管道. 这意味着, 当一个Data Node接收数据块时, 它会同时推送一个数据的复制到管道中的下一个Node.
+
 Here too is a primary example of leveraging the Rack Awareness data in the Name Node to improve cluster performance. Notice that the second and third Data Nodes in the pipeline are in the same rack, and therefore the final leg of the pipeline does not need to traverse between racks and instead benefits from in-rack bandwidth and low latency. The next block will not be begin until this block is successfully written to all three nodes.
+
+这也是一个借助机架系统的简单例子, Name Node中的数据提升集群性能. 注意管道中的第二个和第三个Data Node位于同一个机架中, 因此管道的最后一步不用穿过机架, 这会带来机架内的带宽和低延迟收益. 下一个数据块会在这一块成功写入到三个Nodes后开始.
 
 ------
 
@@ -116,19 +120,27 @@ Here too is a primary example of leveraging the Rack Awareness data in the Name 
 
 When all three Nodes have successfully received the block they will send a “Block Received” report to the Name Node. They will also send “Success” messages back up the pipeline and close down the TCP sessions. The Client receives a success message and tells the Name Node the block was successfully written. The Name Node updates it metadata info with the Node locations of Block A in File.txt. The Client is ready to start the pipeline process again for the next block of data.
 
+当所有的三个Node都成功接收了这个块, 它们会发送一个"Block Received"报告给Name Node. 它们也会给管道返回一个"Success"消息并关闭TCP协议. Client接收了一个Success消息, 通知Name Node块已经成功写入. Name Node更新File.txt中块A的Node位置的元数据信息. Client准备好开始下一个数据块的管道处理.
+
 ------
 
 ![Multi-block-Replication-Pipeline](http://ouat6a0as.bkt.clouddn.com/Multi-block-Replication-Pipeline.png)
 
 As the subsequent blocks of File.txt are written, the initial node in the pipeline will vary for each block, spreading around the hot spots of in-rack and cross-rack traffic for replication.
 
+当File.txt中随后的块都被写入, 管道中初始的node会为每一个块做相应的变化, 在机架内的热点间传播, 在机架间复制. 
+
 Hadoop uses a lot of network bandwidth and storage. We are typically dealing with very big files, Terabytes in size. And each file will be replicated onto the network and disk (3) times. If you have a 1TB file it will consume 3TB of network traffic to successfully load the file, and 3TB disk space to hold the file.
+
+Hadoop使用大量的网络带宽和存储空间. 特别是当我们处理非常大的文件时, TB量级的. 每个文件将3倍地复制到网络和磁盘上. 如果你有一个1TB的文件, 它将消耗3TB的网络来成功地加载文件, 以及3TB的磁盘空间来保存这个文件.
 
 ------
 
 ![Client-Writes-Span-Cluster](http://ouat6a0as.bkt.clouddn.com/Client-Writes-Span-Cluster.png)
 
 After the replication pipeline of each block is complete the file is successfully written to the cluster. As intended the file is spread in blocks across the cluster of machines, each machine having a relatively small part of the data. The more blocks that make up a file, the more machines the data can potentially spread. The more CPU cores and disk drives that have a piece of my data mean more parallel processing power and faster results. This is the motivation behind building large, wide clusters. To process more data, faster. When the machine count goes up and the cluster goes **wide**, our network needs to scale appropriately.
+
+在每个块的复制管道都完成后, 文件就成功地写入集群了. 为了文件在集群机器的块之间传播, 每个机器有相对小的一部分数据. 文件分割的块越多, 数据可能传播的
 
 Another approach to scaling the cluster is to go **deep**. This is where you scale up the machines with more disk drives and more CPU cores. Instead of increasing the number of machines you begin to look at increasing the density of each machine. In scaling deep, you put yourself on a trajectory where more network I/O requirements may be demanded of fewer machines. In this model, [how your Hadoop cluster makes the transition to 10GE nodes](http://www.bradhedlund.com/2012/03/26/considering-10ge-hadoop-clusters-and-the-network/) becomes an important consideration.
 
