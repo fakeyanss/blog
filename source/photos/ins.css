@@ -13,7 +13,7 @@ figure {
 }
 .instagram img {
     width: 100%;
-    
+
 }
 .posts-expand .post-body img {
     padding: 0;
@@ -34,7 +34,7 @@ figure {
 }
 .instagram .thumb {
 	width: 25%;
-	height: 0; 
+	height: 0;
 	padding-bottom: 25%;
 	position: relative;
 	display: inline-block;
@@ -150,4 +150,8 @@ figure {
 		width: 90%;
 		height: 90%;
 	}
+}
+
+ul, menu, dir {
+	-webkit-padding-start: 10px;
 }
