@@ -152,11 +152,15 @@ Another approach to scaling the cluster is to go **deep**. This is where you sca
 
 The Name Node holds all the file system metadata for the cluster and oversees the health of Data Nodes and coordinates access to data. The Name Node is the central controller of HDFS. It does not hold any cluster data itself. The Name Node only knows what blocks make up a file and where those blocks are located in the cluster. The Name Node points Clients to the Data Nodes they need to talk to and keeps track of the cluster’s storage capacity, the health of each Data Node, and making sure each block of data is meeting the minimum defined replica policy.
 
-Name Node控制集群的所有的文件系统元数据, 监督Data Nodes的健康和协调数据入口. Name Node时HDFS的控制中心. 它自己不控制任何集群数据. Name Node只知道文件由什么块组成, 和那些块在集群中的位置. Name Node
+Name Node控制集群的所有的文件系统元数据, 监督Data Nodes的健康和协调数据入口. Name Node时HDFS的控制中心. 它自己不控制任何集群数据. Name Node只知道文件由什么块组成, 和那些块在集群中的位置. Name Node从Client指向Data Nodes, 它们需要交流来保持集群存储能力和每个Data Node健康的轨迹, 并且确认每个数据的块保证最低限度的复制.
 
 Data Nodes send heartbeats to the Name Node every 3 seconds via a TCP handshake, using the same port number defined for the Name Node daemon, usually TCP 9000. Every tenth heartbeat is a Block Report, where the Data Node tells the Name Node about all the blocks it has. The block reports allow the Name Node build its metadata and insure (3) copies of the block exist on different nodes, in different racks.
 
+Data Node通过TCP握手每3秒发送心跳给Name Node, 为Name Node使用同一个确定的端口号, 通常是TCP 9000. 每第10个心跳是一个块报告, 关于Data Node告诉Name Node所有它有的块. 块报告允许Name Node建立它的元数据和确认块的3个复制存在于不同机架的不同的node上.
+
 The Name Node is a critical component of the Hadoop Distributed File System (HDFS). Without it, Clients would not be able to write or read files from HDFS, and it would be impossible to schedule and execute Map Reduce jobs. Because of this, it’s a good idea to equip the Name Node with a highly redundant enterprise class server configuration; dual power supplies, hot swappable fans, redundant NIC connections, etc.
+
+Name Node是Hadoop分布式文件系统的一个关键的组件. 没有它, Clients将不能从HDFS写和读文件, 而且也不能规划和执行Map Reduce工作. 归功于它, 用高冗余企业类服务器配置安装Name Node是一个好主意. 双重支持, 热交换, 冗余NIC连接, 等.
 
 ------
 
