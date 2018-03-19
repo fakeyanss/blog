@@ -140,15 +140,19 @@ Hadoop使用大量的网络带宽和存储空间. 特别是当我们处理非常
 
 After the replication pipeline of each block is complete the file is successfully written to the cluster. As intended the file is spread in blocks across the cluster of machines, each machine having a relatively small part of the data. The more blocks that make up a file, the more machines the data can potentially spread. The more CPU cores and disk drives that have a piece of my data mean more parallel processing power and faster results. This is the motivation behind building large, wide clusters. To process more data, faster. When the machine count goes up and the cluster goes **wide**, our network needs to scale appropriately.
 
-在每个块的复制管道都完成后, 文件就成功地写入集群了. 为了文件在集群机器的块之间传播, 每个机器有相对小的一部分数据. 文件分割的块越多, 数据可能传播的
+在每个块的复制管道都完成后, 文件就成功地写入集群了. 为了文件在集群机器的块之间传播, 每个机器有相对小的一部分数据. 文件分割的块越多, 数据可能传播的机器就越多. 一块数据有更多的CPU核心和磁盘驱动意味着更好的并行处理能力和更快的获得结果. 这是建立更大更宽的集群的背后的动机. 为了更快处理更多的数据. 当机器数增长, 集群变宽, 我们的网络需要合适的规模.
 
 Another approach to scaling the cluster is to go **deep**. This is where you scale up the machines with more disk drives and more CPU cores. Instead of increasing the number of machines you begin to look at increasing the density of each machine. In scaling deep, you put yourself on a trajectory where more network I/O requirements may be demanded of fewer machines. In this model, [how your Hadoop cluster makes the transition to 10GE nodes](http://www.bradhedlund.com/2012/03/26/considering-10ge-hadoop-clusters-and-the-network/) becomes an important consideration.
+
+纵向发展是规模化集群的另一种方法. 这即是你用更多的磁盘驱动和更多的CPU核数纵向扩展机器. 相对增加机器数量, 取而代之的是增加每个机器的密度. 在纵向化时, 你将趋向于更多的网络I/O需求使用更少的机器. 在这种模式下, 你的Hasoop集群怎样变迁到10GE nodes成为一个重点.
 
 ------
 
 ![Name-Node](http://ouat6a0as.bkt.clouddn.com/Name-Node.png)
 
 The Name Node holds all the file system metadata for the cluster and oversees the health of Data Nodes and coordinates access to data. The Name Node is the central controller of HDFS. It does not hold any cluster data itself. The Name Node only knows what blocks make up a file and where those blocks are located in the cluster. The Name Node points Clients to the Data Nodes they need to talk to and keeps track of the cluster’s storage capacity, the health of each Data Node, and making sure each block of data is meeting the minimum defined replica policy.
+
+Name Node控制集群的所有的文件系统元数据, 监督Data Nodes的健康和协调数据入口. Name Node时HDFS的控制中心. 它自己不控制任何集群数据. Name Node只知道文件由什么块组成, 和那些块在集群中的位置. Name Node
 
 Data Nodes send heartbeats to the Name Node every 3 seconds via a TCP handshake, using the same port number defined for the Name Node daemon, usually TCP 9000. Every tenth heartbeat is a Block Report, where the Data Node tells the Name Node about all the blocks it has. The block reports allow the Name Node build its metadata and insure (3) copies of the block exist on different nodes, in different racks.
 
