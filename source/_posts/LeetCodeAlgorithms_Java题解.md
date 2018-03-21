@@ -22,19 +22,9 @@ password:
 
 <!-- more -->
 
-# 1-100
+# 1__
 
 [1. Two Sum](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q1/Two_Sum)
-
-[3. Longest_Substring_Without_Repeating_Characters](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q3/Longest_Substring_Without_Repeating_Characters)
-
-[8. String to Integer(atoi)](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q8/String_to_Integer)
-
-[28. Implement_strStr](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q28/Implement_strStr)
-
-[65. Valid Number](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q65/Valid_Number)
-
-# 101-200
 
 [125. Valid_Palindrome](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q125/Valid_Palindrome)
 
@@ -46,17 +36,19 @@ password:
 
 [186. Reverse Words in a String II](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q186/Reverse_Words_in_a_String_II)
 
-# 201-300
+# 2__
 
+[28. Implement_strStr](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q28/Implement_strStr)
 
+# 3__
 
-# 301-400
+[3. Longest_Substring_Without_Repeating_Characters](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q3/Longest_Substring_Without_Repeating_Characters)
 
 [338. Counting_Bits](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q338/Counting_Bits)
 
 [344. Reverse_String](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q344/Reverse_String)
 
-# 401-500
+# 4__
 
 [412. Fizz_Buzz](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q412/Fizz_Buzz)
 
@@ -66,9 +58,9 @@ password:
 
 [476. Number_Complement](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q476/Number_Complement)
 
-[500. Keyboard_Row](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q500/Keyboard_Row)
+# 5__
 
-# 501-600
+[500. Keyboard_Row](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q500/Keyboard_Row)
 
 [535. Encode_and_Decode_TinyURL](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q535/Encode_and_Decode_TinyURL)
 
@@ -80,9 +72,11 @@ password:
 
 [566. Reshape_the_Matrix](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q566/Reshape_the_Matrix)
 
-# 601-700
+# 6__
 
 [617. Merge_two_Binary_Trees](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q617/Merge_two_Binary_Trees)
+
+[65. Valid Number](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q65/Valid_Number)
 
 [654. Maximum_Binary_Tree](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q654/Maximum_Binary_Tree)
 
@@ -92,11 +86,17 @@ password:
 
 [682. Baseball_Game](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q682/Baseball_Game)
 
-# 701-800
+# 7__
 
 [728. Self_Dividing_Numbers](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q728/Self_Dividing_Numbers)
 
 [760. Find_Anagram_Mappings](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q760/Find_Anagram_Mappings)
+
+# 8__
+
+[8. String to Integer(atoi)](https://github.com/fakeYanss/LeetCode/tree/master/src/pers/yanss/Q8/String_to_Integer)
+
+
 
 <br>
 <p id="div-border-top-green"><i>最后要说的是：[博客源码](https://github.com/fakeYanss/blog) ， 欢迎 star</i></p>
