@@ -50,6 +50,7 @@ menu:
   archives: /archives/
   #categories: /categories/
   #tags: /tags/
+  leetcode: /leetcode/
   photos: /photos/
   about: /about/
   #sitemap: /sitemap.xml
@@ -179,7 +180,7 @@ sidebar:
 
   # Scroll percent label in b2t button
   scrollpercent: true
-  
+
   # Enable sidebar on narrow view
   onmobile: false
 
@@ -254,7 +255,7 @@ android_chrome_color: "#222"
 #   image: url-of-image   - Images's url
 custom_logo:
   enabled: false
-  image: 
+  image:
 
 # Code Highlight theme
 # Available value:
@@ -485,8 +486,8 @@ busuanzi_count:
 # Tencent MTA ID
 # tencent_mta:
 
-# Online contact 
-daovoice: 
+# Online contact
+daovoice:
   enable: true
   app_id: a7abe03a
 
@@ -500,8 +501,8 @@ baidu_push: true
 # https://developers.google.com/google-apps/calendar/v3/reference/events/list
 calendar:
   enable: false
-  calendar_id: 
-  api_key: 
+  calendar_id:
+  api_key:
   orderBy: startTime
   offsetMax: 24
   offsetMin: 4
@@ -624,36 +625,36 @@ vendors:
   _internal: lib
 
   # Internal version: 2.1.3
-  jquery:
+  jquery: //cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js
 
   # Internal version: 2.1.5
   # See: http://fancyapps.com/fancybox/
-  fancybox:
-  fancybox_css:
+  fancybox: //cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js
+  fancybox_css: //cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css
 
   # Internal version: 1.0.6
   # See: https://github.com/ftlabs/fastclick
-  fastclick:
+  fastclick: //cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js
 
   # Internal version: 1.9.7
   # See: https://github.com/tuupola/jquery_lazyload
-  lazyload:
+  lazyload: //cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity:
+  velocity: //cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js
 
   # Internal version: 1.2.1
   # See: http://VelocityJS.org
-  velocity_ui:
+  velocity_ui: //cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js
 
   # Internal version: 0.7.9
   # See: https://faisalman.github.io/ua-parser-js/
-  ua_parser:
+  ua_parser: //cdn.jsdelivr.net/ua-parser.js/0.7.10/ua-parser.min.js
 
   # Internal version: 4.6.2
   # See: http://fontawesome.io/
-  fontawesome:
+  fontawesome: //maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css
 
   # Internal version: 1
   # https://www.algolia.com
