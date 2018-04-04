@@ -56,7 +56,7 @@ import java.util.regex.Pattern;
  * 
  */
 public class PositionOfPlane {
-	public static String PLANEID = ""; //无人机编号
+	public static String PLANEID; //无人机编号
 	public static String PATH = "input.txt"; //记录无人机活动信号的文本文件路径
 
 	public static void main(String args[]) {
@@ -119,23 +119,23 @@ public class PositionOfPlane {
 
 	//使用Scanner类nextLine()方法，读取文件每一行的数据，并将每个数据切分，保存到List<List<>>的嵌套集合(动态二维数组)中
 	public static List<List<Integer>> ReadFile(String path) throws FileNotFoundException {
-		FileInputStream fis = new FileInputStream(path);
-		Scanner scanner = new Scanner(fis);
-		String[] str;
-		List<List<Integer>> plane = new ArrayList<List<Integer>>();
-		List<Integer> col = new ArrayList<Integer>();
-		while (scanner.hasNextLine()) {
-			str = scanner.nextLine().split(" ");
-			for (int i = 1; i < str.length; i++) {
-				col.add(Integer.parseInt(str[i]));
-			}
-			PLANEID = str[0];
-			plane.add(new ArrayList<Integer>(col));
-			col.clear();
-		}
-		scanner.close();
-		return plane;
-	}
+        FileInputStream fis = new FileInputStream(path);
+        Scanner scanner = new Scanner(fis);
+        String[] str;
+        List<List<Integer>> plane = new ArrayList<List<Integer>>();
+
+        while (scanner.hasNextLine()) {
+            List<Integer> col = new ArrayList<Integer>();
+            str = scanner.nextLine().split(" ");
+            for (int i = 1; i < str.length; i++) {
+                col.add(Integer.parseInt(str[i]));
+            }
+            PLANEID = str[0];
+            plane.add(col);
+        }
+        scanner.close();
+        return plane;
+    }
 }
 
 ```
