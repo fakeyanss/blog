@@ -53,7 +53,7 @@ password:
 <p th:text="true?'真':'假'"></p>
 ```
 
-## 循环
+## 循环loop
 * 创建表格
 ```html
 <table>
@@ -71,7 +71,7 @@ password:
 ```
 
 * 创建下拉框
-在项目启动访问index页面的时候，把要需要的列表集合存到session作用域
+    * 在项目启动访问index页面的时候，把要需要的列表集合存到session作用域
 ```java
 @RequestMapping("index")
 public String index(HttpSession session){
@@ -80,7 +80,8 @@ public String index(HttpSession session){
     return "index";
 }
 ```
-前台取值
+
+    * 前台取值
 ```html
 <select name="className" class="form-control">
     <option>请选择班级</option>
