@@ -89,6 +89,27 @@ public String index(HttpSession session){
 </select>
 ```
 
+* 遍历Map和List
+```html
+<table class="table">  
+  <thead>  
+    <th th:each="entry : ${map}" th:text="${entry.key}"></th>  
+    <th th:each="entry : ${map}" th:text="${entry.value}"></th>  
+  </thead>  
+  <tbody >  
+    <td th:each="ele : ${list}" th:text="${ele}"></td>  
+  </tbody>  
+</table>  
+```
+
+* 遍历List<Map>
+```html
+<ul th:each="lm : ${listmap}">  
+  <li th:each="entry : ${lm}" th:text="${entry.key}" ></li>  
+  <li th:each="entry : ${lm}" th:text="${entry.value}"></li>  
+</ul>  
+```
+
 ## if/unless, switch/case
 下面`<a>`标签只有在`th:if`中条件成立时才显示，`th:unless`只有不成立时才显示
 ```html
