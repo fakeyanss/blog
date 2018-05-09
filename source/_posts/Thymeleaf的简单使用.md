@@ -18,7 +18,7 @@ password:
 
 举个例子，
 ```html
-<p th:text="#{home.welcome}">Welcome to our grocery store!</p>
+<p th:text="${home.welcome}">Welcome to our grocery store!</p>
 ```
 这里的`th:text`的内容就是需要后台渲染的，假如没有后台渲染，html会将无法识别的部分直接过滤掉，那么输出就是
 ```html
