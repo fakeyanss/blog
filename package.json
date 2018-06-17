@@ -3,13 +3,13 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "3.6.0"
+    "version": "3.7.1"
   },
   "scripts": {
     "dev": "hexo clean && hexo generate && hexo server --debug"
   },
   "dependencies": {
-    "hexo": "^3.6.0",
+    "hexo": "^3.7.1",
     "hexo-abbrlink": "^2.0.5",
     "hexo-baidu-url-submit": "^0.0.5",
     "hexo-deployer-git": "^0.3.1",
