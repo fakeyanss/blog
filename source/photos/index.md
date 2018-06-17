@@ -8,9 +8,13 @@ comments: false
 <link rel="stylesheet" href="./photoswipe.css">
 <link rel="stylesheet" href="./default-skin/default-skin.css">
 <div class="photos-btn-wrap">
-  <a class="photos-btn active" href="javascript:void(0)" target="_blank" rel="external">Photos</a><a class="photos-btn" target="_blank" href="http://wp.yanss.top/" style="color:#08c; border-bottom:1px #999">Gallery</a>
+  <a class="photos-btn active" id="photoA" href="javascript:void(0)" onclick="setActive('photo')" target="_blank" rel="external" style="border-bottom:1px #999">Photo</a><a class="photos-btn" id="gameA" target="_blank" href="javascript:void(0)" onclick="setActive('game')" rel="external" style="border-bottom:1px #999">GameRecord</a>
 </div>
-<div class="instagram itemscope">
+<div class="instagram itemscope" id="photoD">
+  <a href="http://blog.yanss.top" target="_blank" class="open-ins">图片正在加载中…</a>
+</div>
+
+<div class="instagram itemscope" id="gameD" style="display: none;">
   <a href="http://blog.yanss.top" target="_blank" class="open-ins">图片正在加载中…</a>
 </div>
 
@@ -26,3 +30,4 @@ loadScript('./ins.js')
 }, 0)
 })()
 </script>
+<script type="text/javascript" src="./toggle.js"></script>

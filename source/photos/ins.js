@@ -111,7 +111,7 @@
           addMask($videoImg[i]);
         }
       };
-      var render = function render(res) {
+      var render = function render(res, tagName) {
         var ulTmpl = "";
         for (var j = 0, len2 = res.list.length; j < len2; j++) {
           var data = res.list[j].arr;
@@ -138,7 +138,7 @@
           <ul class="img-box-ul">' + liTmpl + '</ul>\
           </section>';
         }
-        document.querySelector('.instagram').innerHTML = '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>';
+        document.getElementById(tagName).innerHTML = '<div class="photos" itemscope="" itemtype="http://schema.org/ImageGallery">' + ulTmpl + '</div>';
         createVideoIncon();
         _view2.default.init();
       };
@@ -148,33 +148,33 @@
         return "/assets/ins/" + arr[arr.length - 1];
       };
 
-      var ctrler = function ctrler(data) {
-        var imgObj = {};
-        for (var i = 0, len = data.length; i < len; i++) {
-          var y = data[i].y;
-          var m = data[i].m;
-          var src = replacer(data[i].src);
-          var text = data[i].text;
-          var key = y + "" + ((m + "").length == 1 ? "0" + m : m);
-          if (imgObj[key]) {
-            imgObj[key].srclist.push(src);
-            imgObj[key].text.push(text);
-          } else {
-            imgObj[key] = {
-              year: y,
-              month: m,
-              srclist: [src],
-              text: [text]
-            };
-          }
-        }
-        render(imgObj);
-      };
+      // var ctrler = function ctrler(data) {
+      //   var imgObj = {};
+      //   for (var i = 0, len = data.length; i < len; i++) {
+      //     var y = data[i].y;
+      //     var m = data[i].m;
+      //     var src = replacer(data[i].src);
+      //     var text = data[i].text;
+      //     var key = y + "" + ((m + "").length == 1 ? "0" + m : m);
+      //     if (imgObj[key]) {
+      //       imgObj[key].srclist.push(src);
+      //       imgObj[key].text.push(text);
+      //     } else {
+      //       imgObj[key] = {
+      //         year: y,
+      //         month: m,
+      //         srclist: [src],
+      //         text: [text]
+      //       };
+      //     }
+      //   }
+      //   render(imgObj);
+      // };
 
-      function loadData(success) {
+      function loadData(success, file) {
         if (!searchData) {
           var xhr = new XMLHttpRequest();
-          xhr.open('GET', './data.json?t=' + +new Date(), true);
+          xhr.open('GET', './' + file + '?t=' + +new Date(), true);
 
           xhr.onload = function() {
             if (this.status >= 200 && this.status < 300) {
@@ -199,8 +199,11 @@
       var Ins = {
         init: function init() {
           loadData(function(data) {
-            render(data);
-          });
+            render(data,'photoD');
+          }, 'photo.json');
+          loadData(function(data) {
+            render(data,'gameD');
+          }, 'game.json');
         }
       };
 
