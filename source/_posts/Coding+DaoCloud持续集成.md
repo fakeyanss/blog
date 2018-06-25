@@ -185,7 +185,7 @@ git push -u coding master
 coding+DaoCloud持续集成到此结束，有问题可以下方留言评论，或者很急的话发邮件提醒我也可以，邮箱在`about me`里。
 
 另外还有
-* [《Coding+Hexo搭建个人博客》](http://yanss.top/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
+* [《Coding+Hexo搭建个人博客》]()
 * [《Github+Appveyor博客云端持续集成》]()
 * [《hexo博客部署到Github》]()
 
