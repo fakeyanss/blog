@@ -1,9 +1,7 @@
 ---
 title: ThoughtWorks笔试题
 categories:
-  - 面经
-tags:
-  - ThoughtWorks
+  - Inbox
 mathjax: false
 copyright: true
 reward: true

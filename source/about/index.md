@@ -5,37 +5,36 @@ type: "about"
 date: 2017-07-29 15:19:36
 ---
 
-<center><h1>About Me</h1></center>
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=412016278&auto=0&height=66"></iframe>
-<center>很惭愧，只是做了一点微小的工作</center>
 
-<blockquote class="blockquote-center">目前还是华中科技大学研二菜鸟，日常博客记录一些学习笔记和有用的资料，如果有能帮助到同道的地方，那就再好不过啦。</blockquote>
 
-<center><a href="mailto:yans_s@outlook.com">Mail To Me: yans_s@outlook.com</a></center>
+<blockquote class="blockquote-center"><h3>风起时，唯有努力生存</h3></blockquote>
 
-<center>最下方也可留言↓↓↓</center>
+时间总是过得很快，总觉得自己没什么变化，其实只是不自知。自己早已从当初那个喜欢看书喜欢文字总觉得人生天地间须得有诗意的小孩子，长成现在懂得生活变的市侩学会斤斤计较的小人物了。
+
+只希望在这里，写一点仅有的趣味。也记录学习过程，积攒知识。
+
 <br/>
+**我的简历**
+<embed src="http://otzlyqzo6.bkt.clouddn.com/template.pdf" width="100%" height="1020" type="application/pdf" />
 
-<center><h1>About the Site</h1></center>
+<br/>
+**一句话**
 
-* hexo框架+next主题搭建博客，部署在github上，域名解析到[yanss.top](http://yanss.top)
-* 配置[AppVeyor](https://ci.appveyor.com/projects)持续集成github，同时备份仓库到github
-* 部署到[码云Coding](https://coding.net/)上，阿里云dns分流，国内访问解析到coding pages服务器，国外访问解析到github pages服务器
-* 配置[DaoCloud](https://dashboard.daocloud.io/)持续集成coding
-* 添加RSS订阅
-* 添加head背景图
-* 添加[wordcount](https://github.com/willin/hexo-wordcount)字数统计
-* 添加[不蒜子](http://busuanzi.ibruce.info/)访客计数
-* 添加[LeanCloud](https://leancloud.cn/)文章阅读计数
-* 添加[jiathis](http://www.jiathis.com/)分享
-* 添加[livere](https://livere.com/)评论
-* 添加[cnzz](https://web.umeng.com)站点流量统计
-* 添加博客相册，图片处理脚本来自[litten](https://github.com/litten/BlogBackup/tree/master/source/photos)，具体方法可以看[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue
-* 添加[DaoVoice](http://dashboard.daovoice.io/get-started?invite_code=a7abe03a
-  ),可以使用我的邀请码
-* [livere](https://livere.com/)加载太慢，更换为[Gitment](https://github.com/imsun/gitment)评论
-* 相册图片源改为[七牛云](https://portal.qiniu.com/create)，加载速度更快，空间更大
+*20180502*
+> 五一出去玩真累，十一千万不能这么过了。
 
-<embed src="http://otzlyqzo6.bkt.clouddn.com/template.pdf" width="70%" height="1000" type="application/pdf" />
+*20180220*
+> 两天的外出游玩，只觉不如在家躺尸。
 
+*20171228*
+> 面上扫开十层甲，眉目才无可憎；胸中涤去数斗尘，语言方觉有味。
 
+*20170904*
+> 萍水相逢，当知聚散无定；劳燕分飞，常念相会有时。
+
+*20170901*
+> 云无心以出岫，鸟倦飞而知还。
+
+*20170814*
+> 一日之事始于午后，这就是我的工作写照。

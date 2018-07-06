@@ -6,7 +6,7 @@
 favicon: /images/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "code, life, photos, study, java, machine learning"
+keywords: "code, game, life"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -66,14 +66,14 @@ menu_icons:
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
-  categories: th
-  schedule: calendar
-  tags: tags
+  # categories: th
+  # schedule: calendar
+  # tags: tags
   archives: archive
   photos: camera
   sitemap: sitemap
   commonweal: heartbeat
-  leetcode: file-code-o
+  leetcode: code
 
 
 # ---------------------------------------------------------------
@@ -98,9 +98,9 @@ social:
   #LinkLabel: Link
   GitHub: https://github.com/fakeYanss
   StackOverflow: https://stackoverflow.com/users/8373196/yanss
-  Zhihu: https://www.zhihu.com/people/tf1213/activities
-  Weibo: http://weibo.com/tf121
-  #E-Mail: mailyo:yans_s@outlook.com
+  # Zhihu: https://www.zhihu.com/people/tf1213/activities
+  # Weibo: http://weibo.com/tf121
+  E-Mail: mailyo:yanshisangc@gmail.com
 
 # Social Links Icons
 # Icon Mapping:
@@ -577,7 +577,7 @@ tabs:
 use_motion: true
 
 # Fancybox
-fancybox: true
+fancybox: false
 
 # Progress bar in the top during page loading.
 pace: false

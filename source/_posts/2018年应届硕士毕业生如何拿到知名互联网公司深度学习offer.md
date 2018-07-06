@@ -1,9 +1,9 @@
 ---
 title: 2018年应届硕士毕业生如何拿到知名互联网公司深度学习offer？
 categories:
-  - 面经
+  - Inbox
 tags:
-  - 面经
+  - AI
 toc: true
 description: 'AI方向面试经历，转自https://www.zhihu.com/people/xiongfengcherish'
 abbrlink: 70b5d312

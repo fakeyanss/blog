@@ -15,11 +15,12 @@ description:
 password:
 ---
 
-- [Seer](http://1218.io/) 空格预览
+- ~~[Seer](http://1218.io/) 空格预览~~ [QuickLook](https://pooi.moe/QuickLook/)更好用
 
 - [Listary](http://www.listary.com/download) 类Spotlight
   - 设置页，先激活
-  - 关键字Web![listary1](http://ouat6a0as.bkt.clouddn.com/listary1.png)
+  - 关键字Web
+    ![listary1](http://ouat6a0as.bkt.clouddn.com/listary1.png)
     - 百度：`http://www.baidu.com/s?wd={query}`
     - 淘宝：`https://s.taobao.com/search?q={query}`
     - 京东：`https://search.jd.com/Search?keyword={query}&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wq={query}&psort=3&wtype=1&stock=1&click=2`
@@ -46,7 +47,7 @@ password:
 
 - [SumatraPDF](https://www.sumatrapdfreader.org/)
 
-  - ```
+    ```
     //高级设置
     # For documentation, see http://www.sumatrapdfreader.org/settings3.2.html
 
@@ -125,7 +126,7 @@ password:
 
 - [Sublime](https://www.sublimetext.com/) 插件[下载](http://ouat6a0as.bkt.clouddn.com/Sublime插件.7z)
 
-  - ```
+    ```
     //OmniMarkupPreviewer快捷键设置
     [
     	{
