@@ -36,55 +36,55 @@ centos搭建Jupyter Notebook, 添加多语言支持(R,Ruby,Octave,JS,Java,C++).
 ```sh
 wget https://repo.anaconda.com/archive/Anaconda3-5.2.0-Linux-x86_64.sh 
 ```
-然后运行脚本
-```sh
-bash Anaconda3-3-5.2.0-Linux-x86_64.sh
-```
-中间需要确定时确定即可，等待安装完成，会自动写入环境变量。
-```sh
-conda --version
-jupyter --version
-```
+    然后运行脚本
+    ```sh
+    bash Anaconda3-3-5.2.0-Linux-x86_64.sh
+    ```
+    中间需要确定时确定即可，等待安装完成，会自动写入环境变量。
+    ```sh
+    conda --version
+    jupyter --version
+    ```
+
 2. 然后按照官网步骤，设置config
 ```sh
 jupyter notebook --generate-config
 # 会生成config文件为 .jupyter/jupyter_notebook_config.py
 ```
-设置密码
-```
-from notebook.auth import passwd
-passwd()
-# 会生成类似 sha1:xxxxxxxxxxxxxxxxxxx， 需要记一下
-```
+    设置密码
+    ```
+    from notebook.auth import passwd
+    passwd()
+    # 会生成类似 sha1:xxxxxxxxxxxxxxxxxxx， 需要记一下
+    ```
 
+    然后编辑 config文件
+    ```
+    vim .jupyter/jupyter_notebook_config.py
+    ```
 
-然后编辑 config文件
-```
-vim .jupyter/jupyter_notebook_config.py
-```
-
-修改这些行，去掉注释，填相应值。其他选项也可以自己设置
-```
-c.NotebookApp.password = 'sha1:xxxxxxxxxxxxxxxxxxx'
-c.NotebookApp.ip = '*'
-c.NotebookApp.open_browser = False
-c.NotebookApp.port = 8888
-```
+    修改这些行，去掉注释，填相应值。其他选项也可以自己设置
+    ```
+    c.NotebookApp.password = 'sha1:xxxxxxxxxxxxxxxxxxx'
+    c.NotebookApp.ip = '*'
+    c.NotebookApp.open_browser = False
+    c.NotebookApp.port = 8888
+    ```
 
 3. 开放和重启防火墙
-centos7：
-```
-firewall-cmd --zone=public --add-port=8888/tcp --permanent # 永久开放8888端口
-firewall-cmd --reload # 重启firewall
-firewall-cmd --list-ports # 查看开放端口
-```
+    centos7：
+    ``` 
+    firewall-cmd --zone=public --add-port=8888/tcp --permanent # 永久开放8888端口
+    firewall-cmd --reload # 重启firewall
+    firewall-cmd --list-ports # 查看开放端口
+    ```
 
-centos6：
-```
-/sbin/iptables -I INPUT -p tcp --dport 8888 -j ACCEPT # 开放8888端口
-/etc/rc.d/init.d/iptables save # 保存
-service iptables status # 查看防火墙状态
-```
+    centos6：
+    ```
+    /sbin/iptables -I INPUT -p tcp --dport 8888 -j ACCEPT # 开放8888端口
+    /etc/rc.d/init.d/iptables save # 保存
+    service iptables status # 查看防火墙状态
+    ```
 
 4. 启动server，`jupyter notebook`。如果需要后台启动，运行
 `nohup jupyter notebook > jupyter.log 2>&1 &`
@@ -139,7 +139,7 @@ pip
 pip install octave_kernel
 ```
 
- 或者conda
+或者conda
 
 ```
 conda config --add channels conda-forge
