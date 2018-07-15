@@ -43,5 +43,5 @@ date: 2017-07-29 15:19:36
 </div>
 
 <div id="resumeD" style="display: none;">
-<embed src="http://otzlyqzo6.bkt.clouddn.com/CV-GuiChen.pdf" width="100%" height="1030" type="application/pdf"/>
+<embed src="http://ouat6a0as.bkt.clouddn.com/CV-GuiChen-v1.1.pdf" width="100%" height="1030" type="application/pdf"/>
 </div>
