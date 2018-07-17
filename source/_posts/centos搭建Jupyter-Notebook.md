@@ -152,6 +152,7 @@ conda install octave_kernel
 
 ```
 npm install -g ijavascript
+ijsinstall
 ```
 
 ## java
