@@ -50,7 +50,7 @@ menu:
   archives: /archives/
   #categories: /categories/
   #tags: /tags/
-  leetcode: http://foreti.me/leetcode/#/cover
+  leetcode: /leetcode/
   photos: /photos/
   about: /about/
   #sitemap: /sitemap.xml
