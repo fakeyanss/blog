@@ -50,7 +50,7 @@ menu:
   archives: /archives/
   #categories: /categories/
   #tags: /tags/
-  leetcode: http://yanss.top/leetcode/#/cover
+  leetcode: http://foreti.me/leetcode/#/cover
   photos: /photos/
   about: /about/
   #sitemap: /sitemap.xml
@@ -132,8 +132,8 @@ links_title: Others
 links_layout: inline
 links:
   #Title: http://example.com/
+  My JN: http://jn.yanss.top
   Berry: http://berryk.top/
-  My Gallery: http://wp.yanss.top/
   Lu尼玛的想疗院: https://luna.fancylog.net/
 
 # Sidebar Avatar
@@ -227,7 +227,7 @@ post_wordcount:
   #description: ex. subscribe to my blog by scanning my public wechat account
 
 # Reward
-reward_comment: 很惭愧，只是做了一点微小的工作:)
+reward_comment: offer me a drink :)
 wechatpay: http://otzlyqzo6.bkt.clouddn.com/config/wxpay.jpg
 alipay: http://otzlyqzo6.bkt.clouddn.com/config/alipay.jpg
 #bitcoin: /images/bitcoin.png
@@ -369,9 +369,9 @@ gitment:
   count: true # Show comments count in post meta area
   lazy: false # Comments lazy loading with a button
   cleanly: true # Hide 'Powered by ...' on footer, and more
-  language: # Force language, or auto switch by theme
+  language: default
   github_user: fakeYanss # MUST HAVE, Your Github ID
-  github_repo: blog # MUST HAVE, The repo you use to store Gitment comments
+  github_repo: fakeYanss.github.io # MUST HAVE, The repo you use to store Gitment comments
   client_id: 5e6b31c324f768611da6 # MUST HAVE, Github client id for the Gitment
   client_secret: d674530a3a057c0ee03e3175f04a418772bc3bfd # EITHER this or proxy_gateway, Github access secret token for the Gitment
   proxy_gateway: # Address of api proxy, See: https://github.com/aimingoo/intersect

@@ -7,7 +7,7 @@ title: 有约如铁
 subtitle: Yanss's Blogs
 description:
 author: Yanss
-language: zh-Hans
+#language: default
 timezone:
 avatar: /images/avatar.png
 
@@ -79,6 +79,7 @@ pagination_dir: page
 
 # Extensions
 plugins: hexo-generate-feed
+
 ## Themes: https://hexo.io/themes/
 theme: next
 

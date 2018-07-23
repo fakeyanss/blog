@@ -9,21 +9,16 @@
   <span class="author" itemprop="copyrightHolder" style="font-weight: bold">{{ config.author }}</span>
   <div class="theme-info">
   <div class="powered-by"></div>
-  {{ __('footer.theme') }} -
-  <a class="theme-link" href="https://github.com/fakeYanss" style="font-weight: bold" rel="external nofollow">Github</a>
   </div>
-  <div class="powered-by"></div>
-  <div class="theme-info">Hosted by <a href="https://pages.coding.me" style="font-weight: bold" rel="external nofollow">Coding Pages</a>
-  </div>
-  <br>
+  
   <!--<div class="powered-by">
     <span class="with-love"><i class="fa fa-eye"></i></span>
     <span id="busuanzi_value_site_pv"></span>
   </div>-->
   <div class="powered-by">
-    您是第<span id="busuanzi_value_site_uv"></span>个访问者
+    Visitor count <span id="busuanzi_value_site_uv"></span>
   </div>
   <div class="theme-info">
-    <span class="post-count">全站共{{ totalcount(site) }}字</span>
+    <span class="post-count">Word count {{ totalcount(site) }}</span>
   </div>
 </div>

@@ -16,6 +16,7 @@ menu:
   schedule: Schedule
   sitemap: Sitemap
   commonweal: Commonweal 404
+  leetcode: Leetcode
 
 sidebar:
   overview: Overview
@@ -34,14 +35,13 @@ post:
   visitors: Visitors
   wordcount: Words count in article
   min2read: Reading time
+  totalcount: Site words total count
   copyright:
-      author: Post author
-      link: Post link
-      license_title: Copyright Notice
-      license_content: 'All articles in this blog are licensed under
-        <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally.'
-
-
+    author: Post author
+    link: Post link
+    license_title: Copyright Notice
+    license_content: 'All articles in this blog are licensed under
+      <a href="%s" rel="external nofollow" target="_blank">%s</a> unless stating additionally.'
 
 page:
   totally: Totally
@@ -90,3 +90,11 @@ symbol:
   comma: ', '
   period: '. '
   colon: ':'
+
+reward:
+  donate: donate
+  wechatpay: wechatpay
+  alipay: alipay
+  bitcoin: bitcoin
+
+gitmentbutton: View Gitment

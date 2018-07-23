@@ -11,11 +11,11 @@ comments: false
   <a class="photos-btn active" id="photoA" href="javascript:void(0)" onclick="setActive('photo')" style="border-bottom:1px #999">Photo</a><a class="photos-btn" id="gameA" href="javascript:void(0)" onclick="setActive('game')" style="border-bottom:1px #999">GameRecord</a>
 </div>
 <div class="instagram itemscope" id="photoD">
-  <a href="http://blog.yanss.top" target="_blank" class="open-ins">图片正在加载中…</a>
+  <a href="http://foreti.me" target="_blank" class="open-ins">图片正在加载中…</a>
 </div>
 
 <div class="instagram itemscope" id="gameD" style="display: none;">
-  <a href="http://blog.yanss.top" target="_blank" class="open-ins">图片正在加载中…</a>
+  <a href="http://foreti.me" target="_blank" class="open-ins">图片正在加载中…</a>
 </div>
 
 <script>
