@@ -10,16 +10,16 @@ install:
   - npm --version
   #- npm install -g cnpm --registry=https://registry.npm.taobao.org
   - npm install
-  - npm install hexo-cli -g
-  - npm install --save hexo-generator-feed
-  - npm install hexo-baidu-url-submit --save
-  - npm install hexo-generator-baidu-sitemap --save
-  - npm install hexo-generator-sitemap --save
-  - npm install hexo-generator-feed --save
-  - npm install hexo-abbrlink --save
-  - npm install hexo-wordcount --save
-  - npm install hexo-generator-searchdb --save
-  - npm install hexo-lazyload-image --save
+  # - npm install hexo-cli -g
+  # - npm install --save hexo-generator-feed
+  # - npm install hexo-baidu-url-submit --save
+  # - npm install hexo-generator-baidu-sitemap --save
+  # - npm install hexo-generator-sitemap --save
+  # - npm install hexo-generator-feed --save
+  # - npm install hexo-abbrlink --save
+  # - npm install hexo-wordcount --save
+  # - npm install hexo-generator-searchdb --save
+  # - npm install hexo-lazyload-image --save
 
 build_script:
   - hexo generate

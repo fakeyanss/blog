@@ -7,13 +7,13 @@ title: 有约如铁
 subtitle: Yanss's Blogs
 description:
 author: Yanss
-#language: default
+language: default
 timezone:
 avatar: /images/avatar.png
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://foreti.me
+url: https://foreti.me
 root: /
 #permalink: :title/
 permalink_defaults:
