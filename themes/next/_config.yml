@@ -51,7 +51,7 @@ menu:
   #categories: /categories/
   #tags: /tags/
   leetcode: /leetcode
-  photos: /photo
+  photo: /photo
   about: /about
   #sitemap: /sitemap.xml
   #commonweal: /404/
@@ -70,7 +70,7 @@ menu_icons:
   # schedule: calendar
   # tags: tags
   archives: archive
-  photos: camera
+  photo: camera
   sitemap: sitemap
   commonweal: heartbeat
   leetcode: code

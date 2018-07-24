@@ -2,9 +2,6 @@
 
 博客项目使用[Hexo](https://hexo.io/zh-cn/index.html)框架搭建，主题是[next](http://theme-next.iissnan.com/)，GitHub仓库交付给[Appveyor](https://www.appveyor.com/)持续集成，Coding仓库交付给[DaoCloud](http://www.daocloud.io/)持续集成。
 
-`release.sh`为自动提交脚本
-
-
 **Site Changelog**
 * hexo框架+next主题搭建博客，部署在github上，域名解析到[yanss.top](http://yanss.top)
 * 配置[AppVeyor](https://ci.appveyor.com/projects)持续集成github，同时备份仓库到github
