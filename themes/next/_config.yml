@@ -489,7 +489,7 @@ busuanzi_count:
 
 # Online contact
 daovoice:
-  enable: true
+  enable: false
   app_id: a7abe03a
 
 # Enable baidu push so that the blog will push the url to baidu automatically which is very helpful for SEO
