@@ -329,10 +329,10 @@ han: false
 #swiftype_key:
 
 # Baidu Analytics ID
-baidu_analytics: 32ea829ea8755695f5f20a4c2949d070
+baidu_analytics: 890a21db2efbafd7c4a9d6d3241074cc
 
 # Baidu_site_verification
-baidu_site_verification: 7fUQ7s0poC
+baidu_site_verification: 0QPRs7dWzh
 
 # Duoshuo ShortName
 #duoshuo_shortname:
@@ -367,9 +367,9 @@ gitment:
   enable: true
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
-  lazy: false # Comments lazy loading with a button
+  lazy: true # Comments lazy loading with a button
   cleanly: true # Hide 'Powered by ...' on footer, and more
-  language: default
+  language: en
   github_user: fakeYanss # MUST HAVE, Your Github ID
   github_repo: fakeYanss.github.io # MUST HAVE, The repo you use to store Gitment comments
   client_id: 5e6b31c324f768611da6 # MUST HAVE, Github client id for the Gitment
