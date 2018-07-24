@@ -9,6 +9,8 @@ author: Author
 menu:
   home: Home
   archives: Archives
+  leetcode: Leetcode
+  photos: Gallery
   categories: Categories
   tags: Tags
   about: About
@@ -16,8 +18,7 @@ menu:
   schedule: Schedule
   sitemap: Sitemap
   commonweal: Commonweal 404
-  leetcode: Leetcode
-  photos: Gallery
+  
 
 sidebar:
   overview: Overview
