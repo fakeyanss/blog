@@ -7,7 +7,7 @@ title: 有约如铁
 subtitle: Yanss's Blogs
 description:
 author: Yanss
-language: default
+language: en
 timezone:
 avatar: /images/avatar.png
 
@@ -30,7 +30,7 @@ public_dir: public
 tag_dir: tags
 archive_dir: archives
 category_dir: categories
-photo_dir: photos
+photo_dir: photo
 code_dir: downloads/code
 i18n_dir: :lang
 skip_render: README.md
@@ -94,7 +94,7 @@ lazyload:
   onlypost: true
   loadingImg: # eg. ./images/loading.png
 
-# hexo sitemap网站地图
+# hexo sitemap
 sitemap:
   path: sitemap.xml
 baidusitemap:
