@@ -18,7 +18,7 @@ date: 2017-07-29 15:19:36
 
 <br/>
 <div class="photos-btn-wrap">
-  <a class="photos-btn active" id="wordsA" href="javascript:void(0)" onclick="setActive('words')" style="border-bottom:1px #999">一句话</a><a class="photos-btn" id="resumeA" href="javascript:void(0)" onclick="setActive('resume')" style="border-bottom:1px #999">我的简历</a>
+  <a class="photos-btn active" target="_self" id="wordsA" href="javascript:void(0)" onclick="setActive('words')" style="border-bottom:1px #999">一句话</a><a class="photos-btn" target="_self" id="resumeA" href="javascript:void(0)" onclick="setActive('resume')" style="border-bottom:1px #999">我的简历</a>
 </div>
 
 
