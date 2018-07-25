@@ -10,4 +10,4 @@ function setActive(tagName) {
       document.getElementById("wordsD").style.display="none";
       document.getElementById("resumeD").style.display="block";
     }
-}h
+}
