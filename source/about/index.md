@@ -4,7 +4,7 @@ comments: true
 type: "about"
 date: 2017-07-29 15:19:36
 ---
-<link rel="stylesheet" href="../photos/ins.css">
+<link rel="stylesheet" href="../photo/ins.css">
 <script type="text/javascript" src="./toggle.js"></script>
 
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=412016278&auto=0&height=66"></iframe>
@@ -43,6 +43,6 @@ date: 2017-07-29 15:19:36
 </div>
 
 <div id="resumeD" style="display: none;">
-[GuiChen-CV-v1](http://ouat6a0as.bkt.clouddn.com/GuiChen-CV-v1.3.pdf)
 <embed src="http://ouat6a0as.bkt.clouddn.com/GuiChen-CV-v1.3.pdf" width="100%" height="1200" type="application/pdf"/>
+[PDF Download](http://ouat6a0as.bkt.clouddn.com/GuiChen-CV-v1.3.pdf)
 </div>
