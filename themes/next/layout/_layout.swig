@@ -6,7 +6,6 @@
 {% endif %}
 
 <html class="{{ html_class | lower }}" lang="{{ config.language }}">
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
 <meta name="google-site-verification" content="LaoF_u42K4EdVp3eusVMdLDAp5fyKj_lTPYrmwW5ipo" />
 <head>
   {% include '_partials/head.swig' %}
