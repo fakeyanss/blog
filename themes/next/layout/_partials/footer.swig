@@ -14,10 +14,10 @@
   <!--<div class="powered-by">
     <span class="with-love"><i class="fa fa-eye"></i></span>
     <span id="busuanzi_value_site_pv"></span>
-  </div>-->
+  </div>
   <div class="powered-by">
     Visitor count <span id="busuanzi_value_site_uv"></span>
-  </div>
+  </div>-->
   <div class="theme-info">
     <span class="post-count">Word count {{ totalcount(site) }}</span>
   </div>
