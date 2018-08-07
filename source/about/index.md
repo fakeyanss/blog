@@ -46,7 +46,7 @@ date: 2017-07-29 15:19:36
 </div>
 
 <div id="resumeD" style="display: none;">
-<object width="100%" height="965px" type="application/pdf" data="http://ouat6a0as.bkt.clouddn.com/GuiChen-CV-v1.3.pdf?#scrollbar=0&toolbar=0&navpanes=0">
+<object width="100%" height="965px" type="application/pdf" data="http://ouat6a0as.bkt.clouddn.com/GuiChen-v1.4.0.pdf?#scrollbar=0&toolbar=0&navpanes=0">
 <p>This browser does not support PDFs. Please download the PDF to view it: <a href="http://ouat6a0as.bkt.clouddn.com/GuiChen-CV-v1.3.pdf">Download PDF</a>.
 </object>
 </div>
