@@ -108,7 +108,7 @@ img:hover {
 
 ## 添加相册
 
-<div id="album">我的[相册](http://blog.yanss.top/photos/)。</div>
+<div id="album">我的[相册](https://fakeyanss.github.io/photo/)。</div>
 原理很简单，就是建立一个github仓库存储用于存储图片，然后将每个图片的路径保存到一个json文件里，在hexo博客中解析这个json文件，渲染成html页面后就可以在显示图片了。当然这里肯定要有页面的样式和图片的裁剪压缩，原理简单，实际操作起来有一些坑，我并不懂css样式，还是要感谢[litten](http://litten.me/)提供的方法。
 
 ### 相册源
