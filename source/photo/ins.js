@@ -118,9 +118,9 @@
           var data = res.list[j].arr;
           var liTmpl = "";
           for (var i = 0, len = data.link.length; i < len; i++) {
-            var minSrc = 'http://p1ju2a9a7.bkt.clouddn.com/min_photos/' + data.link[i];
+            var minSrc = 'http://photo.yanss.top/min_photos/' + data.link[i];
             //var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
-            var src = 'http://p1ju2a9a7.bkt.clouddn.com/' + data.link[i];
+            var src = 'http://photo.yanss.top/' + data.link[i];
             var type = data.type[i];
             var target = src + '.' +type;
             var size = data.size[i];
