@@ -100,7 +100,7 @@ social:
   StackOverflow: https://stackoverflow.com/users/8373196/yanss
   # Zhihu: https://www.zhihu.com/people/tf1213/activities
   # Weibo: http://weibo.com/tf121
-  E-Mail: mailyo:yanshisangc@gmail.com
+  E-Mail: mailto:yanshisangc@gmail.com
 
 # Social Links Icons
 # Icon Mapping:
@@ -183,7 +183,7 @@ sidebar:
   scrollpercent: true
 
   # Enable sidebar on narrow view
-  onmobile: false
+  onmobile: true
 
 
 # ---------------------------------------------------------------
