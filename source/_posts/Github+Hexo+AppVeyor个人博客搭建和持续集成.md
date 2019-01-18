@@ -29,7 +29,7 @@ password:
 文档地址：[https://www.appveyor.com/docs/](https://www.appveyor.com/docs/)
 
 环境变量设定：
-![](http://otzlyqzo6.bkt.clouddn.com/blog_appveyor_env.png)
+![](http://pic.yanss.top/blog_appveyor_env.png)
 
 构建脚本：
 ```yaml

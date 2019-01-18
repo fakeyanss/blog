@@ -14,7 +14,7 @@ kewords:
 description:
 password:
 ---
-![](http://otzlyqzo6.bkt.clouddn.com/centos-jn-overview.png)
+![](http://pic.yanss.top/centos-jn-overview.png)
 centos搭建Jupyter Notebook, 添加多语言支持(R,Ruby,Octave,JS,Java,C++).
 <!-- more -->
 

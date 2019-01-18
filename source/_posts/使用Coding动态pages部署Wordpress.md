@@ -18,11 +18,11 @@ password:
 
 什么都别说了，先上图 
 
-![coding-pages](http://ouat6a0as.bkt.clouddn.com/coding-pages.png)
+![coding-pages](http://pic.yanss.top/coding-pages.png)
 
 部署好的wordpress效果（我主要是做一个相册集）
 
-![wp](http://ouat6a0as.bkt.clouddn.com/wp.yanss.top_.png)
+![wp](http://pic.yanss.top/wp.yanss.top_.png)
 
 总体效果还不错吧，毕竟动态博客还是可操作性强多了。
 
@@ -36,7 +36,7 @@ password:
 
 只能使用php语言，然后数据库其实是coding自己的服务器提供的，然后整个服务器后台也是coding提供，所以自己是不可能做什么修改的。当然做一个wordpress博客还是绰绰有余，下面就是我的wordpress仓库文件。
 
-![coding-pages1](http://ouat6a0as.bkt.clouddn.com/coding-pages1.png)
+![coding-pages1](http://pic.yanss.top/coding-pages1.png)
 
 搭建过程也非常简单，就是coding新建一个仓库，然后去[wordpress官网](https://cn.wordpress.org/)上下载最新的wordpress压缩包，解压之后push到coding仓库中。
 
@@ -46,7 +46,7 @@ password:
 
 所有的连接信息(共5个)都在这里，只有前4个用得上
 
-![coding-pages2](http://ouat6a0as.bkt.clouddn.com/coding-pages2.png)
+![coding-pages2](http://pic.yanss.top/coding-pages2.png)
 
 **存在的问题：**
 

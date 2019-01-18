@@ -177,7 +177,7 @@ type: "photos"
 
 * 然后在photos文件夹下添加这些内容
 
-![TIM截图20171231214306](http://ouat6a0as.bkt.clouddn.com/TIM截图20171231214306.png)
+![TIM截图20171231214306](http://pic.yanss.top/TIM截图20171231214306.png)
 
 文件这里[下载](https://github.com/fakeYanss/Hexo-Album/tree/master/Hexo/Source/photos)，`data.json`是图片的数据信息，运行python脚本后会生成
 
@@ -270,9 +270,9 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
   * 对于修改后的相册的[ins.js](https://github.com/fakeYanss/blog/blob/master/source/photos/ins.js)，需要做一些修改，以适应修改后的脚本生成的json数据，在render()方法中，注意内层`<img>`标签为缩略图，`<a>`标签为原图，在对应的属性处设为对应值。
 
 ```js
-var minSrc = 'http://p1ju2a9a7.bkt.clouddn.com/min_photos/' + data.link[i];
+var minSrc = 'http://pic.yanss.top/min_photos/' + data.link[i];
 //var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
-var src = 'http://p1ju2a9a7.bkt.clouddn.com/' + data.link[i];
+var src = 'http://pic.yanss.top/' + data.link[i];
 var type = data.type[i];
 var target = src + '.' +type;
 var size = data.size[i];
@@ -303,7 +303,7 @@ liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtyp
 我之前的next主题一直是`5.1.0`版本，本来是想在主题中添加gitment的js和css文件，结果没成功。然后在next的[官方文档](http://theme-next.iissnan.com/)中看到已经发行到`5.1.4`了，而且已经集成了gitment评论。这下可方便，干脆直接升级了next主题，然后就改`config`文件就好啦。
 
 以前主题中配置了一些设置项，时间久了还忘了改了哪些文件！！！所以升级版本很痛苦，用的Sublime的一个插件Sublimerge，可以对比两个文件的代码差异，就是这样
-![Sublimerge](http://ouat6a0as.bkt.clouddn.com/hexo个性设置.png)
+![Sublimerge](http://pic.yanss.top/hexo个性设置.png)
 就像git pull操作之后改动时一样，这样子把每个有可能改过的文件都对比了一遍，然后升级到了5.1.4，发现集成了很多新功能，其他的有时间再试吧，这里就只说gitment。
 
 首先在[这里](https://github.com/settings/applications/new)注册一个OAuth Application，`Homepage URL`和`Authorization callback URL`填写博客首页地址，也就是站点配置文件中的`url`，其他随意填写即可。
@@ -325,11 +325,11 @@ gitment:
   redirect_protocol: # 没搞懂，不用填
 ```
 然后重新部署博客(本地调试是没用的，因为url不同)，再打开博客，这时候需要在每一个有评论的页面上使用自己的github长航登录并初始化一遍评论，之后就不用了。文章多的话会有点麻烦，不知道gitment作者有没有做好自动初始化？好像查到了[这个](https://draveness.me/git-comments-initialize)，不过我还没试过。
-这里是成功的样子![gitment](http://ouat6a0as.bkt.clouddn.com/gitment.png)
+这里是成功的样子![gitment](http://pic.yanss.top/gitment.png)
 
-但是，这个鼠标放上有两条横线什么鬼啊！！！![gitment1](http://ouat6a0as.bkt.clouddn.com/gitment1.png)
+但是，这个鼠标放上有两条横线什么鬼啊！！！![gitment1](http://pic.yanss.top/gitment1.png)
 
-还有这里头像下面为什么有一条横线！！！！![gitment2](http://ouat6a0as.bkt.clouddn.com/gitment2.png)
+还有这里头像下面为什么有一条横线！！！！![gitment2](http://pic.yanss.top/gitment2.png)
 
 强迫症忍不了，查看了gitment的css定义，没发现什么问题啊，然后在浏览器中调试，发现了这个
 ```css

@@ -92,11 +92,11 @@ coding后面替换为你自己的coding仓库地址，加上coding-pages分支�
 这里是因为DaoCloud系统有过升级改版，网上搜到的DaoCloud操作教程几乎都是去年12月以前的，所以有些对现在的版本不太适用，我自己借助旧的教程和部署`AppVeyor`的经验改动了一些，适用现在的DaoCloud。
 
 下面先登录DaoCloud官网，用github或者coding账号直接登录，在个人设置中绑定github和coding，然后在控制台新建项目，项目名随便取。
-![img](http://ouat6a0as.bkt.clouddn.com/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807214217.jpg)
-![img](http://ouat6a0as.bkt.clouddn.com/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807214425.jpg)
+![img](http://pic.yanss.top/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807214217.jpg)
+![img](http://pic.yanss.top/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807214425.jpg)
 
 选择`成功构建后设置 latest 为镜像标签`，然后点击`镜像：ci-hexo`（这里是我的名字，你就点你自己相应的），复制镜像地址，先记在一边等下要用。这里安利一个剪贴板管理软件[Ditto](https://sourceforge.net/projects/ditto-cp/)。
-![img](http://ouat6a0as.bkt.clouddn.com/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE2017080721427.jpg)
+![img](http://pic.yanss.top/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE2017080721427.jpg)
 
 然后打开流程定义，点击右侧`通过 yaml 快捷编辑`，打开后只一个脚本编辑页面，直接把以下内容复制进去：
 
@@ -145,11 +145,11 @@ stages:
   - rm -rf ~/.ssh/
 ```
 只用修改3处位置，其他的不要动，然后点击`更新`。
-![img](http://ouat6a0as.bkt.clouddn.com/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807220526.jpg)
+![img](http://pic.yanss.top/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807220526.jpg)
 
 到了这里就快完成了，还差一点，在流程定义这里点击构建任务，修改触发条件为分支-master-执行任务，测试任务也修改触发条件为分支-master-执行任务。
-![img](http://ouat6a0as.bkt.clouddn.com/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807220586726.jpg)
-![img](http://ouat6a0as.bkt.clouddn.com/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807221310.jpg)
+![img](http://pic.yanss.top/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807220586726.jpg)
+![img](http://pic.yanss.top/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/TIM%E6%88%AA%E5%9B%BE20170807221310.jpg)
 
 ## git关联远程库和提交代码
 先在所有的配置就做完了，可以回到blog文件夹下，将本地仓库push到远程库就行了。

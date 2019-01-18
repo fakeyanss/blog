@@ -20,15 +20,15 @@ password:
 - [Listary](http://www.listary.com/download) 类Spotlight
   - 设置页，先激活
   - 关键字Web
-    ![listary1](http://ouat6a0as.bkt.clouddn.com/listary1.png)
+    ![listary1](http://pic.yanss.top/listary1.png)
     - 百度：`http://www.baidu.com/s?wd={query}`
     - 淘宝：`https://s.taobao.com/search?q={query}`
     - 京东：`https://search.jd.com/Search?keyword={query}&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wq={query}&psort=3&wtype=1&stock=1&click=2`
     - 必应词典：`http://cn.bing.com/dict/search?q={query}`
   - 关键字自定义
-    - run：![listary3](http://ouat6a0as.bkt.clouddn.com/listary3.png)
-    - 新建文件：![listary4](http://ouat6a0as.bkt.clouddn.com/listary4.png)
-    - GoldenDict：![listary2](http://ouat6a0as.bkt.clouddn.com/listary2.png)
+    - run：![listary3](http://pic.yanss.top/listary3.png)
+    - 新建文件：![listary4](http://pic.yanss.top/listary4.png)
+    - GoldenDict：![listary2](http://pic.yanss.top/listary2.png)
 
 - [Ditto](http://ditto-cp.sourceforge.net/) 剪贴板工具
 
@@ -37,7 +37,7 @@ password:
 - [Honeyview](https://www.bandisoft.com/honeyview/cn/) 看图超快
 
 - [potplayer](https://potplayer.daum.net/) 视频播放器
-  - 加皮肤Zune![potplayer+zune](http://ouat6a0as.bkt.clouddn.com/potplayer+zune.png)
+  - 加皮肤Zune![potplayer+zune](http://pic.yanss.top/potplayer+zune.png)
 
 - [GoldenDict](http://goldendict.org/) 词典，配合Listary
 
@@ -124,7 +124,7 @@ password:
 
 - [Anaconda](https://anaconda.org/) python包管理
 
-- [Sublime](https://www.sublimetext.com/) 插件[下载](http://ouat6a0as.bkt.clouddn.com/Sublime插件.7z)
+- [Sublime](https://www.sublimetext.com/) 插件[下载](http://pic.yanss.top/Sublime插件.7z)
 
     ```
     //OmniMarkupPreviewer快捷键设置
