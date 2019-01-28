@@ -28,10 +28,16 @@ password:
 
 文档地址：[https://www.appveyor.com/docs/](https://www.appveyor.com/docs/)
 
-环境变量设定：
+1. 创建新项目，在设置中进行环境变量设定：
+
 ![](http://pic.yanss.top/blog_appveyor_env.png)
 
-构建脚本：
+2. 访问github个人设置页面，点击边栏下方的【Personal access tokens】选项卡，并点击右上方的【Generate new token】按钮。Token description任意填写，下方的选项中全选repo即可。点击下方绿色的【Generate token】按钮。此时就能得到Access Token。也可以参考[官方文档](https://help.github.com/articles/creating-a-personal-access-token-for-the-command-line/)
+
+3. 加密Access Token。由于这个AccessToken是可以直接操作你的仓库的，而且配置文件是公开的，所以这时就要求对AccessToken进行加密。可到[AppVeyor Token加密页面](https://ci.appveyor.com/tools/encrypt)进行加密。把加密后的字符串填入下一步中的配置脚本的`secure`里。
+
+4. 构建脚本：
+
 ```yaml
 clone_depth: 5
 
