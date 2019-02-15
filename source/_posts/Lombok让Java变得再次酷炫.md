@@ -14,13 +14,13 @@ kewords:
 description:
 password:
 ---
-## 201902W5 [Review]
+201902W5 [Review]
+![](http://pic.yanss.top/2019/20190202144529.png)
+<!-- more -->
 
 ### Lombok让Java变得再次酷炫
 
 [原文](https://bytes.grubhub.com/lombok-makes-java-cool-again-171102bdcc52)
-![](http://pic.yanss.top/2019/20190202144529.png)
-<!-- more -->
 
 在Grauhub，我们在大多数后端编程中都是用Java。Java是一门经过20多年实战考验的语言，已经证明了它的速度和可靠性。虽然我们已经使用Java很多年了，最近，它开始展现了它的老旧的特性。
 
