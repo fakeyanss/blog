@@ -1,5 +1,5 @@
 ---
-title: Lombok让Java变得再次酷炫
+title: [201902W5 Review] Lombok让Java变得再次酷炫
 categories:
   - Java
 tags:
@@ -14,7 +14,7 @@ kewords:
 description:
 password:
 ---
-201902W5 [Review]
+
 ![](http://pic.yanss.top/2019/20190202144529.png)
 <!-- more -->
 
