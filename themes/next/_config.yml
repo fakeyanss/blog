@@ -82,9 +82,9 @@ menu_icons:
 
 # Schemes
 #scheme: Muse
-#scheme: Mist
-#scheme: Pisces
 scheme: Mist
+#scheme: Pisces
+#scheme: Gemini
 
 
 # ---------------------------------------------------------------
@@ -339,10 +339,10 @@ baidu_site_verification: 0QPRs7dWzh
 #duoshuo_shortname:
 
 # Disqus
-#disqus:
-#  enable: false
-#  shortname:
-#  count: true
+disqus:
+  enable: true
+  shortname: you-yue-ru-tie
+  count: true
 
 # Hypercomments
 #hypercomments_id:
@@ -364,8 +364,9 @@ baidu_site_verification: 0QPRs7dWzh
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
 # You can get your Github ID from https://api.github.com/users/<Github username>
+# 作者的验证服务器停止提供了
 gitment:
-  enable: true
+  enable: false
   mint: true # RECOMMEND, A mint on Gitment, to support count, language and proxy_gateway
   count: true # Show comments count in post meta area
   lazy: false # Comments lazy loading with a button
@@ -391,7 +392,8 @@ gitment:
 # Warning: JiaThis does not support https.
 
 # AddThis
-add_this_id: ra-5a5d747a19a1dc88
+#和disqus评论提供的分享功能重合
+#add_this_id: ra-5a5d747a19a1dc88
 
 # Share
 # duoshuo_share: true
