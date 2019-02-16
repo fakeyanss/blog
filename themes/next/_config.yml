@@ -47,9 +47,9 @@ index_with_subtitle: false
 # When running the site in a subdirectory (e.g. domain.tld/blog), remove the leading slash (/archives -> archives)
 menu:
   home: /
-  archives: /archives
+  #archives: /archives
   #categories: /categories/
-  #tags: /tags/
+  tags: /tags
   leetcode: http://foreti.me/leetcode
   photo: /photo
   about: /about
@@ -66,9 +66,9 @@ menu_icons:
   #KeyMapsToMenuItemKey: NameOfTheIconFromFontAwesome
   home: home
   about: user
-  # categories: th
-  # schedule: calendar
-  # tags: tags
+  categories: th
+  schedule: calendar
+  ags: tags
   archives: archive
   photo: camera
   sitemap: sitemap
@@ -133,8 +133,8 @@ links_layout: inline
 links:
   #Title: http://example.com/
   My JN: http://jn.yanss.top
-  Berry: http://berryk.top/
-  Lu尼玛的想疗院: https://luna.fancylog.net/
+  Berry: http://xiebanle.me
+  Lu尼玛的想疗院: https://luna.fancylog.net
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
@@ -228,8 +228,8 @@ post_wordcount:
 
 # Reward
 reward_comment: offer me a drink :)
-wechatpay: http://otzlyqzo6.bkt.clouddn.com/config/wxpay.jpg
-alipay: http://otzlyqzo6.bkt.clouddn.com/config/alipay.jpg
+wechatpay: /images/WxQRCode.png.jpg
+alipay: /images/AliQRCode.jpg
 #bitcoin: /images/bitcoin.png
 
 # Declare license on posts
