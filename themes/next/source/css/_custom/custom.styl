@@ -1,11 +1,71 @@
-//背景图片
-body {
-background: url('/images/background.png');
-//background-size:cover;
-background-repeat:repeat;
-background-attachment:fixed;
-background-position:center;
+.header {
+	background: none;
 }
+
+.footer {
+	background: none;	
+}
+
+body {
+	//background: url('/images/background.png');
+	background-repeat:repeat;
+	background-attachment:fixed;
+	background-position:center;
+    background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
+}
+
+#sidebar {
+    box-shadow:none
+    background: none;
+}
+
+.sidebar-nav li:hover {
+	color: #F96531;
+}
+
+.sidebar-nav .sidebar-nav-active:hover {
+	color: #F96531;
+}
+
+.sidebar-nav .sidebar-nav-active {
+    color: #F96531;
+    border-bottom-color: #F96531;
+}
+
+.post-toc .nav .active > a {
+    color: #F96531;
+    border-bottom-color: #F96531;
+}
+
+.post-toc .nav .active-current > a {
+	color: #F96531;
+}
+
+.post-toc .nav .active-current > a:hover {
+	color: #F96531;
+}
+
+.post-toc ol a:hover {
+	color: #555555;
+	border-bottom-color: #555555;
+}
+
+.site-author-name {
+	color: #555555;
+	font-size: 18px;
+}
+
+.page-post-detail .sidebar-toggle-line {
+    background: #ebedee;
+}
+
+.site-author-image {
+	border: none;
+}
+
+
+
+
 
 // Custom styles.
 //修改文章内链接文本样式
@@ -269,7 +329,6 @@ p#div-border-top-purple {
 }
 
 //动画模块
-//第一篇博客中-精于心，简于形-的动画
 span#yu-1 {
 	display:inline;
 	position:relative;

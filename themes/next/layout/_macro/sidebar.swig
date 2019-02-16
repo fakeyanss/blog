@@ -37,6 +37,8 @@
               <p class="site-description motion-element" itemprop="description">{{ theme.description }}</p>
           {% endif %}
         </div>
+
+        <!--
         <nav class="site-state motion-element">
 
           {% if config.archive_dir != '/' %}
@@ -71,6 +73,7 @@
           {% endif %}
 
         </nav>
+        -->
 
         {% if theme.rss %}
           <div class="feed-link motion-element">

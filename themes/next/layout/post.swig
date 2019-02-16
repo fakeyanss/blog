@@ -19,11 +19,16 @@
       {% elseif theme.baidushare %}
         {% include '_partials/share/baidushare.swig' %}
       {% elseif theme.add_this_id %}
-        {% include '_partials/share/add-this.swig' %}
+        {% if browser.versions.mobile || browser.versions.ios || browser.versions.android ||   
+              browser.versions.iPhone || browser.versions.iPad %}
+        {% else %}
+          {% include '_partials/share/add-this.swig' %}
+        {% endif %}
       {% elseif theme.duoshuo_shortname and theme.duoshuo_share %}
         {% include '_partials/share/duoshuo_share.swig' %}
       {% endif %}
     </div>
+
   </div>
 
 {% endblock %}

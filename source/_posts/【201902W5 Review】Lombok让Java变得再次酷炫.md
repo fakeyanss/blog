@@ -8,6 +8,7 @@ mathjax: false
 copyright: true
 reward: true
 toc: true
+abbrlink: 9563ca2c
 date: 2019-02-15 13:18:04
 kewords:
 description:
@@ -16,8 +17,6 @@ password:
 
 ![](http://pic.yanss.top/2019/20190202144529.png)
 <!-- more -->
-
-### Lombok让Java变得再次酷炫
 
 [原文](https://bytes.grubhub.com/lombok-makes-java-cool-again-171102bdcc52)
 
