@@ -124,9 +124,15 @@
             var type = data.type[i];
             var target = src + '.' +type;
             var size = data.size[i];
-            src = src + (type === 'mp4' ? '.jpg' : '.' + type) + '?imageMogr2/auto-orient';
-            minSrc = minSrc + (type === 'mp4' ? '.jpg' : '.' + type);
-            type = (type === 'mp4' ? 'video' : 'image')
+            if (type === 'webm' || type === 'mp4') {
+              src = src + '.jpg' + '?imageMogr2/auto-orient';
+              minSrc = minSrc + '.jpg';
+              type = 'video';
+            } else {
+              src = src +  '.' + type + '?imageMogr2/auto-orient';
+              minSrc = minSrc + '.' + type;
+              type = 'image';
+            }
 
             liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                   <a href="' + src + '" itemprop="contentUrl" data-size="' + size + '" data-type="' + type + '" data-target="' + target + '">\
