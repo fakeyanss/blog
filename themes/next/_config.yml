@@ -132,7 +132,7 @@ links_layout: block
 # links_layout: inline
 links:
   #Title: http://example.com/
-  LeetCode: http://fakeYanss.github.io/LeetCode
+  LeetCode: https://github.com/fakeYanss/LeetCode
   Jupyter Notebook: http://jn.yanss.top
   Berry: http://xiebanle.me
 
