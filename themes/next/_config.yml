@@ -50,7 +50,6 @@ menu:
   archives: /archives
   #categories: /categories/
   tags: /tags
-  leetcode: http://foreti.me/leetcode
   photo: /photo
   about: /about
   #sitemap: /sitemap.xml
@@ -129,13 +128,13 @@ social_icons:
 
 # Blog rolls
 links_title: Others
-#links_layout: block
-links_layout: inline
+links_layout: block
+# links_layout: inline
 links:
   #Title: http://example.com/
-  My JN: http://jn.yanss.top
+  LeetCode: http://fakeYanss.github.io/LeetCode
+  Jupyter Notebook: http://jn.yanss.top
   Berry: http://xiebanle.me
-  Lu尼玛的想疗院: https://luna.fancylog.net
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.jpg
