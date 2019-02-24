@@ -17,7 +17,8 @@ password:
 
 - ~~[Seer](http://1218.io/) 空格预览~~ [QuickLook](https://pooi.moe/QuickLook/)更好用
 
-- [Listary](http://www.listary.com/download) 类Spotlight
+- ~~[Listary](http://www.listary.com/download) 类Spotlight~~
+
   - 设置页，先激活
   - 关键字Web
     ![listary1](http://pic.yanss.top/listary1.png)
@@ -30,6 +31,8 @@ password:
     - 新建文件：![listary4](http://pic.yanss.top/listary4.png)
     - GoldenDict：![listary2](http://pic.yanss.top/listary2.png)
 
+- 发现[Wox](http://www.wox.one/)更好用，配置更少更方便，搭配Everything也是一样的快
+
 - [Ditto](http://ditto-cp.sourceforge.net/) 剪贴板工具
 
 - [Bandizip](https://www.bandisoft.com/bandizip/cn/) 比7Zzip好
@@ -37,6 +40,7 @@ password:
 - [Honeyview](https://www.bandisoft.com/honeyview/cn/) 看图超快
 
 - [potplayer](https://potplayer.daum.net/) 视频播放器
+
   - 加皮肤Zune![potplayer+zune](http://pic.yanss.top/potplayer+zune.png)
 
 - [GoldenDict](http://goldendict.org/) 词典，配合Listary
@@ -50,13 +54,13 @@ password:
     ```
     //高级设置
     # For documentation, see http://www.sumatrapdfreader.org/settings3.2.html
-
+    
     MainWindowBackground = #80fff200
     EscToExit = false
     ReuseInstance = false
     UseSysColors = false
     RestoreSession = true
-
+    
     FixedPageUI [
     	TextColor = #000000
     	BackgroundColor = #ffffff
@@ -87,7 +91,7 @@ password:
     FullPathInTitle = false
     ZoomLevels = 8.33 12.5 18 25 33.33 50 66.67 75 100 125 150 200 300 400 600 800 1000 1200 1600 2000 2400 3200 4800 6400
     ZoomIncrement = 0
-
+    
     PrinterDefaults [
     	PrintScale = shrink
     ]
@@ -98,7 +102,7 @@ password:
     	HighlightPermanent = false
     ]
     CustomScreenDPI = 0
-
+    
     RememberStatePerDocument = true
     UiLanguage = cn
     ShowToolbar = true
@@ -136,7 +140,9 @@ password:
     ]
     ```
 
-- ShadowsocksR 下载[地址一](https://dl.onetive.com/) [地址二](http://shiyu.pro/archives/ssr-apk.html) [github](https://github.com/shadowsocksrr/shadowsocksr)
+- ~~ShadowsocksR 下载[地址一](https://dl.onetive.com/) [地址二](http://shiyu.pro/archives/ssr-apk.html) [github](https://github.com/shadowsocksrr/shadowsocksr)~~
+
+- ShadowSocks, github开源，可以找到各平台的应用
 
 - 自己搭建vps [方案](http://shiyu.pro/archives/shadowsocks.html)
 
