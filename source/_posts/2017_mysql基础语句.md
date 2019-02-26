@@ -1,5 +1,5 @@
 ---
-title: sql基础语句
+title: mysql基础语句
 categories: SQL
 tags:
   - mysql
