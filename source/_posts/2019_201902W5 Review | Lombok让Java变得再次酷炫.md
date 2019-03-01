@@ -1,5 +1,5 @@
 ---
-title: 【201902W5 Review】Lombok让Java变得再次酷炫
+title: 201902W5 Review | Lombok让Java变得再次酷炫
 categories: Java
 tags:
   - Java

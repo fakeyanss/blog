@@ -1,5 +1,5 @@
 ---
-title: 【201902W5 Algorithm】Leetcode 4 and 11
+title: 201902W5 Algorithm | Leetcode 4 and 11
 tags:
   - Leetcode
   - Algorithm
