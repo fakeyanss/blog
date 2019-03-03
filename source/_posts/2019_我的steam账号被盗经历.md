@@ -32,7 +32,7 @@ hey，bro，恭喜你。
 
 嗯，都是些什么枪，也不知道值不值钱，算了捡垃圾吧，嗯，sign in with steam。
 
-弹出了一个小窗，嗯，域名steamcommunity.com/xxxxx，没错，是steam的。
+弹出了一个小窗，嗯，域名`steamcommunity.com/xxxxx`，没错，是steam的。
 
 我输入了账号，咦，我的lastpass怎么不提示填充密码，可能网不好吧。嗯，输入密码，登录，还要手机令牌，没错了。
 
