@@ -1,5 +1,5 @@
 ---
-title: spring-boot的Mapper与数据库表字段映射
+title: springboot的Mapper与数据库表字段映射
 categories:
   - Java
 tags:
