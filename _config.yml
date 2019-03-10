@@ -1,39 +1,29 @@
 # Hexo Configuration
-## Docs: https://hexo.io/docs/configuration.html
+## Docs: http://hexo.io/docs/configuration.html
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: 有约如铁
-subtitle: Yanss' Blog
+title: Yet Another Possibility
+subtitle: 有约如铁
 description:
-author: Yanss
+author: fakeyanss
+email: yanshisangc@gmail.com
 language: en
-timezone:
-avatar: /images/avatar.png
+timezone: 'Asia/Shanghai'
+since: 2017
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://foreti.me
+url: https://foreti.me
 root: /
-#permalink: :title/
-permalink_defaults:
-
-# permalink: :title/
-permalink: archives/:abbrlink.html
-abbrlink:
-  alg: crc32  # 算法：crc16(default) and crc32
-  rep: hex    # 进制：dec(default) and hex
+baseurl: https://foreti.me/home
+permalink: :year/:month/:day/:title/
 
 # Directory
 source_dir: source
-public_dir: public
-tag_dir: tags
-archive_dir: archives
-# category_dir: categories
-photo_dir: photo
-code_dir: downloads/code
+
 i18n_dir: :lang
-skip_render: README.md
+skip_render:
 
 # Writing
 new_post_name: :title.md # File name of new posts
@@ -48,28 +38,14 @@ future: true
 highlight:
   enable: true
   line_number: true
-  auto_detect: false
-  tab_replace:
-
-# Home page setting
-# path: Root path for your blogs index page. (default = '')
-# per_page: Posts displayed per page. (0 = disable pagination)
-# order_by: Posts order. (Order by date descending by default)
-index_generator:
-  path: ''
-  per_page: 100
-  order_by: -date
-
-# Category & Tag
-default_category: uncategorized
-category_map:
-tag_map:
+  auto_detect: true
+  tab_replace: true
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
 ## You can customize the date format as defined in
 ## http://momentjs.com/docs/#/displaying/format/
-date_format: YYYY-MM-DD
+date_format: YYYY 年 MM 月 DD 日
 time_format: HH:mm:ss
 
 # Pagination
@@ -78,44 +54,13 @@ per_page: 100
 pagination_dir: page
 
 # Extensions
-plugins: hexo-generate-feed
+## Plugins: http://hexo.io/plugins/
+## Themes: http://hexo.io/themes/
+theme: hollow
 
-## Themes: https://hexo.io/themes/
-theme: next
-
-feed:
-  type: atom       #feed 类型 (atom/rss2)
-  path: atom.xml   #rss 路径
-  limit: 0        #在 rss 中最多生成的文章数(0显示所有)
-
-#Image Lazyload
-lazyload:
-  enable: true
-  onlypost: true
-  loadingImg: # eg. ./images/loading.png
-
-# hexo sitemap
-sitemap:
-  path: sitemap.xml
-baidusitemap:
-  path: baidusitemap.xml
-
-baidu_url_submit:
-  count: 5
-  host: foreti.me
-  token:  http://data.zz.baidu.com/urls?site=foreti.me&token=B1b6ztzlokxmfRr3
-  path: baidu_urls.txt
-
-search:
-  path: search.xml
-  field: post
-  format: html
-  limit: 10000
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  - type: git
-    repo:
-      #github: git@github.com:fakeYanss/blog.git,gh-pages
-      coding: git@git.coding.net:fakeYanss/blog.git,coding-pages
-  - type: baidu_url_submitter
+## Docs: http://hexo.io/docs/deployment.html
+deploy: 
+  type: git
+  repo: git@github.com:fakeYanss/fakeyanss.github.io.git
+  branch: master

@@ -1,0 +1,14 @@
+# Default post title
+default_post_title: Halo
+
+#Date Format
+date_format: YYYY 年 MM 月 DD 日
+
+# Comments. Choose one by filling up the information
+comments:
+  # Disqus comments
+  disqus_shortname: you-yue-ru-tie
+
+# Google Analytics Tracking ID
+google_analytics: UA-112380656-1
+ 

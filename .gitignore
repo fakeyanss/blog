@@ -1,7 +1,10 @@
 .DS_Store
 Thumbs.db
+.idea
 db.json
 *.log
 node_modules/
 public/
 .deploy*/
+scaffolds/
+.Ulysses-Group.plist
