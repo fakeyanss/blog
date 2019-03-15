@@ -1,11 +1,13 @@
 ---
-title: 201902W5 Review - Lombok让Java变得再次酷炫
+title: Lombok让Java变得再次酷炫
 tags:
   - Java
   - Lombok
+  - ARTS
 date: 2019-02-15 13:18:04
 ---
-这是一篇关于Spring开发插件Lombok的译文。<!-- more -->
+201902W5 Review, 这是一篇关于Spring开发插件Lombok的译文。
+<!-- more -->
 
 ![](http://pic.yanss.top/2019/20190202144529.png)
 

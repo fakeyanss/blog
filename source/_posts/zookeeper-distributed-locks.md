@@ -1,11 +1,15 @@
 ---
-title: 201902W9 Share | 基于ZooKeeper的分布式锁实现
+title: 基于ZooKeeper的分布式锁实现
 tags:
   - ZooKeeper
   - 分布式锁
+  - ARTS
 date: 2019-02-24 15:46:58
 ---
-分布式锁的实现方式有很多种，可以依赖数据库、Redis、ZooKeeper等实现，当然不同的方式各有其优缺点。本文仅探讨基于ZooKeeper实现分布式锁的方法。<!--more-->
+201902W9 Share
+<!--more-->
+
+分布式锁的实现方式有很多种，可以依赖数据库、Redis、ZooKeeper等实现，当然不同的方式各有其优缺点。本文仅探讨基于ZooKeeper实现分布式锁的方法。
 
 > 此部分分布式锁介绍摘自https://blog.didiyun.com/index.php/2018/11/20/zookeeper/
 >
