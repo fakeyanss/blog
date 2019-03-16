@@ -5,7 +5,6 @@ tags:
   - autowired
 date: 2018-07-17 19:59:35
 ---
-
 stackoverflow问题[Can you use @Autowired with static fields?](https://stackoverflow.com/questions/1018797/can-you-use-autowired-with-static-fields)
 <!--more-->
 
