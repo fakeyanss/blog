@@ -145,6 +145,7 @@ mapped.
 当然，如果你想深入了解用Spring构建REST API - 请看[the new REST with Spring course](https://www.baeldung.com/rest-with-spring-course?utm_source=blog&utm_medium=web&utm_content=art1&utm_campaign=rws)。
 
 ## 4. RequestMapping使用路径变量
+映射URL的一部分可以由 *@PathVariable* 绑定到变量。
 
 一个简单的单路径变量例子：
 ```java
@@ -155,14 +156,27 @@ public String getFoosBySimplePathWithPathVariable(
     return "Get a specific Foo with id=" + id;
 }
 ```
+
 可以用curl测试：
+
 ```sh
 curl http://localhost:8080/spring-rest/ex/foos/1
 ```
-如果方法的参数名和路径名相同，可以只用`@PathVariable`而不附加值：
-```java
 
+如果方法的参数名和路径名相同，可以只用`@PathVariable`而不附加值：
+
+```java
+@RequestMapping(value = "/ex/foos/{id}", method = GET)
+@ResponseBody
+public String getFoosBySimplePathWithPathVariable(
+  @PathVariable String id) {
+    return "Get a specific Foo with id=" + id;
+}
 ```
+
+
+
+
 
 <br>
 <p id="div-border-top-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>

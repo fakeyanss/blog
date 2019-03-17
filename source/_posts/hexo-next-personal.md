@@ -104,99 +104,61 @@ img:hover {
 
 ## 添加相册
 
-<div id="album">我的[相册](https://fakeyanss.github.io/photo/)。</div>
+<div id="album">我的[相册](https://fakeyanss.github.io/gallery/)。</div>
+
 原理很简单，就是建立一个github仓库存储用于存储图片，然后将每个图片的路径保存到一个json文件里，在hexo博客中解析这个json文件，渲染成html页面后就可以在显示图片了。当然这里肯定要有页面的样式和图片的裁剪压缩，原理简单，实际操作起来有一些坑，我并不懂css样式，还是要感谢[litten](http://litten.me/)提供的方法。
 
 ### 相册源
 
 * 首先在github上新建一个仓库，命名`Blog_Album`
-* 然后本地新建一个文件夹`Blog_Album`，进入文件夹新建两个子文件夹`photos`，`min_photos`，然后下载这两个文件[ImageProcess.py](https://github.com/fakeYanss/Hexo-Album/blob/master/Album-Github/ImageProcess.py)，[tool.py](https://github.com/fakeYanss/Hexo-Album/blob/master/Album-Github/tool.py)到`Blog_Album`
-
-记住之后要上传的相片就放到`photos`文件夹内。
+* clone我的[Hexo-Album仓库](https://github.com/fakeYanss/Hexo-Album)，改一下文件名为Blog_Album或者其他，记住之后要上传的相片就放到`photos`文件夹内。
 
 * 在博客根目录运行
 
 ```
-hexo new photos
+hexo new photo
 ```
 
-* 回到`Blog_Album`文件夹，将tools.py`中131行
-
+* 回到`Blog_Album`文件夹，在make-json.py中96行、98行，修改路径为blog源文件中的photo页面路径。这里后两行打印json的可以不需要。
 ```
-final_dict = {"list": list_info}
-    with open("D:/Blog/source/photos/data.json","w") as fp:
-        json.dump(final_dict, fp)
+with open("../Blog_Source/source/photo/" + target_file, "w") as fp:
+    json.dump(final_dict, fp, indent=4, separators=(',', ': '))
+with open("../Blog_Source/source/photo/" + target_file, "r") as fp:
+    print (json.load(fp))
 ```
-
-将路径改为你的博客`photos`文件夹的相应位置
 
 * 添加一些图片到`Blog_Album`的`photos`文件夹中
-* 将本地`Blog_Album`与github仓库`Blog_Album关联`
-* 运行`tool.py`脚本（因为脚本中有上传到github的函数，所以不用手动git push），如果不能运行请看文章下面的说明
-* 将本地`Blog_Album`上传到github仓库`Blog_Album`
+* 运行compress.py生成图片缩略图到min_photos/
+* 运行make-json.py生成json文件到blog源文件中
+* 将`Blog_Album`的修改传到github远程仓库`Blog_Album`
+
+上传前可以将Hexo文件夹移出，这个文件夹中的文件在后面还有作用。如果你不用七牛云，也可以将qiniu相关的脚本删掉。
+
 
 ### 博客相册页
 
-* 回到`yourblog\source\photos`目录下，将`index.md`内容修改为
+1. 回到`yourblog\source\photo`目录下，下载这些定义好的[photo页面文件](https://github.com/fakeYanss/Hexo-Album/tree/master/Hexo/Source/photos)，后期你可以自己修改其中内容。
 
-```html
----
-title: 我的相册
-date: 2017-12-29 22:32:22
-type: "photos"
----
-<link rel="stylesheet" href="./ins.css">
- <link rel="stylesheet" href="./photoswipe.css"> 
-<link rel="stylesheet" href="./default-skin/default-skin.css"> 
-<div class="photos-btn-wrap">
-  <a class="photos-btn active" href="javascript:void(0)">Photos</a>
-</div>
-<div class="instagram itemscope">
-  <a href="http://yanss.top" target="_blank" class="open-ins">图片正在加载中…</a>
-</div>
- 
-<script>
-  (function() {
-    var loadScript = function(path) {
-      var $script = document.createElement('script')
-      document.getElementsByTagName('body')[0].appendChild($script)
-      $script.setAttribute('src', path)
-    }
-    setTimeout(function() {
-        loadScript('./ins.js')
-    }, 0)
-  })()
-</script>
-```
-
-第13行链接为自己的博客url
-
-* 然后在photos文件夹下添加这些内容
-
-![TIM截图20171231214306](http://pic.yanss.top/TIM截图20171231214306.png)
-
-文件这里[下载](https://github.com/fakeYanss/Hexo-Album/tree/master/Hexo/Source/photos)，`data.json`是图片的数据信息，运行python脚本后会生成
-
-`ins.js`中的114行的`render()`函数需要修改这两个变量
+将`ins.js`中的114行的`render()`函数需要修改这两个变量，这里是将图片存在github对应的连接，如果是七牛云需要绑定域名了。
 
 ```js
 var minSrc = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/min_photos/' + data.link[i];
 var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
 ```
 
-如果你的仓库名和我相同，只用把这里的`fakeYanss`改为你自己的github name即可
+如果你的仓库名和我相同，只用把这里的`fakeYanss`改为你自己的github name即可。
 
-* 在`yourBlog/themes/next/source/js/src`下加入两个js文件[photoswipe.min.js](https://github.com/fakeYanss/Hexo-Album/blob/master/Hexo/photoswipe.min.js) 和[photoswipe-ui-default.min.js](https://github.com/fakeYanss/Hexo-Album/blob/master/Hexo/photoswipe-ui-default.min.js)
+2. 在`yourBlog/themes/next/source/js/src`下加入两个js文件photoswipe.min.js和photoswipe-ui-default.min.js，都可以在Hexo文件夹中找到。
 
 
-* 在`yourBlog/themes/next/layout/_scripts/pages/post-details.swig`中添加
+3. 在`yourBlog/themes/next/layout/_scripts/pages/post-details.swig`中添加
 
 ```html
 <script type="text/javascript" src="{{ url_for(theme.js) }}/src/photoswipe.min.js?v={{ theme.version }}"></script>
 <script type="text/javascript" src="{{ url_for(theme.js) }}/src/photoswipe-ui-default.min.js?v={{ theme.version }}"></script>
 ```
 
-* 在`yourBlog/themes/next/layout/_layout.swig`中
+4. 在`yourBlog/themes/next/layout/_layout.swig`中
 
 `head`内插入
 
@@ -251,23 +213,26 @@ var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/
 {% endif %}
 ```
 
-* 重新生成博客内容即可看到相册内容。
+5. 重新编译博客内容即可看到相册内容。
+  
+6. 注意：
   * 如果py脚本不能运行，先安装python环境，再安装`Pillow`库`pip install Pillow`
-  * 相册图片的命名请遵循`yyyy-mm-dd_abc.jpg`格式，虽然脚本里写了其他格式的处理，但实际情况似乎只能对jpg裁剪压缩
+  * 相册图片的命名请遵循`yyyy-mm-dd_abc.jpg`格式，虽然脚本里写了其他格式的处理，但实际情况似乎只能对jpg文件裁剪压缩
   * 最后的不足是，相片的裁剪算法，可能会把一张图片中的人体头部裁剪掉
   * next主题源码是不支持相册的，如果有不懂的地方，可以看看评论的相似情况，或者查一下[yilia](https://github.com/litten/hexo-theme-yilia)主题的issue，然后再来问我
+  * 相册源文件中处理图片生成json和上传图片的处理，我写了一个releash.sh脚本，可以修改一下，以后添加图片后快捷处理
 
-* **2018.1.20修改**：由于从github仓库读取图片，在html页面中会发生ios手机竖持拍照的照片90度旋转问题（图片的EXIF的orientaion信息在裁剪压缩后发生改变），找了一些办法都没效果，所以将相片源仓库转移到七牛云，利用七牛云外链后加上`?imageMogr2/auto-orient`的方式，可以将照片正常角度显示。如果要用七牛云做图床，可以看我的[设置](https://github.com/fakeYanss/Hexo-Album)。
+### changelog
 
-* **2018.2.23修改：**发现ios设备拍摄的正方形照片的压缩图上传后仍然有orientation值为6即偏转90度问题，索性修改了整个裁剪切割和生成json的脚本。在压缩同时修改偏转值，并且在生成json时获取图片尺寸，在前端显示图片原图时在`data-size`中设置json中的对应图片尺寸，这样可以不切割原图，修改后的设置方法在
+* 2018.2.23修改
+发现ios设备拍摄的正方形照片的压缩图上传后仍然有orientation值为6即偏转90度问题，索性修改了整个裁剪切割和生成json的脚本。在压缩同时修改偏转值，并且在生成json时获取图片尺寸，在前端显示图片原图时在`data-size`中设置json中的对应图片尺寸，这样可以不切割原图，修改后的设置方法在
 
-  *  [生成缩略图和json数据并上传七牛云](https://github.com/fakeYanss/Blog_Album)，
+  *  [生成缩略图和json数据并上传七牛云](https://github.com/fakeYanss/gallery)，
 
-  * 对于修改后的相册的[ins.js](https://github.com/fakeYanss/blog/blob/master/source/photos/ins.js)，需要做一些修改，以适应修改后的脚本生成的json数据，在render()方法中，注意内层`<img>`标签为缩略图，`<a>`标签为原图，在对应的属性处设为对应值。
+  * 对于修改后的相册的ins.js，需要做一些修改，以适应修改后的脚本生成的json数据，在render()方法中，注意内层`<img>`标签为缩略图，`<a>`标签为原图，在对应的属性处设为对应值。
 
 ```js
 var minSrc = 'http://pic.yanss.top/min_photos/' + data.link[i];
-//var src = 'https://raw.githubusercontent.com/fakeYanss/Blog_Album/master/photos/' + data.link[i];
 var src = 'http://pic.yanss.top/' + data.link[i];
 var type = data.type[i];
 var target = src + '.' +type;
@@ -284,10 +249,13 @@ liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtyp
            </figure>';
 ```
 
+* 2019.3.2修改
+由于换了主题hollow，不支持添加页面，所以讲相册独立出来，发到一个github仓库并开启page功能，目前是在[https://fakeyanss.github.io/gallery](https://fakeyanss.github.io/gallery)。
 
-**[所有文件的下载](https://github.com/fakeYanss/Hexo-Album)**
-
-其实啊，相册源文件和博客相册只是用一个json文件关联起来了，可以在实际处理中把相册源文件和博客分离开。也就是说我hexo博客不用管你图片怎么处理的，你的图片裁不裁剪压不压缩都没关系的，存在哪里也没关系的，我只要有一个json数据，并且json数据的格式和ins.js中的处理能对应上就行。
+并且做了一些修改：
+- 不在使用七牛云图床，转到github，毕竟不限流，不限量，慢点就慢点。 
+- 如果图片的orientaion信息有问题，可以自己修改一下，mac上用Xee³，window上用bandizip家的蜂蜜浏览器，都是打开图片保存一下就好了，直接将orientation值重设为1。
+- 修改了一些样式，计划做成Instagram的样式。
 
 ---
 
@@ -354,6 +322,10 @@ a{
 第一个就是修改的ID下的横线，显示为`none`就好了；第二个是修改编辑框头像下的横线，也是显示为`none`。
 
 这样，算是完成了Gitment的配置了。
+
+gitment已经失效了，看到作者的博客下的评论也失效了，查到似乎是因为gitment中在与github认证时需要作者提供的服务端支持，但是作者的服务端已经停掉了。
+
+我现在转到了disqus。
 
 ---
 
