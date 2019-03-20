@@ -266,8 +266,11 @@ http://localhost:8080/spring-rest/ex/bars?id=100&second=something
 ```
 将总会被映射到最好的适配 - 更进一步的适配，同时定义`id`和`second`参数。
 
-## 6. RequestMapping Corner Cases
+## 6. `RequestMapping` Corner Cases
 
+### 6.1. `@RequestMapping` – 多个路径映射到同一Controller方法
+
+虽然一个单个`@RequestMapping`路径值通常用于单个controller方法， 但这只是一种好的用法，而不是强制规则 - 有一些情况下，多个请求到同一方法的可能是必要的。
 
 
 
