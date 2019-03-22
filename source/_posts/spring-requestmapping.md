@@ -270,8 +270,21 @@ http://localhost:8080/spring-rest/ex/bars?id=100&second=something
 
 ### 6.1. `@RequestMapping` – 多个路径映射到同一Controller方法
 
-虽然一个单个`@RequestMapping`路径值通常用于单个controller方法， 但这只是一种好的用法，而不是强制规则 - 有一些情况下，多个请求到同一方法的可能是必要的。
-
+虽然一个单个`@RequestMapping`路径值通常用于单个controller方法， 但这只是一种好的用法，而不是强制规则 - 有一些情况下，多个请求到同一方法的可能是必要的。在那种情况下，**@RequestMapping的value属性接收多个映射**，而不是一个映射：
+```java
+@RequestMapping(
+  value = { "/ex/advanced/bars", "/ex/advanced/foos" }, 
+  method = GET)
+@ResponseBody
+public String getFoosOrBarsByPath() {
+    return "Advanced - Get some Foos or Bars";
+}
+```
+现在，这两个curl命令应该使用相同的方法：
+```sh
+curl -i http://localhost:8080/spring-rest/ex/advanced/foos
+curl -i http://localhost:8080/spring-rest/ex/advanced/bars
+```
 
 
 
