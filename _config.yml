@@ -63,4 +63,4 @@ theme: hollow
 deploy: 
   type: git
   repo: git@github.com:fakeYanss/fakeyanss.github.io.git
-  branch: master
+  branch: source
