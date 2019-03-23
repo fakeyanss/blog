@@ -4,7 +4,7 @@ tags:
   - thymeleaf
 date: 2018-03-12 20:09:44
 ---
-[Thymeleaf](http://www.thymeleaf.org/)是一款用于渲染XML/XHTML/HTML5内容的Java模板引擎库，可以通过HTML的标签属性渲染标签内容。
+Thymeleaf是一款用于渲染XML/XHTML/HTML5内容的Java模板引擎库，可以通过HTML的标签属性渲染标签内容。
 <!--more-->
 
 举个例子，
