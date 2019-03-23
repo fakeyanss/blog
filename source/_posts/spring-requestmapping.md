@@ -10,7 +10,7 @@ tags: [ARTS,Spring,RequestMapping]
 by [Eugen Paraschiv](https://www.baeldung.com/author/eugen/)
 
 ## 1. 概述
-在这篇文章中，我们将关注于这个Spring MVC中常用的注释 - @RequestMapping。
+在这篇文章中，我们将关注于这个Spring MVC中常用的注释 - *@RequestMapping*。
 
 简单地说，这个注释用于将网络请求映射到Spring Controller的方法。
 
