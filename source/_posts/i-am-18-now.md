@@ -1,6 +1,6 @@
 title: 未完的歌
 date: 2013-02-07
-tags:
+tags: fragment
 ---
  这一天，我18岁了。
 <!-- more -->

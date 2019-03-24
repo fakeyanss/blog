@@ -1,6 +1,6 @@
 title: 波比
 date: 2013-04-08
-tags:
+tags: fragment
 ---
 当年波比冷门又厉害，拿着小锤子打遍上单无敌手
 <!-- more -->
