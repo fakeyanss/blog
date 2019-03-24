@@ -41,7 +41,7 @@ hey，bro，恭喜你。
 “你的steam账号已被移除手机令牌”
 ![Snipaste_2019-02-26_22-54-30](http://pic.yanss.top/Snipaste_2019-02-26_22-54-30.jpg)
 
-我草你麻痹！！！我号被盗了！！！我他吗傻狗！！！
+我号没了了！！！
 
 这个steamcommuty弹窗是假的，钓鱼！！！难怪我的lastpass不提示密码！！！
 
