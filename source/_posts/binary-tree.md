@@ -13,14 +13,13 @@ date: 2017-03-15 13:44:53
 
 ## 树的实现
 
-
 ```java
 //树节点的声明
 class TreeNode
 {
-	Object element;
-	TreeNode firstChild;
-	TreeNode netSibling;
+    Object element;
+    TreeNode firstChild;
+    TreeNode netSibling;
 }
 ```
 将每个节点的所有儿子都放到树节点的链表中。

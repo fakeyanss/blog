@@ -39,7 +39,7 @@ highlight:
   enable: true
   line_number: true
   auto_detect: false
-  tab_replace: true
+  tab_replace: 
 
 # Date / Time format
 ## Hexo uses Moment.js to parse and display date
