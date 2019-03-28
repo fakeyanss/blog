@@ -286,7 +286,7 @@ curl -i http://localhost:8080/spring-rest/ex/advanced/foos
 curl -i http://localhost:8080/spring-rest/ex/advanced/bars
 ```
 
-
+### 6.2. *@RequestMapping* – 多个HTTP请求方法到同一个controller方法
 
 
 
