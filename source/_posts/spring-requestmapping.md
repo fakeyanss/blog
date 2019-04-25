@@ -10,7 +10,7 @@ tags: [ARTS,Spring,RequestMapping]
 by [Eugen Paraschiv](https://www.baeldung.com/author/eugen/)
 
 ## 1. 概述
-在这篇文章中，我们将关注于这个Spring MVC中常用的注释 - *@RequestMapping*。
+在这篇文章中，我们将关注于这个Spring MVC中常用的注释 - @RequestMapping。
 
 简单地说，这个注释用于将网络请求映射到Spring Controller的方法。
 
@@ -287,6 +287,145 @@ curl -i http://localhost:8080/spring-rest/ex/advanced/bars
 ```
 
 ### 6.2. *@RequestMapping* – 多个HTTP请求方法到同一个controller方法
+
+用不同HTTP请求方式的多个请求可以被映射到同一个Controller方法：
+```java
+@RequestMapping(
+  value = "/ex/foos/multiple", 
+  method = { RequestMethod.PUT, RequestMethod.POST }
+)
+@ResponseBody
+public String putAndPostFoos() {
+    return "Advanced - PUT and POST within single method";
+}
+```
+用*curl*，这些请求都被打到同一个方法：
+```java
+curl -i -X POST http://localhost:8080/spring-rest/ex/foos/multiple
+curl -i -X PUT http://localhost:8080/spring-rest/ex/foos/multiple
+```
+
+### 6.3. *@RequestMapping* - 对所有请求的返回
+
+对所有请求实现一个返回，可以使用一个特别的HTTP方法 - 例如，对GET方法：
+```java
+@RequestMapping(value = "*", method = RequestMethod.GET)
+@ResponseBody
+public String getFallback() {
+    return "Fallback for GET Requests";
+}
+```
+或者对所有请求：
+```java
+@RequestMapping(
+  value = "*", 
+  method = { RequestMethod.GET, RequestMethod.POST ... })
+@ResponseBody
+public String allFallback() {
+    return "Fallback for All Requests";
+}
+```
+
+### 6.4 模糊映射错误
+
+模糊映射错误发生与：当Spring评估两个或多个请求映射对于不同的Controller方法是相同的。当两个请求映射有同样的HTTP方法、URL、参数、头部和媒体类型时，它们就是相同的。例如，这是一个模糊映射：
+```java
+@GetMapping(value = "foos/duplicate")
+public String duplicate() {
+    return "Duplicate";
+}
+ 
+@GetMapping(value = "foos/duplicate")
+public String duplicateEx() {
+    return "Duplicate";
+}
+```
+抛出的异常通常在这些行有异常信息：
+```java
+Caused by: java.lang.IllegalStateException: Ambiguous mapping.
+  Cannot map 'fooMappingExamplesController' method 
+  public java.lang.String org.baeldung.web.controller.FooMappingExamplesController.duplicateEx()
+  to {[/ex/foos/duplicate],methods=[GET]}:
+  There is already 'fooMappingExamplesController' bean method
+  public java.lang.String org.baeldung.web.controller.FooMappingExamplesController.duplicate() mapped.
+```
+仔细阅读错误信息，指出Spring不能映射方法*org.baeldung.web.controller.FooMappingExamplesController.duplicateEx()* ，因为它与一个已经映射的*org.baeldung.web.controller.FooMappingExamplesController.duplicate()* 有冲突。
+
+下面这个代码段将不会产生模糊映射错误，因为两个方法返回不同的内容类型：
+```java
+@GetMapping(value = "foos/duplicate", produces = MediaType.APPLICATION_XML_VALUE)
+public String duplicate() {
+    return "Duplicate";
+}
+ 
+@GetMapping(value = "foos/duplicate", produces = MediaType.APPLICATION_JSON_VALUE)
+public String duplicateEx() {
+    return "Duplicate";
+}
+```
+
+## 7. 新的请求映射捷径
+
+Spring Framework 4.3引入了[一些新的](https://www.baeldung.com/spring-new-requestmapping-shortcuts)HTTP映射注释，所有这些都基于 *@RequestMapping* ：
+
+- **@GetMapping**
+- **@PostMapping**
+- **@PutMapping**
+- **@DeleteMapping**
+- **@PatchMapping**
+
+这些新的注解可以提高可读性，减少代码冗长。让我们看看这些新的注解在创建一个支持CRUD操作RESTFUL API的实例：
+```java
+@GetMapping("/{id}")
+public ResponseEntity<?> getBazz(@PathVariable String id){
+    return new ResponseEntity<>(new Bazz(id, "Bazz"+id), HttpStatus.OK);
+}
+ 
+@PostMapping
+public ResponseEntity<?> newBazz(@RequestParam("name") String name){
+    return new ResponseEntity<>(new Bazz("5", name), HttpStatus.OK);
+}
+ 
+@PutMapping("/{id}")
+public ResponseEntity<?> updateBazz(
+  @PathVariable String id,
+  @RequestParam("name") String name) {
+    return new ResponseEntity<>(new Bazz(id, name), HttpStatus.OK);
+}
+ 
+@DeleteMapping("/{id}")
+public ResponseEntity<?> deleteBazz(@PathVariable String id){
+    return new ResponseEntity<>(new Bazz(id), HttpStatus.OK);
+}
+```
+深入了解这些可以在[这里](https://www.baeldung.com/spring-new-requestmapping-shortcuts)找到。
+
+## 8. Spring配置
+
+Spring MVC的配置足够简单 - 考虑到我们的*FooController*被定义在接下来的包里:
+```java
+package org.baeldung.spring.web.controller;
+ 
+@Controller
+public class FooController { ... }
+```
+我们只用一个 *@Configuration* 去启用完整的MVC支持并为控制器配置类路径扫描：
+```java
+@Configuration
+@EnableWebMvc
+@ComponentScan({ "org.baeldung.spring.web.controller" })
+public class MvcConfig {
+    //
+}
+```
+
+## 9. 结论
+
+这篇文章专注于**Spring的 *@RequestMapping* 注解** - 讨论一个简单的用例, HTTP头的映射, *@PathVariable* 绑定URI部分, 使用URL参数工作, 和使用 *@RequestParam* 注解.
+
+如果你想学习如何使用另一个Spring MVC的核心注解, 你可以[在这浏览 *@ModelAttribu* 注解](https://www.baeldung.com/spring-mvc-and-the-modelattribute-annotation).
+
+这篇文章的全部代码在[Github](https://github.com/eugenp/tutorials/tree/master/spring-rest-simple)可见. 这是一个Maven项目, 所以它可以很容易被导入和运行.
 
 
 
