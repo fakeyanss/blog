@@ -267,7 +267,7 @@ liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtyp
 我之前的next主题一直是`5.1.0`版本，本来是想在主题中添加gitment的js和css文件，结果没成功。然后在next的[官方文档](http://theme-next.iissnan.com/)中看到已经发行到`5.1.4`了，而且已经集成了gitment评论。这下可方便，干脆直接升级了next主题，然后就改`config`文件就好啦。
 
 以前主题中配置了一些设置项，时间久了还忘了改了哪些文件！！！所以升级版本很痛苦，用的Sublime的一个插件Sublimerge，可以对比两个文件的代码差异，就是这样
-![Sublimerge](http://pic.yanss.top/hexo个性设置.png)
+![Sublimerge](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/hexo%E4%B8%AA%E6%80%A7%E8%AE%BE%E7%BD%AE.png)
 就像git pull操作之后改动时一样，这样子把每个有可能改过的文件都对比了一遍，然后升级到了5.1.4，发现集成了很多新功能，其他的有时间再试吧，这里就只说gitment。
 
 首先在[这里](https://github.com/settings/applications/new)注册一个OAuth Application，`Homepage URL`和`Authorization callback URL`填写博客首页地址，也就是站点配置文件中的`url`，其他随意填写即可。
@@ -289,11 +289,11 @@ gitment:
   redirect_protocol: # 没搞懂，不用填
 ```
 然后重新部署博客(本地调试是没用的，因为url不同)，再打开博客，这时候需要在每一个有评论的页面上使用自己的github长航登录并初始化一遍评论，之后就不用了。文章多的话会有点麻烦，不知道gitment作者有没有做好自动初始化？好像查到了[这个](https://draveness.me/git-comments-initialize)，不过我还没试过。
-这里是成功的样子![gitment](http://pic.yanss.top/gitment.png)
+这里是成功的样子![gitment](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/gitment.png)
 
-但是，这个鼠标放上有两条横线什么鬼啊！！！![gitment1](http://pic.yanss.top/gitment1.png)
+但是，这个鼠标放上有两条横线什么鬼啊！！！![gitment1](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/gitment1.png)
 
-还有这里头像下面为什么有一条横线！！！！![gitment2](http://pic.yanss.top/gitment2.png)
+还有这里头像下面为什么有一条横线！！！！![gitment2](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/gitment2.pnghttp://pic.yanss.top/gitment2.png)
 
 强迫症忍不了，查看了gitment的css定义，没发现什么问题啊，然后在浏览器中调试，发现了这个
 ```css

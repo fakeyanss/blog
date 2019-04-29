@@ -9,7 +9,7 @@ date: 2019-02-15 13:18:04
 201902W5 Review, 这是一篇关于Spring开发插件Lombok的译文。
 <!-- more -->
 
-![](http://pic.yanss.top/2019/20190202144529.png)
+![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190202144529.png)
 
 [原文](https://bytes.grubhub.com/lombok-makes-java-cool-again-171102bdcc52)
 

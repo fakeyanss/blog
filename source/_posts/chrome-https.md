@@ -9,7 +9,7 @@ date: 2019-02-24 23:08:26
 ```
 chrome://net-internals/#hsts
 ```
-![](http://pic.yanss.top/2019/20190224231418.png)
+![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190224231418.png)
 在红色区域中输入不想自动重定向到https的域名，点击delete即可。
 
 <br>

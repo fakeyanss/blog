@@ -16,7 +16,7 @@ Translator: Yanss
 This article is Part 1 in series that will take a closer look at the architecture and methods of a Hadoop cluster, and how it relates to the network and server infrastructure. The content presented here is largely based on academic work and conversations I’ve had with customers running real production clusters. If you run production Hadoop clusters in your data center, I’m hoping you’ll provide your valuable insight in the comments below. Subsequent articles to this will cover the server and network architecture options in closer detail. Before we do that though, lets start by learning some of the basics about how a Hadoop cluster works. OK, let’s get started!
 
 本文是系列的第1部分，将带你详细了解Hadoop集群的架构和方法，以及它如何将网络和服务器基础设施相关联。这里介绍的内容主要是基于学术研究和我与在实际产品中运行集群的客户的交流。如果你在你的数据中心中运行Hadoop集群生产，我期待你在下面的评论中提供有价值的见解。接下来的文章将会包含服务器和网络结构的详细细节。然而在此之前，让我了解一些Hadoop集群工作的基础。
-![Hadoop-Server-Roles](http://pic.yanss.top/Hadoop-Server-Roles.png)
+![Hadoop-Server-Roles](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Hadoop-Server-Roles.png)
 
 The three major categories of machine roles in a Hadoop deployment are Client machines, Masters nodes, and Slave nodes. The Master nodes oversee the two key functional pieces that make up Hadoop: storing lots of data (HDFS), and running parallel computations on all that data (Map Reduce). The Name Node oversees and coordinates the data storage function (HDFS), while the Job Tracker oversees and coordinates the parallel processing of data using Map Reduce. Slave Nodes make up the vast majority of machines and do all the dirty work of storing the data and running the computations. Each slave runs both a Data Node and Task Tracker daemon that communicate with and receive instructions from their master nodes. The Task Tracker daemon is a slave to the Job Tracker, the Data Node daemon a slave to the Name Node.
 
@@ -32,7 +32,7 @@ In real production clusters there is no server virtualization, no hypervisor lay
 
 ------
 
-![Hadoop-Cluster](http://pic.yanss.top/Hadoop-Cluster.png)
+![Hadoop-Cluster](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Hadoop-Cluster.png)
 
 This is the typical architecture of a Hadoop cluster. You will have rack servers (not blades) populated in racks connected to a top of rack switch usually with 1 or 2 GE boned links. 10GE nodes are uncommon but gaining interest as machines continue to get more dense with CPU cores and disk drives. The rack switch has uplinks connected to another tier of switches connecting all the other racks with uniform bandwidth, forming the cluster. The majority of the servers will be Slave nodes with lots of local disk storage and moderate amounts of CPU and DRAM. Some of the machines will be Master nodes that might have a slightly different configuration favoring more DRAM and CPU, less local storage. In this post, we are not going to discuss various detailed network design options. Let’s save that for another discussion (stay tuned). First, lets understand how this application works…
 
@@ -40,7 +40,7 @@ This is the typical architecture of a Hadoop cluster. You will have rack servers
 
 ------
 
-![Workflow](http://pic.yanss.top/Workflow.png)
+![Workflow](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Workflow.png)
 
 Why did Hadoop come to exist? What problem does it solve? Simply put, businesses and governments have a tremendous amount of data that needs to be analyzed and processed very quickly. If I can chop that huge chunk of data into small chunks and spread it out over many machines, and have all those machines processes their portion of the data in parallel – I can get answers extremely fast – and that, in a nutshell, is what Hadoop does. In our simple example, we’ll have a huge data file containing emails sent to the customer service department. I want a quick snapshot to see how many times the word “Refund” was typed by my customers. This might help me to anticipate the demand on our returns and exchanges department, and staff it appropriately. It’s a simple word count exercise. The Client will load the data into the cluster (File.txt), submit a job describing how to analyze that data (word count), the cluster will store the results in a new file (Results.txt), and the Client will read the results file.
 
@@ -48,7 +48,7 @@ Hadoop为何诞生？它解决了什么问题？简言之，商业和政府有�
 
 ------
 
-![Writing-Files-to-HDFS](http://pic.yanss.top/Writing-Files-to-HDFS.png)
+![Writing-Files-to-HDFS](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Writing-Files-to-HDFS.png)
 
 Your Hadoop cluster is useless until it has data, so we’ll begin by loading our huge File.txt into the cluster for processing. The goal here is fast parallel processing of lots of data. To accomplish that I need as many machines as possible working on this data all at once. To that end, the Client is going to break the data file into smaller “Blocks”, and place those blocks on different machines throughout the cluster. The more blocks I have, the more machines that will be able to work on this data in parallel. At the same time, these machines may be prone to failure, so I want to insure that every block of data is on multiple machines at once to avoid data loss. So each block will be replicated in the cluster as its loaded. The standard setting for Hadoop is to have (3) copies of each block in the cluster. This can be configured with the **dfs.replication** parameter in the file **hdfs-site.xml**.
 
@@ -60,7 +60,7 @@ Client将File.txt拆分为3个块。对每个块，Client查看Name Node(通常�
 
 ------
 
-![Hadoop-Rack-Awareness](http://pic.yanss.top/Hadoop-Rack-Awareness.png)
+![Hadoop-Rack-Awareness](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Hadoop-Rack-Awareness.png)
 
 Hadoop has the concept of “Rack Awareness”. As the Hadoop administrator you can **manually** define the rack number of each slave Data Node in your cluster. Why would you go through the trouble of doing this? There are two key reasons for this: Data loss prevention, and network performance. Remember that each block of data will be replicated to multiple machines to prevent the failure of one machine from losing all copies of data. Wouldn’t it be unfortunate if all copies of data happened to be located on machines in the same rack, and that rack experiences a failure? Such as a switch failure or power failure. That would be a mess. So to avoid this, somebody needs to know where Data Nodes are located in the network topology and use that information to make an intelligent decision about where data replicas should exist in the cluster. That “somebody” is the Name Node.
 
@@ -80,7 +80,7 @@ Even more interesting would be a [OpenFlow network](http://www.bradhedlund.com/2
 
 ------
 
-![Preparing-HDFS-Writes](http://pic.yanss.top/Preparing-HDFS-Writes.png)
+![Preparing-HDFS-Writes](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Preparing-HDFS-Writes.png)
 
 The Client is ready to load File.txt into the cluster and breaks it up into blocks, starting with Block A. The Client consults the Name Node that it wants to write File.txt, gets permission from the Name Node, and receives a list of (3) Data Nodes for each block, a unique list for each block. The Name Node used its Rack Awareness data to influence the decision of which Data Nodes to provide in these lists. The key rule is that **for every block of data, two copies will exist in one rack, another copy in a different rack.** So the list provided to the Client will follow this rule.
 
@@ -96,7 +96,7 @@ The acknowledgments of readiness come back on the same TCP pipeline, until the i
 
 ------
 
-![HDFS-Pipeline-Write](http://pic.yanss.top/HDFS-Pipeline-Write.png)
+![HDFS-Pipeline-Write](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/HDFS-Pipeline-Write.png)
 
 As data for each block is written into the cluster a replication pipeline is created between the (3) Data Nodes (or however many you have configured in dfs.replication). This means that as a Data Node is receiving block data it will at the same time push a copy of that data to the next Node in the pipeline.
 
@@ -108,7 +108,7 @@ Here too is a primary example of leveraging the Rack Awareness data in the Name 
 
 ------
 
-![HDFS-Pipeline-Write-Success](http://pic.yanss.top/HDFS-Pipeline-Write-Success.png)
+![HDFS-Pipeline-Write-Success](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/HDFS-Pipeline-Write-Success.png)
 
 When all three Nodes have successfully received the block they will send a “Block Received” report to the Name Node. They will also send “Success” messages back up the pipeline and close down the TCP sessions. The Client receives a success message and tells the Name Node the block was successfully written. The Name Node updates it metadata info with the Node locations of Block A in File.txt. The Client is ready to start the pipeline process again for the next block of data.
 
@@ -116,7 +116,7 @@ When all three Nodes have successfully received the block they will send a “Bl
 
 ------
 
-![Multi-block-Replication-Pipeline](http://pic.yanss.top/Multi-block-Replication-Pipeline.png)
+![Multi-block-Replication-Pipeline](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Multi-block-Replication-Pipeline.png)
 
 As the subsequent blocks of File.txt are written, the initial node in the pipeline will vary for each block, spreading around the hot spots of in-rack and cross-rack traffic for replication.
 
@@ -128,7 +128,7 @@ Hadoop使用大量的网络带宽和存储空间. 特别是当我们处理非常
 
 ------
 
-![Client-Writes-Span-Cluster](http://pic.yanss.top/Client-Writes-Span-Cluster.png)
+![Client-Writes-Span-Cluster](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Client-Writes-Span-Cluster.png)
 
 After the replication pipeline of each block is complete the file is successfully written to the cluster. As intended the file is spread in blocks across the cluster of machines, each machine having a relatively small part of the data. The more blocks that make up a file, the more machines the data can potentially spread. The more CPU cores and disk drives that have a piece of my data mean more parallel processing power and faster results. This is the motivation behind building large, wide clusters. To process more data, faster. When the machine count goes up and the cluster goes **wide**, our network needs to scale appropriately.
 
@@ -140,7 +140,7 @@ Another approach to scaling the cluster is to go **deep**. This is where you sca
 
 ------
 
-![Name-Node](http://pic.yanss.top/Name-Node.png)
+![Name-Node](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Name-Node.png)
 
 The Name Node holds all the file system metadata for the cluster and oversees the health of Data Nodes and coordinates access to data. The Name Node is the central controller of HDFS. It does not hold any cluster data itself. The Name Node only knows what blocks make up a file and where those blocks are located in the cluster. The Name Node points Clients to the Data Nodes they need to talk to and keeps track of the cluster’s storage capacity, the health of each Data Node, and making sure each block of data is meeting the minimum defined replica policy.
 
@@ -156,7 +156,7 @@ Name Node是Hadoop分布式文件系统的一个关键的组件. 没有它, Clie
 
 ------
 
-![Re-replicating-Missing-Replicas2](http://pic.yanss.top/Re-replicating-Missing-Replicas2.png)
+![Re-replicating-Missing-Replicas2](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Re-replicating-Missing-Replicas2.png)
 
 If the Name Node stops receiving heartbeats from a Data Node it presumes it to be dead and any data it had to be gone as well. Based on the block reports it had been receiving from the dead node, the Name Node knows which copies of blocks died along with the node and can make the decision to re-replicate those blocks to other Data Nodes. It will also consult the Rack Awareness data in order to maintain the **two copies in one rack, one copy in another rack** replica rule when deciding which Data Node should receive a new copy of the blocks.
 
@@ -164,7 +164,7 @@ Consider the scenario where an entire rack of servers falls off the network, per
 
 ------
 
-![Secondary-Name-Node](http://pic.yanss.top/Secondary-Name-Node.png)
+![Secondary-Name-Node](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Secondary-Name-Node.png)
 
 Hadoop has server role called the Secondary Name Node. A common misconception is that this role provides a high availability backup for the Name Node. This is not the case.
 
@@ -174,13 +174,13 @@ Should the Name Node die, the files retained by the Secondary Name Node can be u
 
 ------
 
-![Client-Read-from-HDFS](http://pic.yanss.top/Client-Read-from-HDFS.png)
+![Client-Read-from-HDFS](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Client-Read-from-HDFS.png)
 
 When a Client wants to retrieve a file from HDFS, perhaps the output of a job, it again consults the Name Node and asks for the block locations of the file. The Name Node returns a list of each Data Node holding a block, for each block. The Client picks a Data Node from each block list and reads one block at a time with TCP on port 50010, the default port number for the Data Node daemon. It does not progress to the next block until the previous block completes.
 
 ------
 
-![Data-Node-Read-from-HDFS](http://pic.yanss.top/Data-Node-Read-from-HDFS.png)
+![Data-Node-Read-from-HDFS](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Data-Node-Read-from-HDFS.png)
 
 There are some cases in which a Data Node daemon itself will need to read a block of data from HDFS. One such case is where the Data Node has been asked to process data that it does not have locally, and therefore it must retrieve the data from another Data Node over the network before it can begin processing.
 
@@ -188,7 +188,7 @@ This is another key example of the Name Node’s Rack Awareness knowledge provid
 
 ------
 
-![Map-Task](http://pic.yanss.top/Map-Task.png)
+![Map-Task](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Map-Task.png)
 
 Now that File.txt is spread in small blocks across my cluster of machines I have the opportunity to provide extremely fast and efficient parallel processing of that data. The parallel processing framework included with Hadoop is called Map Reduce, named after two important steps in the model; **Map**, and **Reduce**.
 
@@ -200,13 +200,13 @@ As each Map task completes, each node stores the result of its local computation
 
 ------
 
-![What-if-Map-Task-data-isnt-local](http://pic.yanss.top/What-if-Map-Task-data-isnt-local.png)
+![What-if-Map-Task-data-isnt-local](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/What-if-Map-Task-data-isnt-local.png)
 
 While the Job Tracker will always try to pick nodes with local data for a Map task, it may not always be able to do so. One reason for this might be that all of the nodes with local data already have too many other tasks running and cannot accept anymore. In this case, the Job Tracker will consult the Name Node whose Rack Awareness knowledge can suggest other nodes in the same rack. The Job Tracker will assign the task to a node in the same rack, and when that node goes to find the data it needs the Name Node will instruct it to grab the data from another node in its rack, leveraging the presumed single hop and high bandwidth of in-rack switching.
 
 ------
 
-![Reduce-Task](http://pic.yanss.top/Reduce-Task.png)
+![Reduce-Task](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Reduce-Task.png)
 
 The second phase of the Map Reduce framework is called, you guess it, **Reduce**. The Map task on the machines have completed and generated their intermediate data. Now we need to gather all of this intermediate data to combine and distill it for further processing such that we have one final result.
 
@@ -222,7 +222,7 @@ If you’re a studious network administrator, you would learn more about Map Red
 
 ------
 
-![Unbalanced-Hadoop-Cluster](http://pic.yanss.top/Unbalanced-Hadoop-Cluster.png)
+![Unbalanced-Hadoop-Cluster](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Unbalanced-Hadoop-Cluster.png)
 
 Hadoop may start to be a real success in your organization, providing a lot of previously untapped business value from all that data sitting around. When business folks find out about this you can bet that you’ll quickly have more money to buy more racks of servers and network for your Hadoop cluster.
 
@@ -232,7 +232,7 @@ The new servers are sitting idle with no data, until I start loading new data in
 
 ------
 
-![Hadoop-Cluster-Balancer](http://pic.yanss.top/Hadoop-Cluster-Balancer.png)
+![Hadoop-Cluster-Balancer](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/Hadoop-Cluster-Balancer.png)
 
 To fix the unbalanced cluster situation, Hadoop includes a nifty utility called, you guessed it, **balancer**.
 

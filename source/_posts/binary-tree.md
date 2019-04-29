@@ -391,7 +391,7 @@ private static class AvlNode<AnyType>
 ```
 
 ### 单旋转	
-![LL单旋转](http://img.blog.csdn.net/20140820004302879?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2hlZXBtdQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![LL单旋转](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429221300.png)
 
 ```java
 /**
@@ -413,7 +413,8 @@ private AvlNode<AnyType> RotationWithLeftChild(AvlNode<AnyType> k2)
 }
 ```
 
-![RR单旋转](http://img.blog.csdn.net/20140820004655055?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2hlZXBtdQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![RR单旋转](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429221627.png)
+
 ```java
 /**
  * Rotate binary tree node with right child.
@@ -435,7 +436,7 @@ private AvlNode<AnyType> RotationWithRightChild(AvlNode<AnyType> k1)
 ```
 
 ### 双旋转
-![LR双旋转](http://img.blog.csdn.net/20140820005024110?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2hlZXBtdQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![LR双旋转](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429221709.png)
 
 ```java
 	/**
@@ -451,7 +452,7 @@ private AvlNode<AnyType> RotationWithRightChild(AvlNode<AnyType> k1)
 	}
 ```
 
-![RL双旋转](http://img.blog.csdn.net/20140820005600275?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvc2hlZXBtdQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/Center)
+![RL双旋转](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429221732.png)
 
 ```java
 	/**

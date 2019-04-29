@@ -7,7 +7,7 @@ date: 2019-03-01 00:06:37
 来自一个程序员的心理自陈。
 <!--more-->
 
-![Steam-to-restrict-chat-from-users-who-dont-have-mutual-servers-or-a-chat-history-Featured-Image](http://pic.yanss.top/Steam-to-restrict-chat-from-users-who-dont-have-mutual-servers-or-a-chat-history-Featured-Image.png)
+![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231202.png)
 
 最近在玩LOL的无限火力，毕竟不停敲击技能键让人无穷无尽的爽快感。然而就在那天晚上LOL的服务器更新，我只好玩了几把Apex，这是前些天火起来的游戏，守望+堡垒，都是我不擅长的类型。玩吃鸡类型的游戏还是叫朋友一起才有趣。我自己的游戏机上习惯是steam开机启动的，打完几把没意思切了出来，突然收到steam聊天消息提醒，这让我有些意外和惊喜。惊喜的是，好久没有朋友在steam中与我发聊天消息，以往在一起玩PUBG的时光恍如昨日浮现在眼前。
 
@@ -39,7 +39,7 @@ hey，bro，恭喜你。
 “你的steam账号已被移除绑定手机号”
 “你的steam账号已被移除绑定邮箱”
 “你的steam账号已被移除手机令牌”
-![Snipaste_2019-02-26_22-54-30](http://pic.yanss.top/Snipaste_2019-02-26_22-54-30.jpg)
+![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231247.png)
 
 我号没了！！！
 
@@ -53,13 +53,13 @@ hey，bro，恭喜你。
 
 算了，先申诉恢复账号吧。
 
-![Snipaste_2019-02-26_22-53-50](http://pic.yanss.top/Snipaste_2019-02-26_22-53-50.jpg)
+![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231327.png)
 
 想起来ofo退押金假装外国人，客服的服务效率可能高一下，乱扯了一通英文，第二天催了一下。
 
 嗯，有回复了，谢谢客服小姐姐。
 
-![Snipaste_2019-02-26_22-54-30](http://pic.yanss.top/Snipaste_2019-02-26_22-54-30.jpg)
+![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231357.png)
 
 这事还没完，我的steam邮箱和账号，和很多网站的账号密码都一样，只好花时间改了lastpass里的所有账号的密码。
 

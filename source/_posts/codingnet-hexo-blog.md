@@ -82,7 +82,7 @@ http://localhost:4000
 ## step 3 本地博客部署到coding
 
 首先，去官网登陆你的coding账号，没有就注册一个，然后完善个人信息，升级到银牌会员（才能绑定个人域名）。然后新建一个repository，项目名称就填你的用户名，选择私有，然后创建项目。
-![img](http://pic.yanss.top/Coding+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/TIM%E6%88%AA%E5%9B%BE20170807124643.png)
+![img](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20170807124643.png)
 
 现在有了远程仓库，就要把本地仓库和远程仓库关联起来，首先在`blog`目录下`git bash`，然后输入
 ```
@@ -148,7 +148,7 @@ Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]  // 
 然后一直回车，回车，回车，然后在 Coding.net 添加公钥
 本地打开 id_rsa.pub 文件（一般在c盘用户文件夹下，进入你的用户文件夹，有一个`.ssh`文件，打开其中的`id_rsa.pub` ），复制其中全部内容，添加到Coding账户“SSH 公钥”页面 中，公钥名称可以随意起名字。
 完成后点击“添加”，然后输入密码或动态码即可添加完成。
-![img](http://pic.yanss.top/Coding+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/TIM%E6%88%AA%E5%9B%BE20170807132102.png)
+![img](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20170807132102.png)
 这里要注意是账户的SSH公匙，而不是项目中的设置的部署公匙，切记。
 
 现在验证一下是否添加SSH公匙成功，在git bash中输入
@@ -262,7 +262,7 @@ search:
 
 打开coding网站上你刚才创建的仓库，点击代码，左下角选择`SSH方式访问仓库`，复制那个链接，把它填到你的`_config.yml`的`repo`那里。
 
-![img](http://pic.yanss.top/Coding+Hexo%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/TIM%E6%88%AA%E5%9B%BE20170807130858.png)
+![img](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20170807130858.png)
 
 现在我们就可以开始部署博客了，记得部署之前最好清理一遍`public`文件夹,也就是这样
 
@@ -278,10 +278,7 @@ hexo d
 hexo d -g
 ```
 
-coding+hexo的博客部署操作就是这些了，有问题可以下方留言评论，或者很急的话发邮件提醒我也可以，邮箱在`about me`里。
-
-另外还有
-* [《Coding+DaoCloud持续集成》](http://yanss.top/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/)
+coding+hexo的博客部署操作就是这些了，有问题可以下方留言评论。
 
 
 <br>

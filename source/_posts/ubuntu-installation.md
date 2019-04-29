@@ -6,7 +6,7 @@ date: 2018-01-11 13:16:17
 ---
 安装ubuntu双系统过程<!-- more -->
 
-![](http://pic.yanss.top/2019/20190310185435.png)
+![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231432.png)
 
 * [ubuntu系统安装教程](https://tutorials.ubuntu.com/tutorial/tutorial-create-a-usb-stick-on-windows#0)
 * [ubuntu Desktop最新版本下载](https://www.ubuntu.com/download/desktop)，制作U盘启动盘推荐使用[Rufus](https://rufus.akeo.ie/)工具

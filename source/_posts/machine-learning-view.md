@@ -43,7 +43,7 @@ date: 2018-01-12 15:01:20
 
 下面一个问题。problem1将要卖的货物数量看成一个连续的值，属于回归问题；problem2输出的值可能为0或1，分别表示两种不同的结果，属于分类问题。
 
-![ML1](http://pic.yanss.top/ML1.PNG)
+![ML1](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231017.png)
 
 ## Unsupervised Learning
 
@@ -61,7 +61,7 @@ date: 2018-01-12 15:01:20
 
 下面一个问题，哪些选项要使用无监督学习算法？
 
-![ML2](http://pic.yanss.top/ML2.PNG)
+![ML2](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231037.png)
 
 <br>
 <p id="div-border-top-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>
