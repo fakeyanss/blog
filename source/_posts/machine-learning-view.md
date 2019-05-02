@@ -11,14 +11,9 @@ date: 2018-01-12 15:01:20
 ---
 
 <center>
-    <img style="border-radius: 0.3125em;
-    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
+    <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
     src="https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190502110338.png">
-    <br>
-    <div style="color:orange; border-bottom: 1px solid #d9d9d9;
-    display: inline-block;
-    color: #999;
-    padding: 2px;">Machine learning</div>
+    <div style="border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">Machine learning</div>
 </center>
 
 ## Machine learning
