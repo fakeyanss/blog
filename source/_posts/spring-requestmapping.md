@@ -5,6 +5,8 @@ tags: [ARTS,Spring,RequestMapping]
 201902W9 Review, 一篇关于Spring RequestMapping的译文
 <!-- more -->
 
+---
+
 # Spring RequestMapping
 [原文](https://www.baeldung.com/spring-requestmapping)
 by [Eugen Paraschiv](https://www.baeldung.com/author/eugen/)

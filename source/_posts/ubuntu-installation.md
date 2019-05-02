@@ -4,7 +4,10 @@ tags:
   - ubuntu
 date: 2018-01-11 13:16:17
 ---
-安装ubuntu双系统过程<!-- more -->
+安装ubuntu双系统过程
+<!-- more -->
+
+---
 
 ![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231432.png)
 

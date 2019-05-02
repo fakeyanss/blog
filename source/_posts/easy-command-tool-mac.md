@@ -6,6 +6,9 @@ date: 2019-02-25 22:51:35
 ---
 这是我日常使用mac os的一些常用app和命令
 <!--more-->
+
+---
+
 ![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190224235353.png)
 
 ## 工具

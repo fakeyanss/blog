@@ -5,9 +5,11 @@ tags:
   - Coding-pages
 date: 2018-02-09 14:28:46
 ---
-什么都别说了，先上图 
-
+什么都别说了，先上图。
 <!-- more -->
+
+---
+
 ![coding-pages](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/coding-pages.png)
 
 部署好的wordpress效果（我主要是做一个相册集）

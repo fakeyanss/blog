@@ -4,7 +4,11 @@ tags:
   - win10
 date: 2018-02-25 12:44:05
 ---
-这是我在日常使用windows 10的一些常用软件。<!-- more -->
+这是我在日常使用windows 10的一些常用软件。
+<!-- more -->
+
+---
+
 ![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231453.png)
 
 - ~~[Seer](http://1218.io/) 空格预览~~ [QuickLook](https://pooi.moe/QuickLook/)更好用
