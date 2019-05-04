@@ -62,9 +62,11 @@ date: 2018-01-12 15:01:20
 
 解决代码
 
-$$[W,s,v]=svd((repmat(sum(x.^\*x,1),size(x,1),1).^\*x)^\*x')$$
+{% math %}
+[W,s,v]=svd((repmat(sum(x.^\*x,1),size(x,1),1).^\*x)^\*x')
+{% endmath %}
 
-$svd$ 是奇异值分解的缩写，在Octave中作为一个内置函数。
+{% math %}svd{% endmath %} 是奇异值分解的缩写，在Octave中作为一个内置函数。
 
 <br>
 
