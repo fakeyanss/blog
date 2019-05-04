@@ -25,6 +25,19 @@ source_dir: source
 i18n_dir: :lang
 skip_render:
 
+# Math
+math:
+  engine: 'mathjax' # or 'katex'
+  mathjax:
+    src: custom_mathjax_source
+    config:
+      # MathJax config
+  katex:
+    css: custom_css_source
+    js: custom_js_source # not used
+    config:
+      # KaTeX config
+
 # Writing
 new_post_name: :title.md # File name of new posts
 default_layout: post

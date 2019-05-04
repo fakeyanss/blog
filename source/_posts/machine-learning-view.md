@@ -4,6 +4,7 @@ tags:
   - supervised learning
   - unsupervised learning
 date: 2018-01-12 15:01:20
+mathjax: true
 ---
 关于机器学习，这是我学的第一节课。
 <!-- more -->
