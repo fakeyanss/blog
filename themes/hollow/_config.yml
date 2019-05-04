@@ -11,4 +11,7 @@ comments:
 
 # Google Analytics Tracking ID
 google_analytics: UA-112380656-1
+
+# Mathjax enable
+mathjax: true
  
