@@ -61,9 +61,11 @@ mathjax: true
 
 编程环境Octave或Matlab
 
-解决代码$$[W,s,v]=svd((repmat(sum(x.^\*x,1),size(x,1),1).^\*x)^\*x')$$
+解决代码
 
-\\(svd\\)是奇异值分解的缩写，在Octave中作为一个内置函数。
+$$[W,s,v]=svd((repmat(sum(x.^\*x,1),size(x,1),1).^\*x)^\*x')$$
+
+$svd$ 是奇异值分解的缩写，在Octave中作为一个内置函数。
 
 <br>
 
@@ -72,4 +74,5 @@ mathjax: true
 ![ML2](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231037.png)
 
 <br>
+
 <p id="div-border-top-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>
