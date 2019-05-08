@@ -10,6 +10,36 @@ tags: tip
 在 ARTS 系列中，除了 Algorithm外，Tip 似乎也不大好作为博客的形式来展现。但是 Leetcode 题解还能发到 Github repo 中作为记录，Tip 该怎么办？
 于是想把所有的 Tip 作为一个系列发出，名 「倾斜人生」，取自 "tip" 的「倾斜」之意。
 
+---
+
+## 下载服务器文件
+
+一般在自己服务器上传下载文件，直接用 `rz` `sz` 比较方便，但是文件较大时，速度较慢而且容易失败。这时可以使用 Python 启动简单的文件服务： 
+
+\```sh 
+
+\# python2 
+
+python -m SimpleHTTPServer 8080 
+
+\# python3 
+
+python3 -m http.server 8080 
+
+\``` 
+
+而且 SimpleHTTPServer 服务有个好处是可以用在暂时需要别人传一个文件到服务器，但又不想给出登录权限的场景。 
+
+如果需要上传文件，可以下载运行这个 [Python 文件](https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b572/raw/8765e34ffe1a981b7d7911bdc17380bb85356f39/SimpleHTTPServerWithUpload.py) 
+
+\```sh 
+
+curl https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b572/raw/8765e34ffe1a981b7d7911bdc17380bb85356f39/SimpleHTTPServerWithUpload.py -O 
+
+python SimpleHTTPServerWithUpload.py 8080 
+
+\``` 
+
 ## Linux 文件内容查询统计
 
 最近遇到的一个事儿，需要在一堆日志文件中统计出包含指定字符串的行内容。首先日志文件是按天存储的，每天的日志文件会按 50MB 大小进行分割，这样分下来，一天的日志文件有 2000 至 3000 个，总共 100+GB。
@@ -85,4 +115,5 @@ OverWatch 的 Mercy 和 D.va，都是我喜欢的角色，可以作为网站的�
 
 
 <br>
+
 <p id="div-border-top-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>
