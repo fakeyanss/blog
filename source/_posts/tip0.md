@@ -14,31 +14,24 @@ tags: tip
 
 ## 下载服务器文件
 
-一般在自己服务器上传下载文件，直接用 `rz` `sz` 比较方便，但是文件较大时，速度较慢而且容易失败。这时可以使用 Python 启动简单的文件服务： 
+一般在自己服务器上传下载文件，直接用 `rz` `sz` 比较方便，但是文件较大时，速度较慢而且容易失败。这时可以使用 Python 启动简单的文件服务：
 
-\```sh 
+```sh
+# python2
+python -m SimpleHTTPServer 8080
+# python3
+python3 -m http.server 8080
+```
 
-\# python2 
+而且 SimpleHTTPServer 服务有个好处是可以用在暂时需要别人传一个文件到服务器，但又不想给出登录权限的场景。
 
-python -m SimpleHTTPServer 8080 
+如果需要上传文件，可以下载运行这个 [Python 文件](https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b572/raw/8765e34ffe1a981b7d7911bdc17380bb85356f39/SimpleHTTPServerWithUpload.py)
 
-\# python3 
+```sh
+curl https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b572/raw/8765e34ffe1a981b7d7911bdc17380bb85356f39/SimpleHTTPServerWithUpload.py -O
 
-python3 -m http.server 8080 
-
-\``` 
-
-而且 SimpleHTTPServer 服务有个好处是可以用在暂时需要别人传一个文件到服务器，但又不想给出登录权限的场景。 
-
-如果需要上传文件，可以下载运行这个 [Python 文件](https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b572/raw/8765e34ffe1a981b7d7911bdc17380bb85356f39/SimpleHTTPServerWithUpload.py) 
-
-\```sh 
-
-curl https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b572/raw/8765e34ffe1a981b7d7911bdc17380bb85356f39/SimpleHTTPServerWithUpload.py -O 
-
-python SimpleHTTPServerWithUpload.py 8080 
-
-\``` 
+python SimpleHTTPServerWithUpload.py 8080
+```
 
 ## Linux 文件内容查询统计
 
