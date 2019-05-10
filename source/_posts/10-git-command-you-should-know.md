@@ -1,6 +1,7 @@
+---
 title: 你应该知道的10个Git命令
 date: 2019-03-17 21:48:24
-tags: git
+tags: [git, Review]
 ---
 201902W11 Review, Git的一些常用且很有用的命令
 <!-- more -->

@@ -3,7 +3,7 @@ title: Lombok让Java变得再次酷炫
 tags:
   - Java
   - Lombok
-  - ARTS
+  - Review
 date: 2019-02-15 13:18:04
 ---
 201902W5 Review, 这是一篇关于Spring开发插件Lombok的译文。
