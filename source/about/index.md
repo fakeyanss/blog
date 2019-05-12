@@ -3,11 +3,6 @@ type: "about"
 date: 2019-05-12
 ---
 
-
-
-
----
-
 我是 FakeYanss，后端工程师，目前在 Baidu 工作。
 
 主要写 Java，会一些 Python 和 JavaScript，推崇自动化。
@@ -21,6 +16,10 @@ date: 2019-05-12
 喜欢的一句话：
 
 <blockquote class="blockquote-center">风起时，唯有努力生存</blockquote>
+
+---
+
+欢迎订阅我的博客：[atom.xml](https://foreti.me/atom.xml)
 
 以下是可以找到我的方式：
 
