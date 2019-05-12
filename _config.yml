@@ -61,6 +61,7 @@ feed:
   limit: 0
   hub:
   order_by: -date
+  icon: https://foreti.me/imgplace/2019/logo2.png
 
 ## Themes: http://hexo.io/themes/
 theme: hollow
