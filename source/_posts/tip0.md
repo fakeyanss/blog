@@ -23,7 +23,7 @@ python -m SimpleHTTPServer 8080
 python3 -m http.server 8080
 ```
 
-而且 SimpleHTTPServer 服务有个好处是可以用在暂时需要别人传一个文件到服务器，但又不想给出登录权限的场景。
+而且 SimpleHTTPServer 服务有个好处是可以用在暂时需要给其他人一个文件下载，但又不想给出登录权限的场景。
 
 如果需要上传文件，可以下载运行这个 [Python 文件](https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b572/raw/8765e34ffe1a981b7d7911bdc17380bb85356f39/SimpleHTTPServerWithUpload.py)
 
@@ -44,7 +44,7 @@ cd /home/user/project/log/debug/peoject-name.debug.log-2019-05-05
 
 下面是 2000+ 个日志文件，查看一下 `ls` ：
 ```sh
-2019-05-05.1000.debug.log  2019-05-05.2000.debug.log  2019-05-05.3000.debug.log   2019-05-05.9.debug.log
+2019-05-05.1000.debug.log  2019-05-05.2000.debug.log  2019-05-05.3000.debug.log
 2019-05-05.1001.debug.log  2019-05-05.2001.debug.log  2019-05-05.3001.debug.log
 ......
 ```
