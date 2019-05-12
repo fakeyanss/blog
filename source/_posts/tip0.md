@@ -15,21 +15,18 @@ tags: tip
 ## 下载服务器文件
 
 一般在自己服务器上传下载文件，直接用 `rz` `sz` 比较方便，但是文件较大时，速度较慢而且容易失败。这时可以使用 Python 启动简单的文件服务：
-
 ```sh
 # python2
 python -m SimpleHTTPServer 8080
+
 # python3
 python3 -m http.server 8080
 ```
-
 而且 SimpleHTTPServer 服务有个好处是可以用在暂时需要给其他人一个文件下载，但又不想给出登录权限的场景。
 
 如果需要上传文件，可以下载运行这个 [Python 文件](https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b572/raw/8765e34ffe1a981b7d7911bdc17380bb85356f39/SimpleHTTPServerWithUpload.py)
-
 ```sh
 curl https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b572/raw/8765e34ffe1a981b7d7911bdc17380bb85356f39/SimpleHTTPServerWithUpload.py -O
-
 python SimpleHTTPServerWithUpload.py 8080
 ```
 
@@ -49,17 +46,17 @@ cd /home/user/project/log/debug/peoject-name.debug.log-2019-05-05
 ......
 ```
 
-需要找到这一天的日志里，关于 `[Storage]usage` 相关的内容，于是在当前目录输入：
+需要找到这一天的日志里，关于 `[aaaa]bbbb` 相关的内容，于是在当前目录输入：
 ```sh
-find -name '*.log' | xargs grep '\[Storage\]usage'
+find -name '*.log' | xargs grep '\[aaaa\]bbbb'
 ```
 
 由于文件太多，等了一会才有了输出，确认可以查到相关信息，于是将输出信息存到文件里，担心输出的文件太大，将查询命令分批执行：
 ```sh
 mkdir /home/user/project/tmp
-find -name '2019-05-05.1*' | xargs grep '\[Storage\]usage' > /home/user/project/tmp/res-1.log
-find -name '2019-05-05.2*' | xargs grep '\[Storage\]usage' > /home/user/project/tmp/res-2.log
-find -name '2019-05-05.3*' | xargs grep '\[Storage\]usage' > /home/user/project/tmp/res-3.log
+find -name '2019-05-05.1*' | xargs grep '\[aaaa\]bbbb' > /home/user/project/tmp/res-1.log
+find -name '2019-05-05.2*' | xargs grep '\[aaaa\]bbbb' > /home/user/project/tmp/res-2.log
+find -name '2019-05-05.3*' | xargs grep '\[aaaa\]bbbb' > /home/user/project/tmp/res-3.log
 ```
 
 等待时间较长，最后查看生成的文件，`ll /home/user/project/tmp`：
