@@ -2,7 +2,7 @@ title: 倾斜人生 - 0
 date: 2019-05-07 00:15:05
 tags: tip
 ---
-201904W19 Tip
+201905W19 Tip
 <!-- more -->
 
 ---
@@ -105,6 +105,8 @@ OverWatch 的 Mercy 和 D.va，都是我喜欢的角色，可以作为网站的�
 
 
 <br>
+
+---
 
 <p id="div-border-left-red"><i>DigitalOcean 优惠码，注册充值 $5 送 $100，[链接一](https://m.do.co/c/282d5e1cf06e) [链接二](https://m.do.co/c/5eefb87c26cd)</i></p>
 <p id="div-border-left-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>
