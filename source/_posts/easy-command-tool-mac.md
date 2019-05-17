@@ -12,7 +12,7 @@ date: 2019-02-25 22:51:35
 ![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190224235353.png)
 
 ## 工具
-以下工具皆开源免费，盗版勿求。
+以下工具皆开源免费。
 ### 安装Homebrew
 ```
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
