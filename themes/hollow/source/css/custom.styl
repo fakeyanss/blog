@@ -32,6 +32,10 @@ td {
     font-size: 1.5em;
 }
 
+.post-preview img {
+    display: block;
+}
+
 // 自适应宽度
 @media (min-width: 1600px) {
     .col-lg-offset-2 {
@@ -80,16 +84,20 @@ td {
 }
 
 // }
-
+img {
+  border-radius: 0.3125em; 
+  box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
+}
 // 图片样式
 article .container .row img {
+    border-radius: 0.3125em; 
+    box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);
     position: relative;
     left: 0%;
     margin: 10px auto;
     max-width: 95% !important;
     height: auto;
     display: block;
-    box-shadow: 0 0 0 2px #fff, 0 0 10px 0 #000;
 }
 
 // 下载样式
