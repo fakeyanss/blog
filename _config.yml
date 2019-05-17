@@ -55,6 +55,8 @@ pagination_dir: page
 
 # Extensions
 ## Plugins: http://hexo.io/plugins/
+
+### feed
 feed:
   type: atom
   path: atom.xml
@@ -62,6 +64,11 @@ feed:
   hub:
   order_by: -date
   icon: https://foreti.me/imgplace/2019/logo2.png
+
+### search json file
+search:
+  path: search.xml
+  field: post
 
 ## Themes: http://hexo.io/themes/
 theme: hollow

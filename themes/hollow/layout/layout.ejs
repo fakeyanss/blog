@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html lang="zh-Hans">
+  <!-- Head tag -->
+  <%- partial('_partial/head') %>
 
-<!-- Head tag -->
-<%- partial('_partial/head') %>
-
-<body>
-
+  <body>
+    
     <!-- Content -->
     <%- body %>
-
+    <!-- Search -->
+    <%- partial('_partial/search') %>
     <!-- Scripts -->
     <%- partial('_partial/scripts') %>
     <!-- Google Analytics -->
     <%- partial('_partial/google-analytics') %>
-</body>
-
+    
+  </body>
 </html>

@@ -8,3 +8,4 @@ public/
 .deploy*/
 scaffolds/
 .Ulysses-Group.plist
+package-lock.json
