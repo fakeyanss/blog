@@ -12,6 +12,16 @@ comments:
 # Google Analytics Tracking ID
 google_analytics: UA-112380656-1
 
+# Register service worker
+service_worker: true
+
+# Local search with atom.xml, dependency hexo-generator-feed plugin
+local_search: true
+
+# using viewer.js to view image
+# https://fengyuanchen.github.io/viewerjs/
+image_viewer: true
+
 # Mathjax enable
 #mathjax: true
  

@@ -11,11 +11,13 @@ tags: tip
 验证 Hexo 的内置标签在 hollow 中可使用的部分。
 
 ### Block Quote
+
 ```
 {% blockquote David Levithan, Wide Awake %}
 Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
 {% endblockquote %}
 ```
+
 {% blockquote David Levithan, Wide Awake %}
 Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
 {% endblockquote %}

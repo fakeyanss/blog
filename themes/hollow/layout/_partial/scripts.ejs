@@ -1,58 +1,6 @@
-<!-- jQuery -->
-<script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
-<!-- Bootstrap -->
-<script src="//cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-
-<!-- Custom picture view-->
-<link href="<%= config.root %>css/viewer.min.css" rel="stylesheet" />
-<script
-  src="<%= config.root %>js/viewer.min.js"
-  type="text/javascript"
-  charset="utf-8"
-></script>
-
 <script type="text/javascript">
   console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
   console.log(
     "特别鸣谢zchen9同学的精彩主题，希望大家去逛逛她的github：https://github.com/zchen9"
   );
-
-  // use atom.xml to search blog
-  searchFunc("/atom.xml", "local-search-input", "local-search-result");
-  $("#searchModalCenter").on("shown.bs.modal", function(e) {
-    setTimeout(function() {
-      $("#local-search-input").focus();
-    }, 1);
-  });
-
-  // set image viewer
-  Viewer.setDefaults({
-    zoomRatio: [0.5],
-    navbar: false,
-    toolbar: false,
-    title: [2, (image, imageData) => `${image.alt}`],
-    show: function() {
-      this.viewer.zoomTo(0.5);
-    }
-  });
-  var article = document.querySelector(".post-content");
-  var imageList = article.getElementsByTagName("img");
-  Array.prototype.forEach.call(imageList, element => {
-    var viewer = new Viewer(element);
-  });
 </script>
-
-<!-- <script text="module">
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-      .register("/sw.js")
-      .then(function() {
-        // console.log("A new service worker is being installed.");
-      })
-      .catch(function(error) {
-        console.log("Service worker registration failed:", error);
-      });
-  } else {
-    console.log("Service workers are not supported.");
-  }
-</script> -->
