@@ -6,6 +6,40 @@ tags: tip
 <!--more-->
 
 ---
+## Hexo tag shortcut in hollow
+
+验证 Hexo 的内置标签在 hollow 中可使用的部分。
+
+### Block Quote
+```
+{% blockquote David Levithan, Wide Awake %}
+Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
+{% endblockquote %}
+```
+{% blockquote David Levithan, Wide Awake %}
+Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.
+{% endblockquote %}
+
+### Code Block
+```
+{% codeblock _.compact http://underscorejs.org/#compact Underscore.js %}
+_.compact([0, 1, false, 2, '', 3]);
+=> [1, 2, 3]
+{% endcodeblock %}
+```
+{% codeblock _.compact http://underscorejs.org/#compact Underscore.js %}
+_.compact([0, 1, false, 2, '', 3]);
+=> [1, 2, 3]
+{% endcodeblock %}
+
+### YouTube
+```
+{% youtube video_id %}
+```
+
+
+
+
 
 ## Mysql 命令
 查询数据库编码方式：

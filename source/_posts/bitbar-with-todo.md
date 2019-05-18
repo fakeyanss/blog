@@ -16,7 +16,7 @@ BitBar 使我工作更快乐！
 于是想到了菜单栏上可以做点事情。
 
 找了一圈，Mac平台上的 TODO in menubar 的应用还不少，最合心意的是 [TODO Menubar](https://www.mactodo.app/?ref=producthunt)。
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190517153927.png)
+![TODO Menubar](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190517153927.png)
 但是它收费...
 
 还有一个[Doo](https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?mt=8)，也收费，而且太花哨了，好看但不直观。
