@@ -30,6 +30,8 @@ curl https://gist.githubusercontent.com/fakeYanss/22ab76030c0633835440e86b5b37b5
 python SimpleHTTPServerWithUpload.py 8080
 ```
 
+---
+
 ## Linux 文件内容查询统计
 
 最近遇到的一个事儿，需要在一堆日志文件中统计出包含指定字符串的行内容。首先日志文件是按天存储的，每天的日志文件会按 50MB 大小进行分割，这样分下来，一天的日志文件有 2000 至 3000 个，总共 100+GB。
@@ -68,11 +70,15 @@ find -name '2019-05-05.3*' | xargs grep '\[aaaa\]bbbb' > /home/user/project/tmp/
 
 提取出需要的日志后，可以再按内容进行下一步的操作，比如统计或排错等。
 
+---
+
 ## Mockito 使用
 
 [Mockito](https://segmentfault.com/a/1190000006746409)。
 
 Mockito 多在 Java 项目单测中使用，可以说 Junit + Mockito 是单元测试的利器。Mockito 可以方便的 mock 对象，避免外部依赖对单测的影响。
+
+---
 
 ## 私人网盘 - FileBrowser
 
@@ -81,6 +87,8 @@ Mockito 多在 Java 项目单测中使用，可以说 Junit + Mockito 是单元�
 利用 FileBrowser 可以在服务器上搭建私人网盘，提供了基础的文件服务，以及用户权限管理。开发者提供了自动搭建脚本，搭建的流程十分快捷。
 
 ![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/filebrowser-case.gif)
+
+---
 
 ## MySQL技巧
 
@@ -94,6 +102,8 @@ FROM
   INFORMATION_SCHEMA.TABLES
 WHERE TABLE_SCHEMA = 'database_name';
 ```
+
+---
 
 ## 两个网页头部背景图
 

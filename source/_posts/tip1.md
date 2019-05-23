@@ -40,7 +40,7 @@ _.compact([0, 1, false, 2, '', 3]);
 ```
 
 
-
+___
 
 
 ## Mysql 命令
@@ -53,6 +53,8 @@ show variables like 'character%';
 ```sh
 mysql -h127.0.0.1 -P3306 -uroot -Ddatabases -p -e "select * from table" > file
 ```
+
+___
 
 ## 将 bash 换成 zsh & oh my zsh
 一旦你使用了 zsh 和 oh my zsh，你就很难换回 bash 了。
@@ -105,6 +107,8 @@ source .zshrc
 ```
 
 重连一下服务器，打开新世界。
+
+___
 
 ## 印象笔记 Markdown 支持什么快捷键？
 
