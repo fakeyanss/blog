@@ -90,7 +90,7 @@ echo "↻ Refresh| terminal=false refresh=true"
 
 效果图：
 
-![](/Users/guichen01/Desktop/20190523204949.png)
+![](https://foreti.me/imgplace/2019/20190523204949.png)
 
 对应在 Reminder 中的任务列表
 
