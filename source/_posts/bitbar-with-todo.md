@@ -56,6 +56,8 @@ todolist=$(osascript -e 'tell application "Reminders"
 	end repeat
 	return newlist
 end tell')
+todolist=${todolist// /} # 删除空格
+todolist=${todolist//,/ } # 转换 AppleScript 的 list 为 shell 的 list 格式
 
 if [ "$1" = "done" ]; then
 	osascript -e 	"tell application \"Reminders\"
@@ -84,16 +86,19 @@ do
 done
 echo "---"
 echo "↻ Refresh| terminal=false refresh=true"
-
 ```
 
 效果图：
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190523150723.png)
+![](/Users/guichen01/Desktop/20190523204949.png)
 
 对应在 Reminder 中的任务列表
 
 ![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190523150457.png)
+
+
+
+如果你细心点，可以发现第 3 条 todo，`提交 commit` 在菜单栏中变成了 `提交commit`，这是由于 shell 中的数组元素以空格区分，为了避免1 个 todo 显示在两行，我将每个 todo 中的空格都去掉了。
 
 这样，每天只用维护自己的 Reminder 的任务列表就行了。如果很多天过去，任务总数太多，可以再创建一个 Archive 提醒列表，将过去完成的任务都移动到里面。
 
