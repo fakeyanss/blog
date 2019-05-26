@@ -17,6 +17,7 @@ service_worker: true
 
 # Local search with atom.xml, dependency hexo-generator-feed plugin
 local_search: true
+search_placeholder: 找宝藏吗
 
 # using viewer.js to view image
 # https://fengyuanchen.github.io/viewerjs/
