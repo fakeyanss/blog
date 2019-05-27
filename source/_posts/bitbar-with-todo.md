@@ -83,7 +83,7 @@ echo "---"
 for loop in $todolist
 do
     echo "${loop%*,} | bash='$0' param1='done' param2='${loop%*,}' terminal=false refresh=true"
-done
+done | sort
 echo "---"
 echo "↻ Refresh| terminal=false refresh=true"
 ```
