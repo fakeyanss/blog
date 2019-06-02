@@ -4,20 +4,25 @@ default_post_title: Halo
 #Date Format
 date_format: YYYY 年 MM 月 DD 日
 
-# Comment. 
+# Comments. Choose one by filling up the information
 comments:
-  # Disqus comment
-  disqus_shortname: 
+  # Disqus comments
+  disqus_shortname: you-yue-ru-tie
 
 # Google Analytics Tracking ID
-google_analytics: 
+google_analytics: UA-112380656-1
 
 # Register service worker
 service_worker: false
 
 # Local search with atom.xml, dependency hexo-generator-feed plugin
 local_search: true
+search_placeholder: 找宝藏吗
 
 # using viewer.js to view image
 # https://fengyuanchen.github.io/viewerjs/
 image_viewer: true
+
+# Mathjax enable
+#mathjax: false
+ 
