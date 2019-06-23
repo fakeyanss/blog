@@ -77,7 +77,7 @@ douban:
   game:
     title: '我的游戏'
     # quote: 'This is my game quote'
-  timeout: 10000 
+  timeout: 100000
 
 ## Themes: http://hexo.io/themes/
 theme: hollow
