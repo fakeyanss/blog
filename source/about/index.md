@@ -17,6 +17,14 @@ date: 2019-05-12
 
 <blockquote class="blockquote-center">风起时，唯有努力生存</blockquote>
 
+以及：
+
+[我的读书](/books)
+
+[我的观影](/movies)
+
+[我的游戏](/games)
+
 ---
 
 欢迎订阅我的博客：[atom.xml](https://foreti.me/atom.xml)

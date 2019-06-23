@@ -35,7 +35,9 @@
                         <% } %>
                     </div>
                     <div class="post-date">
-                        <%- item.date.format(theme.date_format) %>
+                        <% if (item.date){ %>
+                            <%- item.date.format(theme.date_format) %>
+                        <% } %>
                     </div>
                 </div>
             </div>

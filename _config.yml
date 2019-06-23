@@ -65,6 +65,20 @@ feed:
   order_by: -date
   icon: https://foreti.me/imgplace/2019/logo2.png
 
+douban:
+  user: 140785622
+  builtin: true
+  book:
+    title: '我的读书'
+    # quote: 'This is my book quote'
+  movie:
+    title: '我的观影'
+    # quote: 'This is my movie quote'
+  game:
+    title: '我的游戏'
+    # quote: 'This is my game quote'
+  timeout: 10000 
+
 ## Themes: http://hexo.io/themes/
 theme: hollow
 
