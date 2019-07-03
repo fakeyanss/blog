@@ -1,8 +1,10 @@
+---
 title: 倾斜人生 - 1
 date: 2019-05-15 22:15:05
 tags: tip
 ---
 201905W20 Tip
+
 <!--more-->
 
 ---
@@ -114,7 +116,7 @@ ___
 
 **Mac 端**
 
-| Command | Shortcut       |
+| Command            | Shortcut    |
 | ------------------ | ----------- |
 | 新建 Markdown 笔记 | CMD+D       |
 | 粗体               | CMD+B       |
@@ -130,7 +132,7 @@ ___
 
 **Windows 端**
 
-| Command | Shortcut       |
+| Command            | Shortcut         |
 | ------------------ | ---------------- |
 | 新建 Markdown 笔记 | Ctrl+Alt+D       |
 | 粗体               | Ctrl+B           |

@@ -1,8 +1,10 @@
+---
 title: Spring @RequestMapping详解
 date: 2019-03-02
 tags: [Review,Spring,RequestMapping]
 ---
-201902W9 Review, 一篇关于Spring RequestMapping的译文
+201902W9 Review, 一篇关于Spring RequestMapping的译文。
+
 <!-- more -->
 
 ---

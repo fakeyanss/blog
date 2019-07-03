@@ -5,6 +5,7 @@ tags:
 date: 2018-02-10 15:18:05
 ---
 这是一篇初学Hadoop时应该浏览的博客，受18年实习时的mentor推荐，我读了Understanding Hadoop Clusters and the Network一文，并在这里翻译一遍。
+
 <!--more-->
 
 ---

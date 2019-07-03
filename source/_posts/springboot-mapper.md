@@ -6,6 +6,7 @@ tags:
 date: 2018-03-13 09:35:32
 ---
 本文讲述Spring Boot如何通过mybatis-spring-boot-starter集成Mybatis，并且在Mapper中如何映射Model属性和表的字段。
+
 <!-- more -->
 
 ---

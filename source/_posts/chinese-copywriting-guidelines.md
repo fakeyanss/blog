@@ -1,8 +1,10 @@
+---
 title: 中文文案排版指北
 date: 2019-04-27 14:38:34
 tags:
 ---
 统一中文文案、排版的相关用法，降低团队成员之间的沟通成本，增强网站气质。
+
 <!-- more -->
 
 ---
@@ -17,27 +19,28 @@ tags:
 
 <!-- vim-markdown-toc GFM -->
 
-* [空格](#空格)
-    * [中英文之间需要增加空格](#中英文之间需要增加空格)
-    * [中文与数字之间需要增加空格](#中文与数字之间需要增加空格)
-    * [数字与单位之间无需增加空格](#数字与单位之间无需增加空格)
-    * [全角标点与其他字符之间不加空格](#全角标点与其他字符之间不加空格)
-    * [`-ms-text-autospace` to the rescue?](#-ms-text-autospace-to-the-rescue)
-* [标点符号](#标点符号)
-    * [不重复使用标点符号](#不重复使用标点符号)
-* [全角和半角](#全角和半角)
-    * [使用全角中文标点](#使用全角中文标点)
-    * [数字使用半角字符](#数字使用半角字符)
-    * [遇到完整的英文整句、特殊名词，其內容使用半角标点](#遇到完整的英文整句特殊名词其內容使用半角标点)
-* [名词](#名词)
-    * [专有名词使用正确的大小写](#专有名词使用正确的大小写)
-    * [不要使用不地道的缩写](#不要使用不地道的缩写)
-* [争议](#争议)
-    * [链接之间增加空格](#链接之间增加空格)
-    * [简体中文使用直角引号](#简体中文使用直角引号)
-* [工具](#工具)
-* [谁在这样做？](#谁在这样做)
-* [参考文献](#参考文献)
+- [目录](#目录)
+- [空格](#空格)
+  - [中英文之间需要增加空格](#中英文之间需要增加空格)
+  - [中文与数字之间需要增加空格](#中文与数字之间需要增加空格)
+  - [数字与单位之间无需增加空格](#数字与单位之间无需增加空格)
+  - [全角标点与其他字符之间不加空格](#全角标点与其他字符之间不加空格)
+  - [`-ms-text-autospace` to the rescue?](#-ms-text-autospace-to-the-rescue)
+- [标点符号](#标点符号)
+  - [不重复使用标点符号](#不重复使用标点符号)
+- [全角和半角](#全角和半角)
+  - [使用全角中文标点](#使用全角中文标点)
+  - [数字使用半角字符](#数字使用半角字符)
+  - [遇到完整的英文整句、特殊名词，其內容使用半角标点](#遇到完整的英文整句特殊名词其內容使用半角标点)
+- [名词](#名词)
+  - [专有名词使用正确的大小写](#专有名词使用正确的大小写)
+  - [不要使用不地道的缩写](#不要使用不地道的缩写)
+- [争议](#争议)
+  - [链接之间增加空格](#链接之间增加空格)
+  - [简体中文使用直角引号](#简体中文使用直角引号)
+- [工具](#工具)
+- [谁在这样做？](#谁在这样做)
+- [参考文献](#参考文献)
 
 <!-- vim-markdown-toc -->
 
@@ -260,7 +263,7 @@ Microsoft 有个 [`-ms-text-autospace`](http://msdn.microsoft.com/en-us/library/
 ## 工具
 
 | 仓库                                                                                                                            | 语言            |
-|---------------------------------------------------------------------------------------------------------------------------------|-----------------|
+| ------------------------------------------------------------------------------------------------------------------------------- | --------------- |
 | [vinta/paranoid-auto-spacing](https://github.com/vinta/paranoid-auto-spacing)                                                   | JavaScript      |
 | [huei90/pangu.node](https://github.com/huei90/pangu.node)                                                                       | Node.js         |
 | [huacnlee/auto-correct](https://github.com/huacnlee/auto-correct)                                                               | Ruby            |
@@ -273,23 +276,23 @@ Microsoft 有个 [`-ms-text-autospace`](http://msdn.microsoft.com/en-us/library/
 
 ## 谁在这样做？
 
-网站 | 文案 | UGC
---- | --- | ---
-[Apple 中国](http://www.apple.com/cn/) | Yes | N/A
-[Apple 香港](http://www.apple.com/hk/) | Yes | N/A
-[Apple 台湾](http://www.apple.com/tw/) | Yes | N/A
-[Microsoft 中国](http://www.microsoft.com/zh-cn/) | Yes | N/A
-[Microsoft 香港](http://www.microsoft.com/zh-hk/) | Yes | N/A
-[Microsoft 台湾](http://www.microsoft.com/zh-tw/) | Yes | N/A
-[LeanCloud](https://leancloud.cn/) | Yes | N/A
-[知乎](https://www.zhihu.com/) | Yes | 部分用户达成
-[V2EX](https://www.v2ex.com/) | Yes | Yes
-[SegmentFault](https://segmentfault.com/) | Yes | 部分用户达成
-[Apple4us](http://apple4us.com/) | Yes | N/A
-[豌豆荚](https://www.wandoujia.com/) | Yes | N/A
-[Ruby China](https://ruby-china.org/) | Yes | 标题达成
-[PHPHub](https://phphub.org/) | Yes | 标题达成
-[少数派](http://sspai.com/) | Yes | N/A
+| 网站                                              | 文案 | UGC          |
+| ------------------------------------------------- | ---- | ------------ |
+| [Apple 中国](http://www.apple.com/cn/)            | Yes  | N/A          |
+| [Apple 香港](http://www.apple.com/hk/)            | Yes  | N/A          |
+| [Apple 台湾](http://www.apple.com/tw/)            | Yes  | N/A          |
+| [Microsoft 中国](http://www.microsoft.com/zh-cn/) | Yes  | N/A          |
+| [Microsoft 香港](http://www.microsoft.com/zh-hk/) | Yes  | N/A          |
+| [Microsoft 台湾](http://www.microsoft.com/zh-tw/) | Yes  | N/A          |
+| [LeanCloud](https://leancloud.cn/)                | Yes  | N/A          |
+| [知乎](https://www.zhihu.com/)                    | Yes  | 部分用户达成 |
+| [V2EX](https://www.v2ex.com/)                     | Yes  | Yes          |
+| [SegmentFault](https://segmentfault.com/)         | Yes  | 部分用户达成 |
+| [Apple4us](http://apple4us.com/)                  | Yes  | N/A          |
+| [豌豆荚](https://www.wandoujia.com/)              | Yes  | N/A          |
+| [Ruby China](https://ruby-china.org/)             | Yes  | 标题达成     |
+| [PHPHub](https://phphub.org/)                     | Yes  | 标题达成     |
+| [少数派](http://sspai.com/)                       | Yes  | N/A          |
 
 ## 参考文献
 

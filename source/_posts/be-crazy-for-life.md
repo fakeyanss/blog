@@ -1,8 +1,10 @@
+---
 title: 为生命狂欢
 date: 2013-03-21
 tags: fragment
 ---
 记再游樱园
+
 <!-- more -->
 
 ---
