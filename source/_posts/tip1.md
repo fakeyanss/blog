@@ -108,6 +108,13 @@ git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:
 source .zshrc
 ```
 
+如果这时候发现显示有些乱码，可以换一下字体，如果没有可用的字体，可以安装powerline的字体。
+```
+git clone https://github.com/powerline/fonts.git
+cd fonts
+./install.sh
+```
+
 重连一下服务器，打开新世界。
 
 ___
