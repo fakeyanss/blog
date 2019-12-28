@@ -6,7 +6,7 @@ environment:
 
 install:
   # - ps: Install-Product node ''
-  - ps: Install-Product node 8.0
+  - ps: Install-Product node 10.0
   - node --version
   - npm --version
   # - npm install -g cnpm --registry=https://registry.npm.taobao.org
