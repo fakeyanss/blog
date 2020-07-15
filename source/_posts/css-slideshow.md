@@ -200,8 +200,3 @@ direction：是否应该轮流反向播放动画 normal 否 alternate 是
 
 虽然css也能实现轮播效果，但是相对于js实现来说，功能性就弱了很多，无法控制暂停与播放，无法与用户产生交互，无法监听到状态的而变化等等，但是好处也很明显嘛！那就是简单。
 
-<br>
-
----
-<p id="div-border-left-red"><i>DigitalOcean 优惠码，注册充值 $5 送 $100，[链接一](https://m.do.co/c/282d5e1cf06e) [链接二](https://m.do.co/c/5eefb87c26cd)</i></p>
-<p id="div-border-left-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>

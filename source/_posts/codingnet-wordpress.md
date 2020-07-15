@@ -50,9 +50,5 @@ date: 2018-02-09 14:28:46
 * 把连接信息保存到一个文件`wp-config.php`，放到根目录下。
 * 所有的主题和插件去源网页下载文件，保存到`wp-content`下的对应文件夹下，然后提交到coding
 
-<br>
 
----
-<p id="div-border-left-red"><i>DigitalOcean 优惠码，注册充值 $5 送 $100，[链接一](https://m.do.co/c/282d5e1cf06e) [链接二](https://m.do.co/c/5eefb87c26cd)</i></p>
-<p id="div-border-left-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>
 

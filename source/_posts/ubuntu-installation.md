@@ -22,8 +22,3 @@ date: 2018-01-11 13:16:17
     * 我的电脑有两块ssd，一块小的全部作为C盘，装的win10系统和开机启动软件；一块大的作为D盘，安装常用软件和存放一些资料。我把ubuntu安装在了D盘上的一个50G分区，这样就要把ubuntu的引导器放在D盘，也就是`sdb` （sda对应第一块硬盘，sdb对应第二块硬盘），这样的话电脑开机时会自动进入win10，如果我按F11才会进入grub选择ubuntu系统，这样正好符合我的需求。
     * 如果把引导器安装在C盘，每次开机都会手动选择系统。
 
-<br>
-
----
-<p id="div-border-left-red"><i>DigitalOcean 优惠码，注册充值 $5 送 $100，[链接一](https://m.do.co/c/282d5e1cf06e) [链接二](https://m.do.co/c/5eefb87c26cd)</i></p>
-<p id="div-border-left-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>

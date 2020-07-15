@@ -23,8 +23,3 @@ tags: fragment
 
 我不知道这样好不好，但我的确是被影响到了，刚竖立的坚定又有动摇，或许我应该有最大的信心和最自然的心态，怡然不惧一切，强大的内心就是强大的实力，就是孤岛也罢，坚硬抵抗一切侵蚀。
 
-<br>
-
----
-<p id="div-border-left-red"><i>DigitalOcean 优惠码，注册充值 $5 送 $100，[链接一](https://m.do.co/c/282d5e1cf06e) [链接二](https://m.do.co/c/5eefb87c26cd)</i></p>
-<p id="div-border-left-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>

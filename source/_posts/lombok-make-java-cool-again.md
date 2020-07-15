@@ -395,8 +395,3 @@ Lombok的另一个好处是它使我们的代码库保持一致。凭借遍布�
 Lombok对Grubhub的意义远远超过了闪亮的新功能。毕竟，Lombok做的任何事情都可以手工编写。如图所示，Lombok简化了代码库的无聊部分，而不会影响业务逻辑。这使我们专注于为Grubhub提供最大价值的工作，并且是我们工程师最感兴趣的工作。编写者，审阅者和维护者让代码库的这么大部分成为单调的样板代码是浪费时间。此外，由于此代码不再手动编写，因此它消除了所有类型的拼写错误。自动生成的好处与强大的功能相结合，@NonNull减少了漏洞的可能性，并使我们的工程专注于为您提供便利！
 
 
-<br>
-
----
-<p id="div-border-left-red"><i>DigitalOcean 优惠码，注册充值 $5 送 $100，[链接一](https://m.do.co/c/282d5e1cf06e) [链接二](https://m.do.co/c/5eefb87c26cd)</i></p>
-<p id="div-border-left-red"><i>Lastly, welcome to follow me on [github](https://github.com/fakeYanss)</i></p>
