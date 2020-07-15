@@ -3,9 +3,11 @@ title: steam客户端页面循环加载失败修复方法
 tags: steam
 date: 2020-07-16 00:00:00
 ---
+重装steam差点让我玩不了大嫖客了！！！
+
+<!--more-->
 
 最近重装了win10系统，下载了steam后，发现除了游戏库页面能正常加载，其他页面都是要么打不开，要么打开后显示2秒就自动跳转到黑屏。
-<!--more-->
 
 搜了好久的解决办法，诸如修改hosts、刷新本地dns缓存、修改dns服务器、使用socks代理、使用proxifier代理本地应用，游戏加速器也试了几个，皆无效；
 网上流传的UseEAm Hosts Editor、steamcommunity_302等工具都试过了，皆无效。
