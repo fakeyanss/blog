@@ -11,10 +11,11 @@ environment:
 
 platform:
   # - x86
-  - x64
+  # - x64
 
 install:
-  - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version) $env:PLATFORM
+  # - ps: Update-NodeJsInstallation (Get-NodeJsLatestBuild $env:nodejs_version) $env:PLATFORM
+  - ps: Install-Product node $env:nodejs_version
   - node --version
   - npm --version
   # - npm install -g cnpm --registry=https://registry.npm.taobao.org
