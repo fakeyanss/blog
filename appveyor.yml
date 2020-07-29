@@ -4,13 +4,13 @@ environment:
   access_token:
     secure: DAP/zdV4e2KWw6NSLEORAhVXT3u4dk3pKuT6z5CWlQoi1NWnNhLLXwBBt1nNSsnx
   matrix:
-  - nodejs_version: "8"
-  - nodejs_version: "10"
-  - nodejs_version: "11"
+  # - nodejs_version: "8"
+  # - nodejs_version: "10"
+  # - nodejs_version: "11"
   - nodejs_version: "12"
 
 platform:
-  - x86
+  # - x86
   - x64
 
 install:
