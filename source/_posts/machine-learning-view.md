@@ -13,7 +13,7 @@ date: 2018-01-12 15:01:20
 
 <center>
     <img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08);" 
-    src="https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190502110338.png">
+    src="https://foreti.me/imgplace/2019/20190502110338.png">
     <div style="border-bottom: 1px solid #d9d9d9; display: inline-block; color: #999; padding: 2px;">Machine learning</div>
 </center>
 
@@ -51,7 +51,7 @@ date: 2018-01-12 15:01:20
 
 下面一个问题。problem1将要卖的货物数量看成一个连续的值，属于回归问题；problem2输出的值可能为0或1，分别表示两种不同的结果，属于分类问题。
 
-![ML1](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231017.png)
+![ML1](https://foreti.me/imgplace/2019/20190429231017.png)
 
 ## Unsupervised Learning
 
@@ -71,5 +71,5 @@ $svd$ 是奇异值分解的缩写，在Octave中作为一个内置函数。
 
 下面一个问题，哪些选项要使用无监督学习算法？
 
-![ML2](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231037.png)
+![ML2](https://foreti.me/imgplace/2019/20190429231037.png)
 

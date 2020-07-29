@@ -23,7 +23,7 @@ GitBook的渲染真的很慢，我找到了它编译生成的html文件，并将
 
 然后打开就可以直接编辑。
 
-![hadoopbook1](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/hadoopbook1.png)
+![hadoopbook1](https://foreti.me/imgplace/2019/hadoopbook1.png)
 
 但是gitbook的编辑器很难用啊，好像原来是直接写markdown的，现在改了编辑模式？特别是插入连接的时候，没法像`[]()`这么方便啊。
 
@@ -38,11 +38,11 @@ GitBook的渲染真的很慢，我找到了它编译生成的html文件，并将
 
 然后到gitbook的书籍`Hadoop-The Definitive Guide 4th Edition`的设置里找到`Github`，添加对应`Hadoop-The-Definitive-Guide-4th`仓库并同步内容
 
-![hadoopbook2](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/hadoopbook2.png)
+![hadoopbook2](https://foreti.me/imgplace/2019/hadoopbook2.png)
 
 之后可以在github仓库中看到一些文件
 
-![hadoopbook3](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/hadoopbook3.png)
+![hadoopbook3](https://foreti.me/imgplace/2019/hadoopbook3.png)
 
 这些都是gitbook书的markdown文件。这一步完成后，就可以在gitbook或github任意一端编译文档，提交后都会在两端生成的相应书籍。这相当于书籍在两端都有备份了。
 
@@ -89,7 +89,7 @@ git push origin gh-pages
 ```
 提交完成后到github仓库的设置中看一下，gh-pages服务是否自动开启，如果没有的话在`Source`中选择`gh-pages branch`，保存刷新，等待几分钟就好了。
 
-![hadoopbook5](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/hadoopbook5.png)
+![hadoopbook5](https://foreti.me/imgplace/2019/hadoopbook5.png)
 
 全部操作已经完成，接下来每次在本地更新书籍内容后，先生成静态页面，然后提交master分支，再提交gh-pages分支就可以了。
 
@@ -101,7 +101,7 @@ git push origin gh-pages
 
 **注意：使用时不能将脚本放在仓库里，不然在切换分支时会出错，**最好与仓库文件夹同级。
 
-![hadoopbook4](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/hadoopbook4.png)
+![hadoopbook4](https://foreti.me/imgplace/2019/hadoopbook4.png)
 
 
 

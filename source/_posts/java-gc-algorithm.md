@@ -17,7 +17,7 @@ date: 2017-12-31 11:05:37
 
 标记清除算法分为“标记”和“清除”两个阶段：首先标记出需要回收的对象，标记完成之后统一清除对象。
 
-![vern标记清除算法](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/vern%E6%A0%87%E8%AE%B0%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.jpg)
+![vern标记清除算法](https://foreti.me/imgplace/2019/vern%E6%A0%87%E8%AE%B0%E6%B8%85%E9%99%A4%E7%AE%97%E6%B3%95.jpg)
 
 主要缺点：
 
@@ -30,7 +30,7 @@ date: 2017-12-31 11:05:37
 
 标记操作和“标记-清除”算法一致，后续操作不只是直接清理对象，而是在清理无用对象完成后让所有存活的对象都向一端移动，并更新引用其对象的指针。
 
-![vern标记整理算法](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/vern%E6%A0%87%E8%AE%B0%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.jpg)
+![vern标记整理算法](https://foreti.me/imgplace/2019/vern%E6%A0%87%E8%AE%B0%E6%95%B4%E7%90%86%E7%AE%97%E6%B3%95.jpg)
 
 主要缺点：在标记-清除的基础上还需进行对象的移动，成本相对较高，好处则是不会产生内存碎片。
 
@@ -40,7 +40,7 @@ date: 2017-12-31 11:05:37
 
 它将可用内存容量划分为大小相等的两块，每次只使用其中的一块。当这一块用完之后，就将还存活的对象复制到另外一块上面，然后在把已使用过的内存空间一次理掉。这样使得每次都是对其中的一块进行内存回收，不会产生碎片等情况，只要移动堆订的指针，按顺序分配内存即可，实现简单，运行高效。
 
-![vern复制算法](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/vern%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.jpg)
+![vern复制算法](https://foreti.me/imgplace/2019/vern%E5%A4%8D%E5%88%B6%E7%AE%97%E6%B3%95.jpg)
 
 主要缺点：内存缩小为原来的一半。
 

@@ -394,7 +394,7 @@ private static class AvlNode<AnyType>
 ```
 
 ### 单旋转	
-![LL单旋转](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429221300.png)
+![LL单旋转](https://foreti.me/imgplace/2019/20190429221300.png)
 
 ```java
 /**
@@ -416,7 +416,7 @@ private AvlNode<AnyType> RotationWithLeftChild(AvlNode<AnyType> k2)
 }
 ```
 
-![RR单旋转](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429221627.png)
+![RR单旋转](https://foreti.me/imgplace/2019/20190429221627.png)
 
 ```java
 /**
@@ -439,7 +439,7 @@ private AvlNode<AnyType> RotationWithRightChild(AvlNode<AnyType> k1)
 ```
 
 ### 双旋转
-![LR双旋转](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429221709.png)
+![LR双旋转](https://foreti.me/imgplace/2019/20190429221709.png)
 
 ```java
 	/**
@@ -455,7 +455,7 @@ private AvlNode<AnyType> RotationWithRightChild(AvlNode<AnyType> k1)
 	}
 ```
 
-![RL双旋转](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429221732.png)
+![RL双旋转](https://foreti.me/imgplace/2019/20190429221732.png)
 
 ```java
 	/**

@@ -88,7 +88,7 @@ Mockito 多在 Java 项目单测中使用，可以说 Junit + Mockito 是单元�
 
 利用 FileBrowser 可以在服务器上搭建私人网盘，提供了基础的文件服务，以及用户权限管理。开发者提供了自动搭建脚本，搭建的流程十分快捷。
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/filebrowser-case.gif)
+![](https://foreti.me/imgplace/2019/filebrowser-case.gif)
 
 ---
 
@@ -110,7 +110,7 @@ WHERE TABLE_SCHEMA = 'database_name';
 ## 两个网页头部背景图
 
 OverWatch 的 Mercy 和 D.va，都是我喜欢的角色，可以作为网站的头部背景使用。
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/headback.jpg)
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/headback2.jpg)
+![](https://foreti.me/imgplace/2019/headback.jpg)
+![](https://foreti.me/imgplace/2019/headback2.jpg)
 
 

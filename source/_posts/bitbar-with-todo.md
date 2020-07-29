@@ -18,15 +18,15 @@ BitBar 使我工作更快乐！
 于是想到了菜单栏上可以做点事情。
 
 找了一圈，Mac平台上的 TODO in menubar 的应用还不少，最合心意的是 [TODO Menubar](https://www.mactodo.app/?ref=producthunt)。
-![TODO Menubar](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190517153927.png)
+![TODO Menubar](https://foreti.me/imgplace/2019/20190517153927.png)
 但是它收费...
 
 还有一个[Doo](https://itunes.apple.com/us/app/doo-get-things-done/id1066322956?mt=8)，也收费，而且太花哨了，好看但不直观。
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190517160402.png)
+![](https://foreti.me/imgplace/2019/20190517160402.png)
 
 
 在 Github 上也搜到了一个[postit-todo](https://github.com/Praseetha-KR/postit-todo)，不错但是用起来太卡，而且关闭后重新打开加载数据很慢。
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190517160158.png)
+![](https://foreti.me/imgplace/2019/20190517160158.png)
 
 最后，在 AppSo 的一篇推 TODO Menubar 的文章评论里看到了 [BitBar](https://getbitbar.com/)。
 
@@ -96,7 +96,7 @@ echo "↻ Refresh| terminal=false refresh=true"
 
 对应在 Reminder 中的任务列表
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190523150457.png)
+![](https://foreti.me/imgplace/2019/20190523150457.png)
 
 
 

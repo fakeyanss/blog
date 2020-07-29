@@ -14,7 +14,7 @@ date: 2020-07-16 00:00:00
 
 就在我以为最近有啥大事steam完全被墙，准备放弃的时候，突然想去贴吧找找答案。然后就在steam吧找到了几个帖子，和我的情况一模一样，都是在7月15号重新下载steam后出现这个问题，下面有回复了这么几个解决方法：
 
-![steam-fix](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2020/steam%20fix.iaflk4hk8o.jpg)
+![steam-fix](https://foreti.me/imgplace/2020/steam%20fix.iaflk4hk8o.jpg)
 
 加速器试过了无效，试了第二条，更新到steam测试版，我熟悉的steam页面又回来了。
 

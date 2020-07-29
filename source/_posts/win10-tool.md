@@ -10,7 +10,7 @@ date: 2018-02-25 12:44:05
 
 ---
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231453.png)
+![](https://foreti.me/imgplace/2019/20190429231453.png)
 
 - ~~[Seer](http://1218.io/) 空格预览~~ [QuickLook](https://pooi.moe/QuickLook/)更好用
 
@@ -18,15 +18,15 @@ date: 2018-02-25 12:44:05
 
   - 设置页，先激活
   - 关键字Web
-    ![listary1](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231527.png)
+    ![listary1](https://foreti.me/imgplace/2019/20190429231527.png)
     - 百度：`http://www.baidu.com/s?wd={query}`
     - 淘宝：`https://s.taobao.com/search?q={query}`
     - 京东：`https://search.jd.com/Search?keyword={query}&enc=utf-8&qrst=1&rt=1&stop=1&vt=2&wq={query}&psort=3&wtype=1&stock=1&click=2`
     - 必应词典：`http://cn.bing.com/dict/search?q={query}`
   - 关键字自定义
-    - run：![listary3](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231559.png)
-    - 新建文件：![listary4](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231614.png)
-    - GoldenDict：![listary2](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231627.png)
+    - run：![listary3](https://foreti.me/imgplace/2019/20190429231559.png)
+    - 新建文件：![listary4](https://foreti.me/imgplace/2019/20190429231614.png)
+    - GoldenDict：![listary2](https://foreti.me/imgplace/2019/20190429231627.png)
 
 - 发现[Wox](http://www.wox.one/)更好用，配置更少更方便，搭配Everything也是一样的快
 
@@ -38,7 +38,7 @@ date: 2018-02-25 12:44:05
 
 - [potplayer](https://potplayer.daum.net/) 视频播放器
 
-  - 加皮肤Zune![potplayer+zune](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190429231658.png)
+  - 加皮肤Zune![potplayer+zune](https://foreti.me/imgplace/2019/20190429231658.png)
 
 - [GoldenDict](http://goldendict.org/) 词典，配合Listary
 

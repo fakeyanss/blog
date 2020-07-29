@@ -196,7 +196,7 @@ spring.datasource.password = 123456
 
 6. 启动多个实例， 用不同端口即可。
 
-![多实例配置](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/image.4orwrpw8u3o.png)
+![多实例配置](https://foreti.me/imgplace/2019/image.4orwrpw8u3o.png)
 
 7. Done！ 观察控制台输出吧。
 

@@ -12,7 +12,7 @@ date: 2019-02-15 13:18:04
 
 ---
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190202144529.png)
+![](https://foreti.me/imgplace/2019/20190202144529.png)
 
 [原文](https://bytes.grubhub.com/lombok-makes-java-cool-again-171102bdcc52)
 

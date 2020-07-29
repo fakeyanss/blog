@@ -23,7 +23,7 @@ by Jeff Hale
 
 让我们先检查变化。
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190430170003.png)
+![](https://foreti.me/imgplace/2019/20190430170003.png)
 
 - [git diff](https://www.atlassian.com/git/tutorials/saving-changes/git-diff) —— 查看本地所有文件的变化。后面加上文件名可以只查看一个文件的变化
 - [git log](https://www.atlassian.com/git/tutorials/git-log) —— 查看所有的提交历史。也可以用于一个文件，`git log -p my_file`。输入`q`退出。
@@ -42,7 +42,7 @@ by Jeff Hale
 
 如果你在多人工作里需要消除一个远程分支的提交，`git revert` 是你的工具。
 
-![undo](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190501155041.png)
+![undo](https://foreti.me/imgplace/2019/20190501155041.png)
 
 每个这些命令都可以加上不同的参数。这里是通用的用法：
 
@@ -64,7 +64,7 @@ by Jeff Hale
 
 `revert` 对多人合作项目是安全的，因为它不会重写其他用户的分支可能依赖的提交历史。
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190501161219.png)
+![](https://foreti.me/imgplace/2019/20190501161219.png)
 <div style="text-align: center;">revert is safe</div>
 
 有时你只想删除你本地目录未被追踪的文件。比如，可能你运行了一些代码去创建大量不同类型的文件，这些文件你并不想加到你的仓库。Oops. 😏 你可以快速地清除它们。
@@ -79,7 +79,7 @@ by Jeff Hale
 
 默认的 *.gitignore* 指定的未追踪文件不会被删除，但是这个行为可以被更改。
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190501162527.png)
+![](https://foreti.me/imgplace/2019/20190501162527.png)
 
 现在你了解了 Git 里的撤销事情的工具，让我们看下保持事情有序的两个命令。
 
@@ -98,7 +98,7 @@ by Jeff Hale
 
 使用 Git，你可能偶尔发现自己被丢进了一个 Vim 编辑器里。比如，你试图提交，但没写提交消息 —— Vim 将会自动打开。如果你不知道 Vim，一种糟糕的东西（大误） —— 看看 [这个 4000+ 赞同的 Stack Overflow 回答](https://stackoverflow.com/a/11828573/4590385)，了解怎样退出它。
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190501164225.png)
+![](https://foreti.me/imgplace/2019/20190501164225.png)
 <div style="text-align: center;">Freedom!</div>
 
 这里是保存文件退出 Vim 的 4 步计划：

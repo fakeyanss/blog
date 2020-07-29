@@ -10,7 +10,7 @@ centos搭建Jupyter Notebook, 添加多语言支持(R,Ruby,Octave,JS,Java,C++).
 
 ---
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/centos-jn-overview.png)
+![](https://foreti.me/imgplace/2019/centos-jn-overview.png)
 
 # 常用命令
 主要熟悉常用命令， 

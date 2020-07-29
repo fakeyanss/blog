@@ -10,7 +10,7 @@ date: 2019-02-25 22:51:35
 
 ---
 
-![](https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/20190224235353.png)
+![](https://foreti.me/imgplace/2019/20190224235353.png)
 
 ## 工具
 以下工具皆开源免费。
