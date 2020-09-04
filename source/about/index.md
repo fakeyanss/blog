@@ -19,11 +19,11 @@ date: 2019-05-12
 
 以及：
 
-[我的读书](/books)
+[我的读书](/blog/books)
 
-[我的观影](/movies)
+[我的观影](/blog/movies)
 
-[我的游戏](/games)
+[我的游戏](/blog/games)
 
 ---
 
