@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "hexo": {
-    "version": "4.2.1"
+    "version": "3.9.0"
   },
   "dependencies": {
     "hexo": "^3.9.0",
@@ -20,7 +20,8 @@
     "hexo-renderer-stylus": "^0.3.0",
     "hexo-server": "^0.1.3",
     "hexo-tag-twitter": "^1.0.1",
-    "viewerjs": "^1.3.3"
+    "viewerjs": "^1.3.3",
+    "hexo-tag-cloud": "2.1.*"
   },
   "description": "For life ：）",
   "main": "index.js",
