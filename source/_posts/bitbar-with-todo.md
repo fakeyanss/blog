@@ -43,29 +43,33 @@ BitBar 是一个可以编写脚本，将你能想到的任何信息，放到 men
 ```shell
 #!/bin/bash
 
-reminder=$(osascript -e 'tell application "Reminders"
-	set activeReminders to (reminders of list "Todo" whose completed is true)
-	set numOfActiveReminders to (count of activeReminders)
-	set allReminders to (reminders of list "Todo")
-	set numOfAllReminders to (count of allReminders)
-	set result to ((numOfActiveReminders as string) & "/" & numOfAllReminders as string)
-	return result
-end tell')
+TODO="Todo" # your todo list name in reminder
+ARCHIVE="Archive" # your archive list name in reminder
 
-todolist=$(osascript -e 'tell application "Reminders"
-	set todos to (reminders of list "Todo" whose completed is false)
+reminder=$(osascript -e "tell application \"Reminders\"
+	set activeReminders to (reminders of list \"$TODO\" whose completed is true)
+	set numOfActiveReminders to (count of activeReminders)
+	set allReminders to (reminders of list \"$TODO\")
+	set numOfAllReminders to (count of allReminders)
+	set result to ((numOfActiveReminders as string) & \"/\" & numOfAllReminders as string)
+	return result
+end tell")
+
+todolist=$(osascript -e "tell application \"Reminders\"
+	set todos to (reminders of list \"$TODO\" whose completed is false)
 	set newlist to {}
 	repeat with todo in todos
 		copy (name of todo as text) to the end of the newlist
 	end repeat
 	return newlist
-end tell')
+end tell")
+
 todolist=${todolist// /#holder} # 删除空格
 todolist=${todolist//,/ } # 转换 AppleScript 的 list 为 shell 的 list 格式
 
 if [ "$1" = "done" ]; then
 	osascript -e 	"tell application \"Reminders\"
-	set activeReminders to (reminders of list \"Todo\" whose completed is false)
+	set activeReminders to (reminders of list \"$TODO\" whose completed is false)
 	repeat with todo in activeReminders
 		if (name of todo as text) is equal to \"$2\" then
 			tell todo
@@ -81,16 +85,16 @@ if [ "$1" = "open" ]; then
 fi
 
 if [ "$1" = "archive" ]; then
-	osascript -e 	'tell application "Reminders"
-    set output to ""
-    set newList to list "Archive"
+	osascript -e 	"tell application \"Reminders\"
+    set output to \"\"
+    set newList to list \"$ARCHIVE\"
     show newList
-    repeat with thisReminder in (get reminders in list "Todo" whose completed is true)
+    repeat with thisReminder in (get reminders in list \"$TODO\" whose completed is true)
         set nameObj to name of thisReminder
         move thisReminder to newList
     end repeat
     return output
-end tell'
+end tell"
 fi
 
 
@@ -106,7 +110,9 @@ echo "---"
 echo "↻ Refresh| terminal=false refresh=true"
 echo "---"
 echo "♺ Archive| bash='$0' param1='archive' terminal=false"
+
 ```
+
 
 > 2020-09-27 update: 由于手动移动 todo 到 Archive 比较麻烦，所以增加了 archive 功能。
 > 2020-09-28 update: 由于去掉 todo 的空格，会导致点击该 todo 无法在 reminder 中自动勾选完成，所以在脚本内部做了优化，从 reminder 中读取列表时，将空格转为一个占位符，然后在 menubar 中展示时，将占位符还原为空格。
