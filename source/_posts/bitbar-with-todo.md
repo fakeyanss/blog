@@ -32,11 +32,13 @@ BitBar 使我工作更快乐！
 
 BitBar 是一个可以编写脚本，将你能想到的任何信息，放到 menubar 里显示。
 
-我下载 BitBar，并且在它的插件市场里找了一个 TODO 的[脚本](https://raw.githubusercontent.com/matryer/bitbar-plugins/master/Tools/todolist.2m.sh)。这个脚本实现的是在 Mac 的原生 Reminder 应用里指定一个提醒列表，将这个列表里的提醒事项放到菜单栏显示，并且只显示第一个，在菜单栏点击这个提醒事项，可以将它在 Reminder 里标记为完成。觉得这个脚本功能有点弱，还差点我要的东西。
+我直接在 homebrew 下载了 BitBar，`brew cask install bitbar`，并且在它的插件市场里找了一个 TODO 的[脚本](https://raw.githubusercontent.com/matryer/bitbar-plugins/master/Tools/todolist.2m.sh)。这个脚本实现的是在 Mac 的原生 Reminder 应用里指定一个提醒列表，将这个列表里的提醒事项放到菜单栏显示，并且只显示第一个，在菜单栏点击这个提醒事项，可以将它在 Reminder 里标记为完成。觉得这个脚本功能有点弱，还差点我要的东西。
 
 顺着这个脚本的思路，边查 AppleScript 的语法边修改，最后改成了我要的样子，和 TODO Menubar 有点像。菜单栏显示完成情况，子菜单显示具体的 TODO，点击 TODO 可以标记为完成。
 
-脚本如下：
+创建脚本文件`todo.2m.sh`，2m表示这个脚本2m执行一次，这是bitbar提供的功能；
+
+脚本内容如下：
 
 ```shell
 #!/bin/bash
