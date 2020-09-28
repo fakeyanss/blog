@@ -38,32 +38,32 @@ BitBar 是一个可以编写脚本，将你能想到的任何信息，放到 men
 
 脚本如下：
 
-```sh
-#!/bin/sh
+```shell
+#!/bin/bash
 
 reminder=$(osascript -e 'tell application "Reminders"
-	set activeReminders to (reminders of list "测试" whose completed is true)
+	set activeReminders to (reminders of list "Todo" whose completed is true)
 	set numOfActiveReminders to (count of activeReminders)
-	set allReminders to (reminders of list "测试")
+	set allReminders to (reminders of list "Todo")
 	set numOfAllReminders to (count of allReminders)
 	set result to ((numOfActiveReminders as string) & "/" & numOfAllReminders as string)
 	return result
 end tell')
 
 todolist=$(osascript -e 'tell application "Reminders"
-	set todos to (reminders of list "测试" whose completed is false)
+	set todos to (reminders of list "Todo" whose completed is false)
 	set newlist to {}
 	repeat with todo in todos
 		copy (name of todo as text) to the end of the newlist
 	end repeat
 	return newlist
 end tell')
-todolist=${todolist// /} # 删除空格
+todolist=${todolist// /#holder} # 删除空格
 todolist=${todolist//,/ } # 转换 AppleScript 的 list 为 shell 的 list 格式
 
 if [ "$1" = "done" ]; then
 	osascript -e 	"tell application \"Reminders\"
-	set activeReminders to (reminders of list \"测试\" whose completed is false)
+	set activeReminders to (reminders of list \"Todo\" whose completed is false)
 	repeat with todo in activeReminders
 		if (name of todo as text) is equal to \"$2\" then
 			tell todo
@@ -78,17 +78,37 @@ if [ "$1" = "open" ]; then
 	osascript -e 	'tell application "Reminders" to activate'
 fi
 
+if [ "$1" = "archive" ]; then
+	osascript -e 	'tell application "Reminders"
+    set output to ""
+    set newList to list "Archive"
+    show newList
+    repeat with thisReminder in (get reminders in list "Todo" whose completed is true)
+        set nameObj to name of thisReminder
+        move thisReminder to newList
+    end repeat
+    return output
+end tell'
+fi
+
+
 echo "✔︎ $reminder"
 echo "---"
-echo "Open Reminder| bash='$0' param1='open' terminal=false"
+echo "⚙︎ Open Reminder| bash='$0' param1='open' terminal=false"
 echo "---"
 for loop in $todolist
 do
-    echo "${loop%*,} | bash='$0' param1='done' param2='${loop%*,}' terminal=false refresh=true"
+	echo "${loop//#holder/ }| bash='$0' param1='done' param2='${loop//#holder/ }' terminal=false refresh=true"
 done | sort
 echo "---"
 echo "↻ Refresh| terminal=false refresh=true"
+echo "---"
+echo "♺ Archive| bash='$0' param1='archive' terminal=false"
 ```
+
+> 2020-09-27 update: 由于手动移动 todo 到 Archive 比较麻烦，所以增加了 archive 功能。
+> 2020-09-28 update: 由于去掉 todo 的空格，会导致点击该 todo 无法在 reminder 中自动勾选完成，所以在脚本内部做了优化，从 reminder 中读取列表时，将空格转为一个占位符，然后在 menubar 中展示时，将占位符还原为空格。
+
 
 效果图：
 
@@ -100,7 +120,7 @@ echo "↻ Refresh| terminal=false refresh=true"
 
 
 
-如果你细心点，可以发现第 3 条 todo，`提交 commit` 在菜单栏中变成了 `提交commit`，这是由于 shell 中的数组元素以空格区分，为了避免1 个 todo 显示在两行，我将每个 todo 中的空格都去掉了。
+(已优化)~~~如果你细心点，可以发现第 3 条 todo，`提交 commit` 在菜单栏中变成了 `提交commit`，这是由于 shell 中的数组元素以空格区分，为了避免1 个 todo 显示在两行，我将每个 todo 中的空格都去掉了。~~~
 
 这样，每天只用维护自己的 Reminder 的任务列表就行了。如果很多天过去，任务总数太多，可以再创建一个 Archive 提醒列表，将过去完成的任务都移动到里面。
 
