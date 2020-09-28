@@ -109,7 +109,7 @@ done | sort
 echo "---"
 echo "↻ Refresh| terminal=false refresh=true"
 echo "---"
-echo "♺ Archive| bash='$0' param1='archive' terminal=false"
+echo "♺ Archive| bash='$0' param1='archive' terminal=false refresh=true"
 
 ```
 
