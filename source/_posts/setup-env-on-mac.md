@@ -263,6 +263,20 @@ jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home
 jenv global 1.8
 ```
 
+## 安装maven
+homebrew安装：
+```bash
+brew install maven
+```
+
+设置环境：
+```bash
+vim ~/.zshrc
+
+export M2_HOME=/usr/local/Cellar/maven/3.6.2/libexec
+export M2=$M2_HOME/bin
+```
+
 ## 安装vscode
 
 jetbrains全家桶固然爽，但是我的账号已经过期，又不想交钱，而且公司配的电脑是乞丐版mbp，8g内存太吃紧了。不过公司提供的开发机倒是有4 c 16g的配置，而且提供了定制化的vscode server软件包，在开发机docker启动vscode server，然后本地mbp运行一个配套的定制化vscode client，等于直接在开发机远程coding。这本来是大多数使用c++开发的同事的方案，不过参考vscode提供的[support for java](https://code.visualstudio.com/docs/languages/java)方案，加入必要的java、maven、spring等插件后，完全可以作为jetbrain idea intellij的替代方案。
@@ -279,6 +293,50 @@ brew install --cask visual-studio-code
 
 ### git
 
-### bos
+设置git全局config：
+```bash
+git config --global -e
+
+
+[user]
+    name = fakeyanss
+    email = yanshisangc@gmail.com
+[core]
+    editor = vim
+[alias]
+    # Shortening aliases
+    co = checkout
+    cob = checkout -b
+    f = fetch -p
+    c = commit
+    p = push
+    ba = branch -a
+    bd = branch -d
+    bD = branch -D
+    dc = diff --cached
+
+    # Feature improving aliases
+    st = status -sb
+    a = add -p
+
+    # Complex aliases
+    plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
+    tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    rank = "!git shortlog -sn --no-merges"
+    bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
+    ranks = "!git log --format='%aN' | sort -u | while read name; do echo \"\\033[32m$name\\033[0m\t\"; git log --author=\"$name\" --pretty=tformat: --numstat | awk \"{ add += \\$1; subs += \\$2; loc += \\$1 - \\$2 } END { printf \\\"added lines: %s, removed lines: %s, total lines: %s\\n\\\", add, subs, loc }\" -; done"
+```
 
 ### mysql
+
+安装mycli客户端
+```bash
+brew install mycli
+```
+
+配置常用连接别名：
+```bash
+vim ~/.zshrc
+alias devdb='mycli -h127.0.0.1 -P3306 -Ddev -udev -pdev'
+```
