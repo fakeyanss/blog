@@ -172,7 +172,7 @@ set -g @plugin "arcticicestudio/nord-tmux"
 
 最终效果：
 
-![image-20210317235227885](https://foreti.me/imgplace/2021/2021-03-17_image-20210317235227885-d2aa93.png)
+![image-20210317235420004](https://foreti.me/imgplace/2021/2021-03-17_image-20210317235420004-e88c55.png)
 
 ## 安装多版本jdk
 
