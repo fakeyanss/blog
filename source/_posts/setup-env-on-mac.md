@@ -132,6 +132,10 @@ ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/the
 
 Set `ZSH_THEME="spaceship"` in your `.zshrc`.
 
+最终样式：
+
+![image-20210317234829665](https://foreti.me/imgplace/2021/2021-03-17_image-20210317234829665-06705d.png)
+
 ## 安装tmux
 
 安装tmux：
@@ -165,6 +169,10 @@ nord是一个干净的、冷色调的配色主题，提供了一组主题插件�
 ```bash
 set -g @plugin "arcticicestudio/nord-tmux"
 ```
+
+最终效果：
+
+![image-20210317235227885](https://foreti.me/imgplace/2021/2021-03-17_image-20210317235227885-d2aa93.png)
 
 ## 安装多版本jdk
 
