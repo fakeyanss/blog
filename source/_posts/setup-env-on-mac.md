@@ -81,6 +81,19 @@ done
 brew update-reset
 ```
 
+二进制预编译包bottles换源：
+
+```bash
+# 临时替换
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+
+# 长期替换
+# bash
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"' >> ~/.bash_profile
+# zsh
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"' >> ~/.zprofile
+```
+
 ## 安装iTerm2
 
 使用homebrew安装：
@@ -277,13 +290,56 @@ homebrew安装：
 brew install maven
 ```
 
-设置环境：
+设置环境（一般不需要）：
+```bash
+# 查询安装路径
+mvn --version
+
+Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)
+Maven home: /usr/local/Cellar/maven/3.6.3_1/libexec
+Java version: 15.0.2, vendor: N/A, runtime: /usr/local/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home
+Default locale: zh_CN_#Hans, platform encoding: UTF-8
+OS name: "mac os x", version: "11.2.3", arch: "x86_64", family: "mac"
+
+# 设置环境变量
+vim ~/.zshrc
+
+export M2_HOME=/usr/local/Cellar/maven/3.6.3_1/libexec
+export M2=$M2_HOME/bin
+```
+
+## 安装node
+
+homebrew安装n（node版本管理）：
+
+```bash
+brew install n
+```
+
+下载最新lts版本node和npm：
+
+```bash
+n lts
+```
+
+设置npm镜像：
+
 ```bash
 vim ~/.zshrc
 
-export M2_HOME=/usr/local/Cellar/maven/3.6.2/libexec
-export M2=$M2_HOME/bin
+# node, npm
+export NODE_MIRROR=https://npm.taobao.org/dist/
 ```
+
+## 安装python
+
+homebrew安装anaconda：
+
+```bash
+brew install anaconda
+```
+
+
 
 ## 安装vscode
 
