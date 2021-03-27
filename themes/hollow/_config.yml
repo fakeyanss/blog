@@ -4,7 +4,7 @@ default_post_title: Halo
 #Date Format
 date_format: YYYY 年 MM 月 DD 日
 
-# Comments. Choose one by filling up the information
+# Comments
 comments:
   # Disqus comments
   disqus_shortname: you-yue-ru-tie
@@ -25,4 +25,9 @@ image_viewer: true
 
 # Mathjax enable
 #mathjax: false
- 
+
+# Table of content
+# Maybe support more toc style in future.
+toc:
+  enable: true
+
