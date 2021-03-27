@@ -13,7 +13,7 @@ comments:
 google_analytics: UA-112380656-1
 
 # Register service worker
-service_worker: false
+service_worker: true
 
 # Local search with atom.xml, dependency hexo-generator-feed plugin
 local_search: true

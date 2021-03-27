@@ -26,7 +26,7 @@ a.nav-back {
         color: var(--font-color);
     }
 
-    body, .intro, .post-title, .post-preview a p, .post-heading {
+    body, .intro, .post-title, .post-preview a p, .post-heading h1 {
         background: var(--bg-color);
         color: var(--font-color);
     }
@@ -35,7 +35,7 @@ a.nav-back {
         background-color: var(--bg-color);
         color: var(--font-color);
         border-color: var(--line-color);
-        text-shadow: #1b1c1c 0px 0px 1px;
+        text-shadow: var(--bg-color) 0px 0px 1px;
     }
 
     figure.highlight table .line {
@@ -129,40 +129,6 @@ kbd {
     border-radius: 3px;
     box-shadow: 0 1px 0 rgba(12, 13, 14, 0.2), 0 0 0 2px #FFF inset;
     white-space: nowrap;
-}
-
-.highlight.java .code:before {
-    content: "Java"
-}
-
-.highlight.html .code:before {
-    content: "HTML"
-}
-
-.highlight.js .code:before {
-    content: "JavaScript"
-}
-
-.highlight.bash .code:before {
-    content: "Shell"
-}
-
-.highlight.css .code:before {
-    content: "CSS"
-}
-
-.highlight.python .code:before {
-    content: "Python"
-}
-
-.code:before {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 5px 10px 0;
-    color: #ccc;
-    text-align: right;
-    font-size: 14px;
 }
 
 /**
