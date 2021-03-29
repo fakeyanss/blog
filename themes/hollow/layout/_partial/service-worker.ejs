@@ -3,7 +3,7 @@
     <script text="module">
       if ("serviceWorker" in navigator) {
         navigator.serviceWorker
-          .register(theme.service_worker.enable + "sw.js")
+          .register("<%- config.root %>js/sw.js")
           .then(function() {
             console.log("A new service worker is being installed.");
           })

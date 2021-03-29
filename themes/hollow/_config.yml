@@ -15,8 +15,6 @@ google_analytics: UA-112380656-1
 # Register service worker
 service_worker:
   enable: true
-  # root path
-  root: /blog/
 
 # Local search with atom.xml, dependency hexo-generator-feed plugin
 local_search: true
