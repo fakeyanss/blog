@@ -4,7 +4,7 @@ date: 2021-03-15 00:05:16
 tags: Mac, 开发环境
 ---
 
-手上一台几乎闲置的mbp mid 2015，最近升级了Big Sur，感觉焕然一新，想作为主力机使用了，毕竟硬件配置比公司给的低配mbp还好一截。按照现在习惯的开发环境，重新装了一遍（想找一下更高效的个人开发环境备份与重装方案？）。
+手上一台几乎闲置的mbp mid 2015，最近升级了Big Sur，感觉焕然一新，想作为主力机使用了，毕竟硬件配置比公司给的低配mbp还好一截。按照现在习惯的开发环境，重新装了一遍（下次试试用dotfiles管理）。
 
 <!-- more -->
 
@@ -336,10 +336,15 @@ export NODE_MIRROR=https://npm.taobao.org/dist/
 homebrew安装anaconda：
 
 ```bash
-brew install anaconda
+brew cask install anaconda
 ```
 
+创建python环境
 
+```bash
+conda create -n py2 python=2.7
+conda create -n py3 python=3.8
+```
 
 ## 安装vscode
 
@@ -349,8 +354,15 @@ jetbrains全家桶固然爽，但是我的账号已经过期，又不想交钱�
 
 安装vscode：
 
-```
+```bash
 brew install --cask visual-studio-code
+```
+
+去应用市场安装插件
+
+```
+Java Extension Pack(包含Java开发常用插件)
+Spring Boot Extension Pack(包含springboot开发常用插件)
 ```
 
 ## 别名配置
