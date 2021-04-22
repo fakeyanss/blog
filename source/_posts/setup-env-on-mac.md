@@ -4,7 +4,7 @@ date: 2021-03-15 00:05:16
 tags: Mac, 开发环境
 ---
 
-手上一台几乎闲置的mbp mid 2015，最近升级了Big Sur，感觉焕然一新，想作为主力机使用了，毕竟硬件配置比公司给的低配mbp还好一截。按照现在习惯的开发环境，重新装了一遍（下次试试用dotfiles管理）。
+手上一台几乎闲置的mbp mid 2015，最近升级了Big Sur，感觉焕然一新，想作为主力机使用了，毕竟硬件配置比公司给的低配mbp还好一截。按照现在习惯的开发环境，重新装了一遍（下次试试用[dotfiles](https://github.com/fakeyanss/dotfiles)管理）。
 
 <!-- more -->
 
@@ -85,13 +85,13 @@ brew update-reset
 
 ```bash
 # 临时替换
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles"
 
 # 长期替换
 # bash
-echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"' >> ~/.bash_profile
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles"' >> ~/.bash_profile
 # zsh
-echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"' >> ~/.zprofile
+echo 'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles"' >> ~/.zprofile
 ```
 
 ## 安装iTerm2
@@ -399,9 +399,8 @@ git config --global -e
     plog = log --graph --pretty='format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'
     tlog = log --stat --since='1 Day Ago' --graph --pretty=oneline --abbrev-commit --date=relative
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-    rank = "!git shortlog -sn --no-merges"
     bdm = "!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"
-    ranks = "!git log --format='%aN' | sort -u | while read name; do echo \"\\033[32m$name\\033[0m\t\"; git log --author=\"$name\" --pretty=tformat: --numstat | awk \"{ add += \\$1; subs += \\$2; loc += \\$1 - \\$2 } END { printf \\\"added lines: %s, removed lines: %s, total lines: %s\\n\\\", add, subs, loc }\" -; done"
+    rank = "!git log --format='%aN' | sort -u | while read name; do echo \"\\033[32m$name\\033[0m\t\"; git log --author=\"$name\" --pretty=tformat: --numstat | awk \"{ add += \\$1; subs += \\$2; loc += \\$1 - \\$2 } END { printf \\\"added lines: %s, removed lines: %s, total lines: %s\\n\\\", add, subs, loc }\" -; done"
 ```
 
 ### mysql
