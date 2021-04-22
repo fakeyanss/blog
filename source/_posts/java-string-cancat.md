@@ -136,7 +136,7 @@ public class StringTest {
 
 - 17行，`StringBuilder` 先初始化，再依次 `append`；
 
-- 32行到45行，开始执行 `+`操作 的循环体，每次都需要初始化 StringBuilder`对象；
+- 32行到45行，开始执行 `+`操作 的循环体，每次都需要初始化 StringBuilder 对象；
 
 - 85行到118行，开始执行 `StringBuilder.append` 操作的循环体，每次只用 `append`。
 
