@@ -4,7 +4,7 @@ date: 2021-03-15 00:05:16
 tags: Mac, 开发环境
 ---
 
-手上一台几乎闲置的mbp mid 2015，最近升级了Big Sur，感觉焕然一新，想作为主力机使用了，毕竟硬件配置比公司给的低配mbp还好一截。按照现在习惯的开发环境，重新装了一遍（下次试试用[dotfiles](https://github.com/fakeyanss/dotfiles)管理）。
+手上一台几乎闲置的mbp mid 2015，最近升级了Big Sur，感觉焕然一新，想作为主力机使用了，毕竟硬件配置比公司给的低配mbp还好一截。按照现在习惯的开发环境，重新装了一遍（下次试试用 dotfiles[^1]管理）。
 
 <!-- more -->
 
@@ -415,3 +415,7 @@ brew install mycli
 vim ~/.zshrc
 alias devdb='mycli -h127.0.0.1 -P3306 -Ddev -udev -pdev'
 ```
+
+## 附录
+
+[^1]: dotfiles，一种配置文件管理方案，参考[我的dotfiles](https://github.com/fakeyanss/dotfiles)
