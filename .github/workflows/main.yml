@@ -1,20 +1,54 @@
-name: deploying Hexo project to GitHub pages
+name: deploying Hexo pages
+
 on:
   push:
     branches:
       - source
 
+env:
+  TZ: Asia/Shanghai
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    name: deploy blog.
     steps:
-      - name: Checkout
-        uses: actions/checkout@master
-
-      - name: Build and Deploy
-        uses: theme-keep/hexo-deploy-github-pages-action@master
-        env:
-          PERSONAL_TOKEN: ${{ secrets.HEXO_DEPLOY }}
-          PUBLISH_REPOSITORY: fakeYanss/blog
-          BRANCH: master
-          PUBLISH_DIR: ./public # 部署 public 目录下的文件
+    - name: Checkout
+      uses: actions/checkout@v1
+      with:
+        submodules: true
+        ref: source
+    - name: Setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: '12'
+    - name: Install dependecies
+      run: |
+        npm install
+        npm install hexo-cli -g
+    - name: Build page
+      run: |
+        hexo clean & hexo g
+#     - name: commit
+#       run: |
+#         cd public
+#         git config --global user.email bot
+#         git config --global user.name bot
+#         git add .
+#         git commit -m "auto build gh-page" -a
+    - name: GitHub Pages
+      uses: crazy-max/ghaction-github-pages@v2.2.0
+      with:
+        # Git branch where site will be deployed
+        target_branch: master
+        # Create incremental commit instead of doing push force
+        keep_history: true
+        # Build directory to deploy
+        build_dir: public
+        # Write the given domain name to the CNAME file
+        # fqdn: custom.domain.name # optional
+        # Prevent Jekyll from building the site
+        jekyll: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GPUSH_TOKEN }}
+        
