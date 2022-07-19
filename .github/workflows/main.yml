@@ -50,5 +50,5 @@ jobs:
         # Prevent Jekyll from building the site
         jekyll: false
       env:
-        GITHUB_TOKEN: ${{ secrets.GPUSH_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.HEXO_DEPLOY }}
         
