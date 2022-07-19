@@ -29,13 +29,6 @@ jobs:
     - name: Build page
       run: |
         hexo clean & hexo g
-#     - name: commit
-#       run: |
-#         cd public
-#         git config --global user.email bot
-#         git config --global user.name bot
-#         git add .
-#         git commit -m "auto build gh-page" -a
     - name: GitHub Pages
       uses: crazy-max/ghaction-github-pages@v2.2.0
       with:
