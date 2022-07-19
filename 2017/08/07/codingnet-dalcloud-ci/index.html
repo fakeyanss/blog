@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="如何在多终端发布coding博客，比如部署好的hexo+coding博客，我换了电脑，有方便的方法可以继续发博客吗？答案是有。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="fakeyanss">
+    
+
+    <!-- Title -->
+    
+    <title>Coding DaoCloud持续集成 | Yet Another Possibility</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/blog/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                Coding DaoCloud持续集成
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>如何在多终端发布coding博客，比如部署好的hexo+coding博客，我换了电脑，有方便的方法可以继续发博客吗？答案是有。</p>
+<a id="more"></a>
+<hr>
+<p>在上一篇博客中，按照步骤做完，就可以在本机发布博客到coding了，但这样我们只能用这一台电脑发博客，并且最大的问题是备份问题，如果这台电脑挂了，或者是误删文件，就很可能丢失了blog源文件。如果没有备份，就要gg了。</p>
+<p>想要备份源文件，同时在多终端发布博客，最好的实现方式是找一个持续集成工具，在<code>coding</code>的帮助文档里有一些介绍，我试过一些，最后选择<code>DaoCloud</code>来集成coding仓库，原因还是免费。</p>
+<p>这里的原理是，在coding的blog仓库中建立两个分支，分别是master和coding-pages。master分支存放blog源文件，即本地的hexo文件内容；<code>coding-pages</code>分支存放博客的全部静态页面，也就是<code>blog\public</code>文件夹中的内容。</p>
+<p>操作的过程中，顺序是</p>
+<ol>
+<li><code>git push</code> 提交本地blog源文件到<code>master</code>分支</li>
+<li>DaoCloud检测到master分支有提交内容，按照设置好的安装环境，生成博客，部署博客到coding-pages分支</li>
+</ol>
+<p>这样在部署过一次之后，如果不再修改样式和主题等其他内容，只是提交博客，可以直接登录coding.net网站，将编辑好的md文件添加到<code>master</code>分支的<code>blog/source/_post</code>文件夹下，就完了。</p>
+<p>如果要同步本地备份，也只用把<code>master</code>分支内容<code>clone</code>到本地就行了。</p>
+<p>现在开始正式的操作。</p>
+<h2 id="创建新分支"><a href="#创建新分支" class="headerlink" title="创建新分支"></a>创建新分支</h2><p>登录到coding官网中，可以继续保留上一篇博客中创建的仓库，先清空仓库（在项目设置里的仓库设置），然后在分支管理处新建分支<code>coding-pages</code>。</p>
+<h2 id="创建SSH-Key文件夹"><a href="#创建SSH-Key文件夹" class="headerlink" title="创建SSH Key文件夹"></a>创建SSH Key文件夹</h2><p>由于上一篇博客<a href="http://yanss.top/Coding+DaoCloud%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90/" target="_blank" rel="noopener">《github+hexo搭建个人博客》</a>中已经创建了SSH key，所以这里可以直接使用，在<code>/blog/</code>根目录下创建文件夹<code>.daocloud</code>，这里前面有<code>.</code>的文件夹不能直接创建，可以先直接创建<code>aaa</code>，再用命令行修改名字。此处右键打开git bash，<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv aaa .daocloud</span><br></pre></td></tr></table></figure></p>
+<p>然后把之前生成的SSH key复制到这个文件夹下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp  ~/.ssh/id_rsa*   .daocloud/</span><br></pre></td></tr></table></figure></p>
+<p>然后在<code>.daocloud</code>下新建文件<code>ssh_config</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch ssh_config</span><br></pre></td></tr></table></figure></p>
+<p>打开<code>ssh_config</code>,输入<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">StrictHostKeyChecking no</span><br><span class="line">UserKnownHostsFile /dev/null</span><br></pre></td></tr></table></figure></p>
+<p>保存。</p>
+<h2 id="编辑Dockerfile"><a href="#编辑Dockerfile" class="headerlink" title="编辑Dockerfile"></a>编辑Dockerfile</h2><p>在本地仓库blog根目录下新建文件名为<code>Dockerfile</code>的文件（没有后缀）,打开编辑内容如下，原因稍后再说：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"># Dockerfile</span><br><span class="line">FROM node:slim</span><br><span class="line">MAINTAINER xxx &lt;xxx@xxx.com&gt;</span><br><span class="line"></span><br><span class="line"># 安装git、ssh等基本工具</span><br><span class="line">RUN apt-get update &amp;&amp; apt-get install -y git ssh-client ca-certificates --no-install-recommends &amp;&amp; rm -r /var/lib/apt/lists/*</span><br><span class="line"></span><br><span class="line"># 设置时区</span><br><span class="line">RUN echo &quot;Asia/Shanghai&quot; &gt; /etc/timezone &amp;&amp; dpkg-reconfigure -f noninteractive tzdata</span><br><span class="line"></span><br><span class="line">RUN npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br><span class="line"># 只安装Hexo命令行工具，其他依赖项根据项目package.json在持续集成过程中安装</span><br><span class="line">RUN cnpm install hexo-cli -g</span><br><span class="line"># install hexo server</span><br><span class="line">RUN cnpm install hexo-server</span><br><span class="line"></span><br><span class="line">EXPOSE 4000</span><br></pre></td></tr></table></figure>
+<p>这里只用替换上你自己的coding用户名和邮箱就行，别的不变。</p>
+<h2 id="修改本地-config-yml配置"><a href="#修改本地-config-yml配置" class="headerlink" title="修改本地_config.yml配置"></a>修改本地_config.yml配置</h2><p>因为要把博客部署到<code>coding-pages</code>分支，所以要修改deploy参数，把_config.yml的deploy修改如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo:</span><br><span class="line">      coding: git@git.coding.net:xxx/xxx.git,coding-pages</span><br></pre></td></tr></table></figure></p>
+<p>coding后面替换为你自己的coding仓库地址，加上coding-pages分支。</p>
+<h2 id="DaoCloud创建项目和配置"><a href="#DaoCloud创建项目和配置" class="headerlink" title="DaoCloud创建项目和配置"></a>DaoCloud创建项目和配置</h2><p>这里是因为DaoCloud系统有过升级改版，网上搜到的DaoCloud操作教程几乎都是去年12月以前的，所以有些对现在的版本不太适用，我自己借助旧的教程和部署<code>AppVeyor</code>的经验改动了一些，适用现在的DaoCloud。</p>
+<p>下面先登录DaoCloud官网，用github或者coding账号直接登录，在个人设置中绑定github和coding，然后在控制台新建项目，项目名随便取。<br><img src="https://foreti.me/imgplace/2019/20170807214217.jpg" alt="img"><br><img src="https://foreti.me/imgplace/2019/20170807214425.jpg" alt="img"></p>
+<p>选择<code>成功构建后设置 latest 为镜像标签</code>，然后点击<code>镜像：ci-hexo</code>（这里是我的名字，你就点你自己相应的），复制镜像地址，先记在一边等下要用。这里安利一个剪贴板管理软件<a href="https://sourceforge.net/projects/ditto-cp/" target="_blank" rel="noopener">Ditto</a>。<br><img src="https://foreti.me/imgplace/2019/2017080721427.jpg" alt="img"></p>
+<p>然后打开流程定义，点击右侧<code>通过 yaml 快捷编辑</code>，打开后只一个脚本编辑页面，直接把以下内容复制进去：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">version: 3</span><br><span class="line">image: ubuntu:16.04</span><br><span class="line">stages:</span><br><span class="line">- build</span><br><span class="line">- test</span><br><span class="line">构建任务:</span><br><span class="line">  stage: build</span><br><span class="line">  job_type: image_build</span><br><span class="line">  only:</span><br><span class="line">    branches:</span><br><span class="line">    - master</span><br><span class="line">  build_dir: /</span><br><span class="line">  cache: true</span><br><span class="line">  dockerfile_path: /Dockerfile</span><br><span class="line">测试任务:</span><br><span class="line">  stage: test</span><br><span class="line">  job_type: test</span><br><span class="line">  only:</span><br><span class="line">    branches:</span><br><span class="line">    - master</span><br><span class="line">  pull_request: false</span><br><span class="line">  before_script:</span><br><span class="line">  - mkdir ~/.ssh</span><br><span class="line">  - mv .daocloud/id_rsa ~/.ssh/id_rsa</span><br><span class="line">  - mv .daocloud/ssh_config ~/.ssh/config</span><br><span class="line">  - chmod 600 ~/.ssh/id_rsa</span><br><span class="line">  - chmod 600 ~/.ssh/config</span><br><span class="line">  - eval $(ssh-agent)</span><br><span class="line">  - ssh-add ~/.ssh/id_rsa</span><br><span class="line">  - rm -rf .daocloud</span><br><span class="line">  - git config --global user.name &quot;xxxxx&quot; #这里填你的coding用户名</span><br><span class="line">  - git config --global user.email &quot;xxxxx@xxxxx.com&quot; #这里填你的coding邮箱</span><br><span class="line">  image: xxxxx:latest #这里填你的镜像url，不要覆盖latest</span><br><span class="line">  install:</span><br><span class="line">  - cnpm install</span><br><span class="line">  - cnpm install --save hexo-generator-feed</span><br><span class="line">  - cnpm install hexo-baidu-url-submit --save</span><br><span class="line">  script:</span><br><span class="line">  - hexo clean</span><br><span class="line">  - hexo g</span><br><span class="line">  - hexo d</span><br><span class="line">  - rm -rf ~/.ssh/</span><br></pre></td></tr></table></figure>
+<p>只用修改3处位置，其他的不要动，然后点击<code>更新</code>。<br><img src="https://foreti.me/imgplace/2019/20170807220526.jpg" alt="img"></p>
+<p>到了这里就快完成了，还差一点，在流程定义这里点击构建任务，修改触发条件为分支-master-执行任务，测试任务也修改触发条件为分支-master-执行任务。<br><img src="https://foreti.me/imgplace/2019/20170807220586726.jpg" alt="img"><br><img src="https://foreti.me/imgplace/2019/20170807221310.jpg" alt="img"></p>
+<h2 id="git关联远程库和提交代码"><a href="#git关联远程库和提交代码" class="headerlink" title="git关联远程库和提交代码"></a>git关联远程库和提交代码</h2><p>先在所有的配置就做完了，可以回到blog文件夹下，将本地仓库push到远程库就行了。<br>现在介绍一下如何关联远程库，以及commit和push操作。</p>
+<ul>
+<li>关联远程库，这里后面xxx是你的仓库url</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add coding xxxxxx</span><br></pre></td></tr></table></figure>
+<ul>
+<li>添加代码到本地仓库和commit信息，这里xxx是你的commit信息，可以随便写</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit -m &quot;xxx&quot;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>push到远程库的master分支</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u coding master</span><br></pre></td></tr></table></figure>
+<p>如果提示有冲突，就把<code>-u</code>改为<code>-f</code>，反正仓库里都是自己的东西，force push也没什么大问题。</p>
+<h2 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h2><p>现在就完成了全部的操作，其实并不复杂，Dockerfile之预编译文件，放在仓库master分支中，每当仓库master分支有新的提交时，DaoCloud会监测到变化，由于触发条件的设置，就开始了构建任务和测试任务，构建任务阶段是编译Dockerfile文件中的脚本，其实大致意思很好懂，就是配置git，node和hexo环境。然后进行测试任务，就是进行刚才编辑的yaml编辑器中的脚本，其中有一段测试任务，逻辑就是安装必要的hexo包，然后复制coding仓库里的ssh密匙，用你配置的账号和邮箱，进行hexo操作，清除缓存，生成文件，部署到coding-pages分支，然后删除ssh密匙（安全性）。</p>
+<p>虽然整个操作过程有暴露私有ssh key的风险，但说实话，git的初衷不就是为了分享代码吗，况且我们写的这些真实价值并没有多少，所以放心的使用吧，coding提供的是私有仓库还是可以放心，github进行进行相同操作就改一下配置也可以最后删掉ssh key。</p>
+<p>coding+DaoCloud持续集成到此结束，有问题可以下方留言评论。</p>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/blog/tags/CI/">#CI</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2017 年 08 月 07 日
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+<div id="disqus_thread" class="comment"></div>
+  <!--<script>
+    var disqus_shortname = 'you-yue-ru-tie';
+    var disqus_website = '/';
+    var disqus_config = function () {
+      this.page.url = disqus_website;
+      this.page.identifier = disqus_shortname;
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+      Disqus.</a></noscript>-->
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'you-yue-ru-tie';
+  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/blog/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/blog/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#创建新分支"><span class="toc-text">创建新分支</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建SSH-Key文件夹"><span class="toc-text">创建SSH Key文件夹</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#编辑Dockerfile"><span class="toc-text">编辑Dockerfile</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改本地-config-yml配置"><span class="toc-text">修改本地_config.yml配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DaoCloud创建项目和配置"><span class="toc-text">DaoCloud创建项目和配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git关联远程库和提交代码"><span class="toc-text">git关联远程库和提交代码</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#结束"><span class="toc-text">结束</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-112380656-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    <script text="module">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/blog/js/sw.js")
+          .then(function() {
+            console.log("A new service worker is being installed.");
+          })
+          .catch(function(error) {
+            console.log("Service worker registration failed:", error);
+          });
+      } else {
+        console.log("Service workers are not supported.");
+      }
+    </script>
+
+    
+</body>
+
+</html>

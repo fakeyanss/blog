@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="201905W20 Tip">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="fakeyanss">
+    
+
+    <!-- Title -->
+    
+    <title>倾斜人生 - 1 | Yet Another Possibility</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/blog/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                倾斜人生 - 1
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>201905W20 Tip</p>
+<a id="more"></a>
+<hr>
+<h2 id="Hexo-tag-shortcut-in-hollow"><a href="#Hexo-tag-shortcut-in-hollow" class="headerlink" title="Hexo tag shortcut in hollow"></a>Hexo tag shortcut in hollow</h2><p>验证 Hexo 的内置标签在 hollow 中可使用的部分。</p>
+<h3 id="Block-Quote"><a href="#Block-Quote" class="headerlink" title="Block Quote"></a>Block Quote</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;% blockquote David Levithan, Wide Awake %&#125;</span><br><span class="line">Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</span><br><span class="line">&#123;% endblockquote %&#125;</span><br></pre></td></tr></table></figure>
+<blockquote><p>Do not just seek happiness for yourself. Seek happiness for all. Through kindness. Through mercy.</p>
+<footer><strong>David Levithan</strong><cite>Wide Awake</cite></footer></blockquote>
+<h3 id="Code-Block"><a href="#Code-Block" class="headerlink" title="Code Block"></a>Code Block</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;% codeblock _.compact http://underscorejs.org/#compact Underscore.js %&#125;</span><br><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br><span class="line">&#123;% endcodeblock %&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>_.compact</span><a href="http://underscorejs.org/#compact" target="_blank" rel="noopener">Underscore.js</a></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">_.compact([0, 1, false, 2, &apos;&apos;, 3]);</span><br><span class="line">=&gt; [1, 2, 3]</span><br></pre></td></tr></table></figure>
+<h3 id="YouTube"><a href="#YouTube" class="headerlink" title="YouTube"></a>YouTube</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% youtube video_id %&#125;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Mysql-命令"><a href="#Mysql-命令" class="headerlink" title="Mysql 命令"></a>Mysql 命令</h2><p>查询数据库编码方式：<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">show</span> <span class="keyword">variables</span> <span class="keyword">like</span> <span class="string">'character%'</span>;</span><br></pre></td></tr></table></figure></p>
+<p>将查询语句结果输出到文件<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -h127.0.0.1 -P3306 -uroot -Ddatabases -p -e <span class="string">"select * from table"</span> &gt; file</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h2 id="将-bash-换成-zsh-amp-oh-my-zsh"><a href="#将-bash-换成-zsh-amp-oh-my-zsh" class="headerlink" title="将 bash 换成 zsh &amp; oh my zsh"></a>将 bash 换成 zsh &amp; oh my zsh</h2><p>一旦你使用了 zsh 和 oh my zsh，你就很难换回 bash 了。</p>
+<p>如何在服务器上使用 zsh 和 oh my zsh？</p>
+<p><strong>第一步：</strong></p>
+<p>以 Ubuntu 为例，首先安装 zsh。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install zsh</span><br></pre></td></tr></table></figure></p>
+<p>然后将默认 Shell 设置为 zsh，有可能路径是 <code>/bin/zsh</code><br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chsh -s /usr/bin/zsh</span><br></pre></td></tr></table></figure></p>
+<p>检查。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="variable">$SHELL</span></span><br></pre></td></tr></table></figure></p>
+<p>第二步：</p>
+<p>安装 oh my zsh。<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)</span>"</span></span><br></pre></td></tr></table></figure></p>
+<p>第三步：</p>
+<p>配置插件，命令提示和高亮<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure></p>
+<p>修改 <code>vim .zshrc</code>，找到 <code>plugins=(git)</code> 改为 <code>plugins=(git zsh-autosuggestions zsh-syntax-highlighting)</code></p>
+<p>并修改主题为 <code>ZSH_THEME=&quot;agnoster&quot;</code>。</p>
+<p>然后退出保存。</p>
+<p>这个主题的路径前缀太长，编辑<code>~/.oh-my-zsh/themes/agnoster.zsh-theme</code>，将 <code>build_prompt</code> 下的 <code>prompt_context</code> 注释掉。</p>
+<p>最后<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> .zshrc</span><br></pre></td></tr></table></figure></p>
+<p>如果这时候发现显示有些乱码，可以换一下字体，如果没有可用的字体，可以安装powerline的字体。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/powerline/fonts.git</span><br><span class="line">cd fonts</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure></p>
+<p>重连一下服务器，打开新世界。</p>
+<hr>
+<h2 id="印象笔记-Markdown-支持什么快捷键？"><a href="#印象笔记-Markdown-支持什么快捷键？" class="headerlink" title="印象笔记 Markdown 支持什么快捷键？"></a>印象笔记 Markdown 支持什么快捷键？</h2><p><strong>Mac 端</strong></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新建 Markdown 笔记</td>
+<td>CMD+D</td>
+</tr>
+<tr>
+<td>粗体</td>
+<td>CMD+B</td>
+</tr>
+<tr>
+<td>斜体</td>
+<td>CMD+I</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td>CMD+S</td>
+</tr>
+<tr>
+<td>分隔线</td>
+<td>CMD+L</td>
+</tr>
+<tr>
+<td>编号列表</td>
+<td>CMD+Shift+O</td>
+</tr>
+<tr>
+<td>项目符号列表</td>
+<td>CMD+Shift+U</td>
+</tr>
+<tr>
+<td>插入待办事项</td>
+<td>CMD+Shift+T</td>
+</tr>
+<tr>
+<td>代码块</td>
+<td>CMD+Shift+P</td>
+</tr>
+<tr>
+<td>撤销</td>
+<td>CMD+Z</td>
+</tr>
+<tr>
+<td>在笔记内搜索</td>
+<td>CMD+F</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Windows 端</strong></p>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Shortcut</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>新建 Markdown 笔记</td>
+<td>Ctrl+Alt+D</td>
+</tr>
+<tr>
+<td>粗体</td>
+<td>Ctrl+B</td>
+</tr>
+<tr>
+<td>斜体</td>
+<td>Ctrl+I</td>
+</tr>
+<tr>
+<td>删除线</td>
+<td>Ctrl+T</td>
+</tr>
+<tr>
+<td>下划线</td>
+<td>Ctrl+U</td>
+</tr>
+<tr>
+<td>分隔线</td>
+<td>Ctrl + Shift + -</td>
+</tr>
+<tr>
+<td>编号列表</td>
+<td>Ctrl + Shift + O</td>
+</tr>
+<tr>
+<td>项目符号列表</td>
+<td>Ctrl + Shift + W</td>
+</tr>
+<tr>
+<td>插入待办事项</td>
+<td>Ctrl + Shift + C</td>
+</tr>
+<tr>
+<td>代码块</td>
+<td>Ctrl+Shift+L</td>
+</tr>
+<tr>
+<td>插入日期和时间</td>
+<td>Alt + Shift + D</td>
+</tr>
+<tr>
+<td>撤销</td>
+<td>Ctrl+Z</td>
+</tr>
+<tr>
+<td>在笔记内搜索</td>
+<td>Ctrl+F</td>
+</tr>
+</tbody>
+</table>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/blog/tags/tip/">#tip</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2019 年 05 月 15 日
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+<div id="disqus_thread" class="comment"></div>
+  <!--<script>
+    var disqus_shortname = 'you-yue-ru-tie';
+    var disqus_website = '/';
+    var disqus_config = function () {
+      this.page.url = disqus_website;
+      this.page.identifier = disqus_shortname;
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+      Disqus.</a></noscript>-->
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'you-yue-ru-tie';
+  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/blog/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/blog/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Hexo-tag-shortcut-in-hollow"><span class="toc-text">Hexo tag shortcut in hollow</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Block-Quote"><span class="toc-text">Block Quote</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-Block"><span class="toc-text">Code Block</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#YouTube"><span class="toc-text">YouTube</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Mysql-命令"><span class="toc-text">Mysql 命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#将-bash-换成-zsh-amp-oh-my-zsh"><span class="toc-text">将 bash 换成 zsh &amp; oh my zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#印象笔记-Markdown-支持什么快捷键？"><span class="toc-text">印象笔记 Markdown 支持什么快捷键？</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-112380656-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    <script text="module">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/blog/js/sw.js")
+          .then(function() {
+            console.log("A new service worker is being installed.");
+          })
+          .catch(function(error) {
+            console.log("Service worker registration failed:", error);
+          });
+      } else {
+        console.log("Service workers are not supported.");
+      }
+    </script>
+
+    
+</body>
+
+</html>

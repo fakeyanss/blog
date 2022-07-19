@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="什么都别说了，先上图。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="fakeyanss">
+    
+
+    <!-- Title -->
+    
+    <title>Coding的动态pages部署WordPress | Yet Another Possibility</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/blog/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                Coding的动态pages部署WordPress
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>什么都别说了，先上图。</p>
+<a id="more"></a>
+<hr>
+<p><img src="https://foreti.me/imgplace/2019/coding-pages.png" alt="coding-pages"></p>
+<p>部署好的wordpress效果（我主要是做一个相册集）<br><img src="https://foreti.me/imgplace/2019/wp.yanss.top.png" alt="wp"></p>
+<p>总体效果还不错吧，毕竟动态博客还是可操作性强多了。</p>
+<p>好了，进入正题。</p>
+<p>做这个其实就是前几天在coding的pages服务菜单中发现还有静态和动态两个选项卡，当时就懵逼了，pages服务还能动态？</p>
+<p>然后看了说明，动态是可以，但是限制还是蛮多的。</p>
+<blockquote>
+<p>动态 Pages 是一个动态网页托管和演示服务，支持使用 PHP 语言和 MySQL 数据库，可用于部署开源博客、CMS 等动态应用。</p>
+</blockquote>
+<p>只能使用php语言，然后数据库其实是coding自己的服务器提供的，然后整个服务器后台也是coding提供，所以自己是不可能做什么修改的。当然做一个wordpress博客还是绰绰有余，下面就是我的wordpress仓库文件。</p>
+<p><img src="https://foreti.me/imgplace/2019/coding-pages1.png" alt="coding-pages1"></p>
+<p>搭建过程也非常简单，就是coding新建一个仓库，然后去<a href="https://cn.wordpress.org/" target="_blank" rel="noopener">wordpress官网</a>上下载最新的wordpress压缩包，解压之后push到coding仓库中。</p>
+<p>然后在Pages服务中开启动态Pages，选择部署来源为master分支，稍等一下就自动部署完成了。</p>
+<p>打开动态pages运行的url，然后就是5分钟流程了。</p>
+<p>所有的连接信息(共5个)都在这里，只有前4个用得上</p>
+<p><img src="https://foreti.me/imgplace/2019/coding-pages2.png" alt="coding-pages2"></p>
+<p><strong>存在的问题：</strong></p>
+<ul>
+<li>使用过程中在wordpress管理后台中下载好了主题和插件，但是在coding仓库中却没有对应的文件增加。所以在偶尔出现数据库连接错误或其他问题需要重新部署时，原本设置好的插件和主题就没有了</li>
+<li>由于动态pages使用的是coding自己的服务器，所以个人没法修改服务器的一些设置，比如上传文件的大小限制，图片的分辨率等，所以上传的大图需要自己压缩一下再传。</li>
+</ul>
+<p><strong>最后建议：</strong></p>
+<ul>
+<li>把连接信息保存到一个文件<code>wp-config.php</code>，放到根目录下。</li>
+<li>所有的主题和插件去源网页下载文件，保存到<code>wp-content</code>下的对应文件夹下，然后提交到coding</li>
+</ul>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/blog/tags/WordPress/">#WordPress</a> <a href="/blog/tags/Coding-pages/">#Coding-pages</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2018 年 02 月 09 日
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+<div id="disqus_thread" class="comment"></div>
+  <!--<script>
+    var disqus_shortname = 'you-yue-ru-tie';
+    var disqus_website = '/';
+    var disqus_config = function () {
+      this.page.url = disqus_website;
+      this.page.identifier = disqus_shortname;
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+      Disqus.</a></noscript>-->
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'you-yue-ru-tie';
+  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/blog/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/blog/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-112380656-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    <script text="module">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/blog/js/sw.js")
+          .then(function() {
+            console.log("A new service worker is being installed.");
+          })
+          .catch(function(error) {
+            console.log("Service worker registration failed:", error);
+          });
+      } else {
+        console.log("Service workers are not supported.");
+      }
+    </script>
+
+    
+</body>
+
+</html>

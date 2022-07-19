@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="SSM包含持久层Dao和Model，业务层Service和ServiceImpl，表现层Controller和View，本文讲述这些不同层的作用和关系。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="fakeyanss">
+    
+
+    <!-- Title -->
+    
+    <title>SSM框架各层关系 | Yet Another Possibility</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/blog/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                SSM框架各层关系
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>SSM包含持久层Dao和Model，业务层Service和ServiceImpl，表现层Controller和View，本文讲述这些不同层的作用和关系。</p>
+<a id="more"></a>
+<hr>
+<h2 id="持久层：Dao层（mapper）"><a href="#持久层：Dao层（mapper）" class="headerlink" title="持久层：Dao层（mapper）"></a>持久层：Dao层（mapper）</h2><blockquote>
+<p>DAO层主要是做数据持久层的工作，负责与数据库进行联络的一些任务都封装在此</p>
+</blockquote>
+<ul>
+<li>DAO层的设计首先是设计DAO的接口</li>
+<li>然后在Spring的配置文件中定义此接口的实现类</li>
+<li>然后就可在模块中调用此接口来进行数据业务的处理，而不用关心此接口的具体实现类是哪个类，显得结构非常清晰</li>
+<li>DAO层的数据源配置，以及有关数据库连接的参数都在Spring的配置文件中进行配置</li>
+</ul>
+<h2 id="业务层：Service层"><a href="#业务层：Service层" class="headerlink" title="业务层：Service层"></a>业务层：Service层</h2><blockquote>
+<p>Service层主要负责业务模块的逻辑应用设计</p>
+</blockquote>
+<ul>
+<li>首先设计接口，再设计其实现的类</li>
+<li>接着再在Spring的配置文件中配置其实现的关联。这样我们就可以在应用中调用Service接口来进行业务处理</li>
+<li>Service层的业务实现，具体要调用到已定义的DAO层的接口</li>
+<li>封装Service层的业务逻辑有利于通用的业务逻辑的独立性和重复利用性，程序显得非常简洁</li>
+</ul>
+<h2 id="表现层：Controller层（Handler）"><a href="#表现层：Controller层（Handler）" class="headerlink" title="表现层：Controller层（Handler）"></a>表现层：Controller层（Handler）</h2><blockquote>
+<p>Controller层负责具体的业务模块流程的控制</p>
+</blockquote>
+<ul>
+<li>在此层里面要调用Service层的接口来控制业务流程</li>
+<li>控制的配置也同样是在Spring的配置文件里面进行，针对具体的业务流程，会有不同的控制器，我们具体的设计过程中可以将流程进行抽象归纳，设计出可以重复利用的子单元流程模块，这样不仅使程序结构变得清晰，也大大减少了代码量</li>
+</ul>
+<h2 id="View层"><a href="#View层" class="headerlink" title="View层"></a>View层</h2><ul>
+<li>View层：此层与控制层结合比较紧密，需要二者结合起来协同工发。View层主要负责前台jsp页面的表示.</li>
+</ul>
+<h2 id="各层联系"><a href="#各层联系" class="headerlink" title="各层联系"></a>各层联系</h2><ul>
+<li>DAO层，Service层这两个层次都可以单独开发，互相的耦合度很低，完全可以独立进行，这样的一种模式在开发大项目的过程中尤其有优势</li>
+<li>Controller，View层因为耦合度比较高，因而要结合在一起开发，但是也可以看作一个整体独立于前两个层进行开发。这样，在层与层之前我们只需要知道接口的定义，调用接口即可完成所需要的逻辑单元应用，一切显得非常清晰简单</li>
+<li>Service层是建立在DAO层之上的，建立了DAO层后才可以建立Service层，而Service层又是在Controller层之下的，因而Service层应该既调用DAO层的接口，又要提供接口给Controller层的类来进行调用，它刚好处于一个中间层的位置。每个模型都有一个Service接口，每个接口分别封装各自的业务处理方法</li>
+</ul>
+<h2 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h2><p>view层：结合control层，显示前端页面</p>
+<p>control层：业务模块流程控制，调用service层接口</p>
+<p>service层：业务操作实现类，调用dao接口</p>
+<p>dao层：数据业务处理，持久化操作</p>
+<p>model层：pojo， or mapping，持久层</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[View]--&gt;B[Controller]</span><br><span class="line">B--&gt;C[Service]</span><br><span class="line">C--&gt;D[ServiceImpl]</span><br><span class="line">D--&gt;E[Dao]</span><br><span class="line">E--&gt;F[Mapping]</span><br></pre></td></tr></table></figure>
+
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/blog/tags/springnvc/">#springnvc</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2017 年 07 月 20 日
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+<div id="disqus_thread" class="comment"></div>
+  <!--<script>
+    var disqus_shortname = 'you-yue-ru-tie';
+    var disqus_website = '/';
+    var disqus_config = function () {
+      this.page.url = disqus_website;
+      this.page.identifier = disqus_shortname;
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+      Disqus.</a></noscript>-->
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'you-yue-ru-tie';
+  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/blog/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/blog/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#持久层：Dao层（mapper）"><span class="toc-text">持久层：Dao层（mapper）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#业务层：Service层"><span class="toc-text">业务层：Service层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表现层：Controller层（Handler）"><span class="toc-text">表现层：Controller层（Handler）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#View层"><span class="toc-text">View层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#各层联系"><span class="toc-text">各层联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-text">总结：</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-112380656-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    <script text="module">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/blog/js/sw.js")
+          .then(function() {
+            console.log("A new service worker is being installed.");
+          })
+          .catch(function(error) {
+            console.log("Service worker registration failed:", error);
+          });
+      } else {
+        console.log("Service workers are not supported.");
+      }
+    </script>
+
+    
+</body>
+
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+
+<!-- Head tag -->
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="手上一台几乎闲置的mbp mid 2015，最近升级了Big Sur，感觉焕然一新，想作为主力机使用了，毕竟硬件配置比公司给的低配mbp还好一截。按照现在习惯的开发环境，重新装了一遍（下次试试用 dotfiles^1管理）。">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="fakeyanss">
+    
+
+    <!-- Title -->
+    
+    <title>Mac从零搭建开发环境 | Yet Another Possibility</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/blog/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- jQuery -->
+    <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+    <!-- Bootstrap -->
+    <script src="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+
+<body>
+
+    <!-- Content -->
+    <section class="article-container">
+    <!-- Back Home -->
+    <a class="nav-back" href="/blog/">
+    <i class="fa fa-puzzle-piece"></i>
+</a>
+
+        <!-- Page Header -->
+        <header class="intro-header">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <div class="post-heading">
+                            <h1>
+                                Mac从零搭建开发环境
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Post Content -->
+        <article>
+            <div class="container">
+                <div class="row">
+                    <!-- Post Main Content -->
+                    <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <p>手上一台几乎闲置的mbp mid 2015，最近升级了Big Sur，感觉焕然一新，想作为主力机使用了，毕竟硬件配置比公司给的低配mbp还好一截。按照现在习惯的开发环境，重新装了一遍（下次试试用 dotfiles<a href="dotfiles，一种配置文件管理方案，参考[我的dotfiles](https://github.com/fakeyanss/dotfiles)">^1</a>管理）。</p>
+<a id="more"></a>
+<h2 id="安装字体"><a href="#安装字体" class="headerlink" title="安装字体"></a>安装字体</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/powerline/fonts.git</span><br><span class="line">cd fonts</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<h2 id="安装homebrew"><a href="#安装homebrew" class="headerlink" title="安装homebrew"></a>安装homebrew</h2><p>国内网络环境太差，安装速度过慢，挂了代理依然只有几十KB的速度，只能选择换镜像源。</p>
+<p>首先，需要已经安装了 bash、git 和 curl，以及 Command Line Tools (CLT) for Xcode， <code>xcode-select --install</code> 。</p>
+<p>接着，在终端输入以下几行命令设置环境变量：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">BREW_TYPE=<span class="string">"homebrew"</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_BREW_GIT_REMOTE=<span class="string">"https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_CORE_GIT_REMOTE=<span class="string">"https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/<span class="variable">$&#123;BREW_TYPE&#125;</span>-core.git"</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_BOTTLE_DOMAIN=<span class="string">"https://mirrors.tuna.tsinghua.edu.cn/<span class="variable">$&#123;BREW_TYPE&#125;</span>-bottles"</span></span><br></pre></td></tr></table></figure>
+<p>最后，在终端运行以下命令以安装 Homebrew / Linuxbrew：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> --depth=1 https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/install.git brew-install</span><br><span class="line">/bin/bash -c <span class="string">"<span class="variable">$(</span></span></span><br><span class="line"><span class="string"><span class="variable">    cat brew-install/install.sh |</span></span></span><br><span class="line"><span class="string"><span class="variable">    sed -E 's|^(\s*HOMEBREW_BREW_GIT_REMOTE=)</span>(.*)$|\1"</span><span class="variable">$&#123;HOMEBREW_BREW_GIT_REMOTE:-\2&#125;</span><span class="string">"|g' |</span></span><br><span class="line"><span class="string">    sed -E 's|^(\s*HOMEBREW_CORE_GIT_REMOTE=)(.*)$|\1"</span><span class="variable">$&#123;HOMEBREW_CORE_GIT_REMOTE:-\2&#125;</span><span class="string">"|g'</span></span><br><span class="line"><span class="string">)"</span></span><br><span class="line">rm -rf brew-install</span><br></pre></td></tr></table></figure>
+<p>这样在首次安装的时候也可以使用镜像。</p>
+<p>安装好homebrew之后，需要设置常用taps以及换源：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">BREW_TAPS=<span class="string">"<span class="variable">$(brew tap)</span>"</span></span><br><span class="line"><span class="keyword">for</span> tap <span class="keyword">in</span> core cask&#123;,-fonts,-drivers,-versions&#125;; <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">echo</span> <span class="string">"<span class="variable">$BREW_TAPS</span>"</span> | grep -qE <span class="string">"^homebrew/<span class="variable">$&#123;tap&#125;</span>\$"</span>; <span class="keyword">then</span></span><br><span class="line">        <span class="comment"># 将已有 tap 的上游设置为本镜像并设置 auto update</span></span><br><span class="line">        <span class="comment"># 注：原 auto update 只针对托管在 GitHub 上的上游有效</span></span><br><span class="line">        git -C <span class="string">"<span class="variable">$(brew --repo homebrew/$&#123;tap&#125;)</span>"</span> remote <span class="built_in">set</span>-url origin https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-<span class="variable">$&#123;tap&#125;</span>.git</span><br><span class="line">        git -C <span class="string">"<span class="variable">$(brew --repo homebrew/$&#123;tap&#125;)</span>"</span> config homebrew.forceautoupdate <span class="literal">true</span></span><br><span class="line">    <span class="keyword">else</span>   <span class="comment"># 在 tap 缺失时自动安装（如不需要请删除此行和下面一行）</span></span><br><span class="line">        brew tap --force-auto-update homebrew/<span class="variable">$&#123;tap&#125;</span> https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-<span class="variable">$&#123;tap&#125;</span>.git</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<p>更换上游后需重新设置 git 仓库 HEAD：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update-reset</span><br></pre></td></tr></table></figure>
+<p>如有问题，可以复原仓库上游：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">BREW_TAPS=<span class="string">"<span class="variable">$(brew tap)</span>"</span></span><br><span class="line"><span class="keyword">for</span> tap <span class="keyword">in</span> core cask&#123;,-fonts,-drivers,-versions&#125;; <span class="keyword">do</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">echo</span> <span class="string">"<span class="variable">$BREW_TAPS</span>"</span> | grep -qE <span class="string">"^homebrew/<span class="variable">$&#123;tap&#125;</span>\$"</span>; <span class="keyword">then</span></span><br><span class="line">        git -C <span class="string">"<span class="variable">$(brew --repo homebrew/$&#123;tap&#125;)</span>"</span> remote <span class="built_in">set</span>-url origin https://github.com/Homebrew/homebrew-<span class="variable">$&#123;tap&#125;</span>.git</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新设置 git 仓库 HEAD</span></span><br><span class="line">brew update-reset</span><br></pre></td></tr></table></figure>
+<p>二进制预编译包bottles换源：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 临时替换</span></span><br><span class="line"><span class="built_in">export</span> HOMEBREW_BOTTLE_DOMAIN=<span class="string">"https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 长期替换</span></span><br><span class="line"><span class="comment"># bash</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles"'</span> &gt;&gt; ~/.bash_profile</span><br><span class="line"><span class="comment"># zsh</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/bottles"'</span> &gt;&gt; ~/.zprofile</span><br></pre></td></tr></table></figure>
+<h2 id="安装iTerm2"><a href="#安装iTerm2" class="headerlink" title="安装iTerm2"></a>安装iTerm2</h2><p>使用homebrew安装：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask iterm2</span><br></pre></td></tr></table></figure>
+<p>安装主题nord：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://raw.sevencdn.com/arcticicestudio/nord-iterm2/develop/src/xml/Nord.itermcolors</span><br></pre></td></tr></table></figure>
+<p><code>preferences → profiles → colors → color preset → import</code>，选择下载的主题文件。</p>
+<p><img src="https://foreti.me/imgplace/2021/2021-03-15_2021-03-14_image-20210314212900552-39213e-57127d.png" alt="image-20210314212900552"></p>
+<p>设置光标跳转，<code>preferences → Keys → Preset → Natural Text Editing</code> 。</p>
+<p><img src="https://foreti.me/imgplace/2021/2021-03-15_2021-03-14_image-20210314232121400-6d9e01-4e6ffa.png" alt="image-20210314232121400"></p>
+<h2 id="安装oh-my-zsh"><a href="#安装oh-my-zsh" class="headerlink" title="安装oh-my-zsh"></a>安装oh-my-zsh</h2><p>安装oh-my-zsh与命令补全、高亮：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sh -c <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)</span>"</span></span><br><span class="line"></span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-autosuggestions <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-autosuggestions</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/zsh-users/zsh-syntax-highlighting.git <span class="variable">$&#123;ZSH_CUSTOM:-~/.oh-my-zsh/custom&#125;</span>/plugins/zsh-syntax-highlighting</span><br></pre></td></tr></table></figure>
+<p>然后修改 <code>vim.zshrc</code>，找到 <code>plugins=(git)</code> 改为 <code>plugins=(git zsh-autosuggestions zsh-syntax-highlighting)</code></p>
+<p>设置主题：</p>
+<p>Clone this repo:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/denysdovhan/spaceship-prompt.git &quot;$ZSH_CUSTOM/themes/spaceship-prompt&quot; --depth=1</span><br></pre></td></tr></table></figure>
+<p>Symlink <code>spaceship.zsh-theme</code> to your oh-my-zsh custom themes directory:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s &quot;$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme&quot; &quot;$ZSH_CUSTOM/themes/spaceship.zsh-theme&quot;</span><br></pre></td></tr></table></figure>
+<p>Set <code>ZSH_THEME=&quot;spaceship&quot;</code> in your <code>.zshrc</code>.</p>
+<p>最终样式：</p>
+<p><img src="https://foreti.me/imgplace/2021/2021-03-17_image-20210317234829665-06705d.png" alt="image-20210317234829665"></p>
+<h2 id="安装tmux"><a href="#安装tmux" class="headerlink" title="安装tmux"></a>安装tmux</h2><p>安装tmux：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install tmux</span><br></pre></td></tr></table></figure>
+<h3 id="oh-my-tmux"><a href="#oh-my-tmux" class="headerlink" title="oh-my-tmux"></a>oh-my-tmux</h3><p>选择用oh-my-tmux一键配置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br><span class="line">git clone https://github.com/gpakosz/.tmux.git</span><br><span class="line">ln -s -f .tmux/.tmux.conf</span><br><span class="line">cp .tmux/.tmux.conf.local .</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">brew install reattach-to-user-namespace</span><br></pre></td></tr></table></figure>
+<p>后续所有tmux配置在 <code>.tmux.conf.local</code> 中修改即可。</p>
+<h3 id="主题nord-tmux"><a href="#主题nord-tmux" class="headerlink" title="主题nord-tmux"></a>主题nord-tmux</h3><p>nord是一个干净的、冷色调的配色主题，提供了一组主题插件集合，包含诸如 jetbrains、vscode、vim、tmux 的主题插件，这里有全部的<a href="https://github.com/arcticicestudio?tab=repositories&amp;q=nord-&amp;type=&amp;language=" target="_blank" rel="noopener">插件仓库</a>。</p>
+<p>在 <code>.tmux.conf.local</code> 中搜索plugin位置，在下面增加一行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">set</span> -g @plugin <span class="string">"arcticicestudio/nord-tmux"</span></span><br></pre></td></tr></table></figure>
+<p>最终效果：</p>
+<p><img src="https://foreti.me/imgplace/2021/2021-03-17_image-20210317235420004-e88c55.png" alt="image-20210317235420004"></p>
+<h2 id="安装多版本jdk"><a href="#安装多版本jdk" class="headerlink" title="安装多版本jdk"></a>安装多版本jdk</h2><p>activate the AdoptOpenJDK：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew tap AdoptOpenJDK/openjdk</span><br></pre></td></tr></table></figure>
+<p>使用国内镜像安装jdk8，编辑rb文件，替换下载的url：</p>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/Homebrew/Library/Taps/adoptopenjdk/homebrew-openjdk/Casks/adoptopenjdk8.rb</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cask <span class="string">"adoptopenjdk8"</span> <span class="keyword">do</span></span><br><span class="line">  version <span class="string">"8,282:b08"</span></span><br><span class="line">  sha256 <span class="string">"f12d380ceae806d02c4cae23bdc601402c543692c763122286b99d8ef6059794"</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># github.com/AdoptOpenJDK was verified as official when first introduced to the cask</span></span><br><span class="line">  <span class="comment">#url "https://github.com/AdoptOpenJDK/openjdk#&#123;version.before_comma&#125;-binaries/releases/download/jdk8u282-b08/OpenJDK8U-jdk_x64_mac_hotspot_8u282b08.pkg",</span></span><br><span class="line">  url <span class="string">"https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/8/jdk/x64/mac/OpenJDK8U-jdk_x64_mac_hotspot_8u282b08.pkg"</span>,</span><br><span class="line">      <span class="symbol">verified:</span> <span class="string">"https://github.com/AdoptOpenJDK"</span></span><br><span class="line">  appcast <span class="string">"https://github.com/adoptopenjdk/openjdk<span class="subst">#&#123;version.before_comma&#125;</span>-binaries/releases/latest"</span></span><br><span class="line">  name <span class="string">"AdoptOpenJDK 8"</span></span><br><span class="line">  desc <span class="string">"AdoptOpenJDK OpenJDK (Java) Development Kit"</span></span><br><span class="line">  homepage <span class="string">"https://adoptopenjdk.net/"</span></span><br><span class="line"></span><br><span class="line">  pkg <span class="string">"OpenJDK8U-jdk_x64_mac_hotspot_8u282b08.pkg"</span></span><br><span class="line"></span><br><span class="line">  postflight <span class="keyword">do</span></span><br><span class="line">    system_command <span class="string">"/usr/sbin/pkgutil"</span>, <span class="symbol">args:</span> [<span class="string">"--pkg-info"</span>, <span class="string">"net.adoptopenjdk.8.jdk"</span>], <span class="symbol">print_stdout:</span> <span class="literal">true</span></span><br><span class="line">  <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">  uninstall <span class="symbol">pkgutil:</span> <span class="string">"net.adoptopenjdk.8.jdk"</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure>
+<p>同样，jdk11、jdk15可以替换url安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/<span class="built_in">local</span>/Homebrew/Library/Taps/adoptopenjdk/homebrew-openjdk/Casks/adoptopenjdk11.rb</span><br><span class="line"></span><br><span class="line">url <span class="string">"https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/11/jdk/x64/mac/OpenJDK11U-jdk_x64_mac_hotspot_11.0.10_9.pkg"</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">vim /usr/<span class="built_in">local</span>/Homebrew/Library/Taps/adoptopenjdk/homebrew-openjdk/Casks/adoptopenjdk15.rb</span><br><span class="line"></span><br><span class="line">url <span class="string">"https://mirrors.tuna.tsinghua.edu.cn/AdoptOpenJDK/15/jdk/x64/mac/OpenJDK15U-jdk_x64_mac_hotspot_15.0.2_7.pkg"</span></span><br></pre></td></tr></table></figure>
+<p>替换url之后，执行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask adoptopenjdk8</span><br><span class="line">brew install --cask adoptopenjdk11</span><br><span class="line">brew install --cask adoptopenjdk15</span><br></pre></td></tr></table></figure>
+<p>可以使用 jenv 管理jdk多版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install jenv</span><br></pre></td></tr></table></figure>
+<p>在 <code>.zshrc</code> 中添加jenv环境：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># java env</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$HOME</span>/.jenv/bin:<span class="variable">$PATH</span>"</span></span><br><span class="line"><span class="built_in">eval</span> <span class="string">"<span class="variable">$(jenv init -)</span>"</span></span><br></pre></td></tr></table></figure>
+<p>查看已安装的jdk版本和路径：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/usr/libexec/java_home -V</span><br><span class="line"></span><br><span class="line">Matching Java Virtual Machines (3):</span><br><span class="line">    15.0.2 (x86_64) <span class="string">"AdoptOpenJDK"</span> - <span class="string">"AdoptOpenJDK 15"</span> /Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk/Contents/Home</span><br><span class="line">    11.0.10 (x86_64) <span class="string">"AdoptOpenJDK"</span> - <span class="string">"AdoptOpenJDK 11"</span> /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home</span><br><span class="line">    1.8.0_282 (x86_64) <span class="string">"AdoptOpenJDK"</span> - <span class="string">"AdoptOpenJDK 8"</span> /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home</span><br></pre></td></tr></table></figure>
+<p>添加到 jenv 中管理：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-15.jdk/Contents/Home</span><br><span class="line">jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home</span><br><span class="line">jenv add /Library/Java/JavaVirtualMachines/adoptopenjdk-8.jdk/Contents/Home</span><br></pre></td></tr></table></figure>
+<p>设置全局默认 jdk 版本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jenv global 1.8</span><br></pre></td></tr></table></figure>
+<h2 id="安装maven"><a href="#安装maven" class="headerlink" title="安装maven"></a>安装maven</h2><p>homebrew安装：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install maven</span><br></pre></td></tr></table></figure></p>
+<p>设置环境（一般不需要）：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查询安装路径</span></span><br><span class="line">mvn --version</span><br><span class="line"></span><br><span class="line">Apache Maven 3.6.3 (cecedd343002696d0abb50b32b541b8a6ba2883f)</span><br><span class="line">Maven home: /usr/<span class="built_in">local</span>/Cellar/maven/3.6.3_1/libexec</span><br><span class="line">Java version: 15.0.2, vendor: N/A, runtime: /usr/<span class="built_in">local</span>/Cellar/openjdk/15.0.2/libexec/openjdk.jdk/Contents/Home</span><br><span class="line">Default locale: zh_CN_<span class="comment">#Hans, platform encoding: UTF-8</span></span><br><span class="line">OS name: <span class="string">"mac os x"</span>, version: <span class="string">"11.2.3"</span>, arch: <span class="string">"x86_64"</span>, family: <span class="string">"mac"</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 设置环境变量</span></span><br><span class="line">vim ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="built_in">export</span> M2_HOME=/usr/<span class="built_in">local</span>/Cellar/maven/3.6.3_1/libexec</span><br><span class="line"><span class="built_in">export</span> M2=<span class="variable">$M2_HOME</span>/bin</span><br></pre></td></tr></table></figure></p>
+<h2 id="安装node"><a href="#安装node" class="headerlink" title="安装node"></a>安装node</h2><p>homebrew安装n（node版本管理）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install n</span><br></pre></td></tr></table></figure>
+<p>下载最新lts版本node和npm：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n lts</span><br></pre></td></tr></table></figure>
+<p>设置npm镜像：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"></span><br><span class="line"><span class="comment"># node, npm</span></span><br><span class="line"><span class="built_in">export</span> NODE_MIRROR=https://npm.taobao.org/dist/</span><br></pre></td></tr></table></figure>
+<h2 id="安装python"><a href="#安装python" class="headerlink" title="安装python"></a>安装python</h2><p>homebrew安装anaconda：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install anaconda</span><br></pre></td></tr></table></figure>
+<p>创建python环境</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n py2 python=2.7</span><br><span class="line">conda create -n py3 python=3.8</span><br></pre></td></tr></table></figure>
+<h2 id="安装vscode"><a href="#安装vscode" class="headerlink" title="安装vscode"></a>安装vscode</h2><p>jetbrains全家桶固然爽，但是我的账号已经过期，又不想交钱，而且公司配的电脑是乞丐版mbp，8g内存太吃紧了。不过公司提供的开发机倒是有4 c 16g的配置，而且提供了定制化的vscode server软件包，在开发机docker启动vscode server，然后本地mbp运行一个配套的定制化vscode client，等于直接在开发机远程coding。这本来是大多数使用c++开发的同事的方案，不过参考vscode提供的<a href="https://code.visualstudio.com/docs/languages/java" target="_blank" rel="noopener">support for java</a>方案，加入必要的java、maven、spring等插件后，完全可以作为jetbrain idea intellij的替代方案。</p>
+<p>目前使用了近半年vscode做为主力开发ide，我的低配办公mbp已经很少发出风扇的声音，习惯vscode的coding、debug流程之后，效率反而变高了不少，毕竟再也不卡顿了。</p>
+<p>安装vscode：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install --cask visual-studio-code</span><br></pre></td></tr></table></figure>
+<p>去应用市场安装插件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Java Extension Pack(包含Java开发常用插件)</span><br><span class="line">Spring Boot Extension Pack(包含springboot开发常用插件)</span><br></pre></td></tr></table></figure>
+<h2 id="别名配置"><a href="#别名配置" class="headerlink" title="别名配置"></a>别名配置</h2><h3 id="git"><a href="#git" class="headerlink" title="git"></a>git</h3><p>设置git全局config：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">git config --global -e</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[user]</span><br><span class="line">    name = fakeyanss</span><br><span class="line">    email = yanshisangc@gmail.com</span><br><span class="line">[core]</span><br><span class="line">    editor = vim</span><br><span class="line">[<span class="built_in">alias</span>]</span><br><span class="line">    <span class="comment"># Shortening aliases</span></span><br><span class="line">    co = checkout</span><br><span class="line">    cob = checkout -b</span><br><span class="line">    f = fetch -p</span><br><span class="line">    c = commit</span><br><span class="line">    p = push</span><br><span class="line">    ba = branch -a</span><br><span class="line">    bd = branch -d</span><br><span class="line">    bD = branch -D</span><br><span class="line">    dc = diff --cached</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Feature improving aliases</span></span><br><span class="line">    st = status -sb</span><br><span class="line">    a = add -p</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Complex aliases</span></span><br><span class="line">    plog = <span class="built_in">log</span> --graph --pretty=<span class="string">'format:%C(red)%d%C(reset) %C(yellow)%h%C(reset) %ar %C(green)%aN%C(reset) %s'</span></span><br><span class="line">    tlog = <span class="built_in">log</span> --<span class="built_in">stat</span> --since=<span class="string">'1 Day Ago'</span> --graph --pretty=oneline --abbrev-commit --date=relative</span><br><span class="line">    lg = <span class="built_in">log</span> --color --graph --pretty=format:<span class="string">'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)&lt;%an&gt;%Creset'</span> --abbrev-commit</span><br><span class="line">    bdm = <span class="string">"!git branch --merged | grep -v '*' | xargs -n 1 git branch -d"</span></span><br><span class="line">    rank = <span class="string">"!git log --format='%aN' | sort -u | while read name; do echo \"\\033[32m<span class="variable">$name</span>\\033[0m\t\"; git log --author=\"<span class="variable">$name</span>\" --pretty=tformat: --numstat | awk \"&#123; add += \\<span class="variable">$1</span>; subs += \\<span class="variable">$2</span>; loc += \\<span class="variable">$1</span> - \\<span class="variable">$2</span> &#125; END &#123; printf \\\"added lines: %s, removed lines: %s, total lines: %s\\n\\\", add, subs, loc &#125;\" -; done"</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="mysql"><a href="#mysql" class="headerlink" title="mysql"></a>mysql</h3><p>安装mycli客户端<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install mycli</span><br></pre></td></tr></table></figure></p>
+<p>配置常用连接别名：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line"><span class="built_in">alias</span> devdb=<span class="string">'mycli -h127.0.0.1 -P3306 -Ddev -udev -pdev'</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="附录"><a href="#附录" class="headerlink" title="附录"></a>附录</h2>
+
+                            <!-- Meta -->
+                            <div class="post-meta">
+                                <hr>
+                                <br>
+                                <div class="post-tags">
+                                    
+                                        
+
+<a href="/blog/tags/Mac-开发环境/">#Mac, 开发环境</a>
+
+
+                                            
+                                </div>
+                                <div class="post-date">
+                                    
+                                        2021 年 03 月 14 日
+                                    
+                                </div>
+                            </div>
+                    </div>
+
+                    <!-- Comments -->
+                    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                        <!-- Disqus Comments -->
+
+<div id="disqus_thread" class="comment"></div>
+  <!--<script>
+    var disqus_shortname = 'you-yue-ru-tie';
+    var disqus_website = '/';
+    var disqus_config = function () {
+      this.page.url = disqus_website;
+      this.page.identifier = disqus_shortname;
+    };
+    (function () {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by
+      Disqus.</a></noscript>-->
+  <script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = 'you-yue-ru-tie';
+  
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+  </script>
+
+
+                    </div>
+                </div>
+            </div>
+        </article>
+</section>
+
+<!-- Image viewer-->
+
+    <!-- Custom picture view-->
+    <link href="/blog/css/viewer.min.css" rel="stylesheet" />
+    <script
+      src="/blog/js/viewer.min.js"
+      type="text/javascript"
+      charset="utf-8"
+    ></script>
+    
+    <script type="text/javascript">
+      // set image viewer
+      Viewer.setDefaults({
+        zoomRatio: [0.5],
+        navbar: false,
+        toolbar: false,
+        button: false,
+        title: [2, (image, imageData) => `${image.alt}`],
+        show: function() {
+          this.viewer.zoomTo(0.5);
+        }
+      });
+      var imageList = document.getElementsByTagName("img");
+      Array.prototype.forEach.call(imageList, element => {
+        var viewer = new Viewer(element);
+      });
+    </script>
+
+    
+
+<!-- TOC -->
+
+    <aside id="article-toc" role="navigation" class="fixed">
+        <div id="article-toc-inner">
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装字体"><span class="toc-text">安装字体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装homebrew"><span class="toc-text">安装homebrew</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装iTerm2"><span class="toc-text">安装iTerm2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装oh-my-zsh"><span class="toc-text">安装oh-my-zsh</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装tmux"><span class="toc-text">安装tmux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#oh-my-tmux"><span class="toc-text">oh-my-tmux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题nord-tmux"><span class="toc-text">主题nord-tmux</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装多版本jdk"><span class="toc-text">安装多版本jdk</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装maven"><span class="toc-text">安装maven</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装node"><span class="toc-text">安装node</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装python"><span class="toc-text">安装python</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装vscode"><span class="toc-text">安装vscode</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#别名配置"><span class="toc-text">别名配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#git"><span class="toc-text">git</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mysql"><span class="toc-text">mysql</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#附录"><span class="toc-text">附录</span></a></li></ol>
+        </div>
+    </aside>
+
+    <!-- Scripts -->
+    <script type="text/javascript">
+    console.log("© zchen9 🙋 2015-" + new Date().getFullYear());
+</script>
+  
+    <!-- Google Analytics -->
+    
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-112380656-1', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+
+    <!-- Service Worker -->
+    <!-- if using service worker -->
+
+    <script text="module">
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker
+          .register("/blog/js/sw.js")
+          .then(function() {
+            console.log("A new service worker is being installed.");
+          })
+          .catch(function(error) {
+            console.log("Service worker registration failed:", error);
+          });
+      } else {
+        console.log("Service workers are not supported.");
+      }
+    </script>
+
+    
+</body>
+
+</html>
