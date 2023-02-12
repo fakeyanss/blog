@@ -27,7 +27,7 @@ date: 2019-05-12
 
 ---
 
-欢迎订阅我的博客：[atom.xml](https://foreti.me/atom.xml)
+欢迎订阅我的博客：[atom.xml](https://foreti.me/blog/atom.xml)
 
 以下是可以找到我的方式：
 
