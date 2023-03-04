@@ -3,11 +3,11 @@ type: "about"
 date: 2019-05-12
 ---
 
-我是 FakeYanss，后端工程师，目前在 Baidu 工作。
+我是 fakeyanss，后端工程师，目前在 Baidu 工作，主要做音视频服务端的业务。
 
-主要写 Java，会一些 Python 和 JavaScript，推崇自动化。
+熟悉 Web 开发相关的技术栈，日常写 Java，业余写 Go，也会一些 Bash/Python/Lua/JavaScript，推崇自动化。
 
-热爱生活，热爱游戏，只希望在这里，写一点仅有的趣味。
+希望在这里，写一点仅有的趣味。
 
 喜欢的一首歌：
 
@@ -31,15 +31,10 @@ date: 2019-05-12
 
 以下是可以找到我的方式：
 
-- yanshisangc@gmail.com
-
+- Mail: yanshisangc@gmail.com
+- WeChat: fakeyanss
 - [Github](https://github.com/fakeYanss)
-
 - [LinkedIn](https://www.linkedin.com/in/foretime/)
-
 - [Twitter](https://twitter.com/fakeYanss)
-
-- WeChat
-<img style="border-radius: 0.3125em; box-shadow: 0 2px 4px 0 rgba(34,36,38,.12),0 2px 10px 0 rgba(34,36,38,.08); width: 300px; display: inline" src="https://raw.githubusercontent.com/fakeYanss/imgplace/master/2019/wechat.png">
 
 
