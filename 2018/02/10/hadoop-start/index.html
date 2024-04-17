@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 
 <!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,12 +25,14 @@
     <link href="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/blog/css/style.css">
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
 
     <!-- Custom Fonts -->
     <link href="//cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- jQuery -->
     <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
@@ -43,7 +45,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
+<meta name="generator" content="Hexo 7.0.0-rc1"></head>
 
 
 <body>
@@ -77,9 +79,9 @@
                     <!-- Post Main Content -->
                     <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <p>这是一篇初学Hadoop时应该浏览的博客，受18年实习时的mentor推荐，我读了Understanding Hadoop Clusters and the Network一文，并在这里翻译一遍。</p>
-<a id="more"></a>
+<span id="more"></span>
 <hr>
-<h1 id="Understanding-Hadoop-Clusters-and-the-Network"><a href="#Understanding-Hadoop-Clusters-and-the-Network" class="headerlink" title="Understanding Hadoop Clusters and the Network"></a>Understanding Hadoop Clusters and the Network</h1><p>Author: Brad Hedlund<br><br>Link: <a href="http://bradhedlund.com/2011/09/10/understanding-hadoop-clusters-and-the-network/" target="_blank" rel="noopener">original text</a><br><br>Translator: Yanss</p>
+<h1 id="Understanding-Hadoop-Clusters-and-the-Network"><a href="#Understanding-Hadoop-Clusters-and-the-Network" class="headerlink" title="Understanding Hadoop Clusters and the Network"></a>Understanding Hadoop Clusters and the Network</h1><p>Author: Brad Hedlund<br><br>Link: <a href="http://bradhedlund.com/2011/09/10/understanding-hadoop-clusters-and-the-network/">original text</a><br><br>Translator: Yanss</p>
 <p>This article is Part 1 in series that will take a closer look at the architecture and methods of a Hadoop cluster, and how it relates to the network and server infrastructure. The content presented here is largely based on academic work and conversations I’ve had with customers running real production clusters. If you run production Hadoop clusters in your data center, I’m hoping you’ll provide your valuable insight in the comments below. Subsequent articles to this will cover the server and network architecture options in closer detail. Before we do that though, lets start by learning some of the basics about how a Hadoop cluster works. OK, let’s get started!</p>
 <p>本文是系列的第1部分，将带你详细了解Hadoop集群的架构和方法，以及它如何将网络和服务器基础设施相关联。这里介绍的内容主要是基于学术研究和我与在实际产品中运行集群的客户的交流。如果你在你的数据中心中运行Hadoop集群生产，我期待你在下面的评论中提供有价值的见解。接下来的文章将会包含服务器和网络结构的详细细节。然而在此之前，让我了解一些Hadoop集群工作的基础。<br><img src="https://foreti.me/imgplace/2019/Hadoop-Server-Roles.png" alt="Hadoop-Server-Roles"></p>
 <p>The three major categories of machine roles in a Hadoop deployment are Client machines, Masters nodes, and Slave nodes. The Master nodes oversee the two key functional pieces that make up Hadoop: storing lots of data (HDFS), and running parallel computations on all that data (Map Reduce). The Name Node oversees and coordinates the data storage function (HDFS), while the Job Tracker oversees and coordinates the parallel processing of data using Map Reduce. Slave Nodes make up the vast majority of machines and do all the dirty work of storing the data and running the computations. Each slave runs both a Data Node and Task Tracker daemon that communicate with and receive instructions from their master nodes. The Task Tracker daemon is a slave to the Job Tracker, the Data Node daemon a slave to the Name Node.</p>
@@ -108,10 +110,10 @@
 <p>Hadoop有“机架感知”的概念。作为Hadoop管理员，你可以手动定义集群中每个slave Data Noded的机架数量。为什么你要做这个麻烦的事情呢？有两个关键原因：防止数据丢失和网络性能。记住每个块的数据需要复制到多个机器以防止一个机器失败是丢失所有的数据。如果所有的数据复制碰巧位于同意机架的机器上，并且机架发生失败，会发生这样的事情吗？比如一个开关失败或者是供电问题。那将会一团糟。所以为了避免这样，“某物”需要知道网络拓扑中Data Nodes在哪，以此做一个关于数据复制品应该存放在集群何处的智能的决定。这个“某物”是Name Node。</p>
 <p>There is also an assumption that two machines in the same rack have more bandwidth and lower latency between each other than two machines in two different racks. This is true most of the time. The rack switch uplink bandwidth is usually (but not always) less than its downlink bandwidth. Furthermore, in-rack latency is usually lower than cross-rack latency (but not always). If at least one of those two basic assumptions are true, wouldn’t it be cool if Hadoop can use the same Rack Awareness that protects data to also optimally place work streams in the cluster, improving network performance? Well, it does! Cool, right?</p>
 <p>有一个假设关于在同一机架的两个机器之间比起不同机架的两个机器有更多的带宽和更低的等待时间。大多是时候这是正确的。机架开关的上行带宽通常(不总是)比下行带宽小。而且，在机架内的等待时间通常比机架见的等待时间低(不总是)。如果这两个基础假设中至少一个是对的，如果Hadoop能用同一个机架感知，保护数据到工作流也就是集群中最适宜的位置，提高网络性能，不会更好吗？当然会。</p>
-<p>What is <strong>NOT</strong> cool about Rack Awareness at this point is the <a href="http://developer.yahoo.com/hadoop/tutorial/module2.html#rack" target="_blank" rel="noopener">manual work required to define it the first time</a>, continually update it, and keep the information accurate. If the rack switch could auto-magically provide the Name Node with the list of Data Nodes it has, that would be cool. Or vice versa, if the Data Nodes could auto-magically tell the Name Node what switch they’re connected to, that would be cool too.</p>
-<p>在这一点关于机架感知不好的地方是，<a href="http://developer.yahoo.com/hadoop/tutorial/module2.html#rack" target="_blank" rel="noopener">manual work required to define it the first time</a>，持续的更新它，保持信息准确。如果机架可以自动提供Data Nodes list的Name Node，那将会很好。反过来也是，如果Data Nodes可以自动告诉Name Node它们连接的什么开关，也会很好。</p>
-<p>Even more interesting would be a <a href="http://www.bradhedlund.com/2011/04/21/data-center-scale-openflow-sdn/" target="_blank" rel="noopener">OpenFlow network</a>, where the Name Node could query the OpenFlow controller about a Node’s location in the topology.</p>
-<p>甚至更有趣的是一个<a href="http://www.bradhedlund.com/2011/04/21/data-center-scale-openflow-sdn/" target="_blank" rel="noopener">OpenFlow network</a>，Name Node可以在哪查询OpenFlow控制器关于一个Node的拓扑位置。</p>
+<p>What is <strong>NOT</strong> cool about Rack Awareness at this point is the <a href="http://developer.yahoo.com/hadoop/tutorial/module2.html#rack">manual work required to define it the first time</a>, continually update it, and keep the information accurate. If the rack switch could auto-magically provide the Name Node with the list of Data Nodes it has, that would be cool. Or vice versa, if the Data Nodes could auto-magically tell the Name Node what switch they’re connected to, that would be cool too.</p>
+<p>在这一点关于机架感知不好的地方是，<a href="http://developer.yahoo.com/hadoop/tutorial/module2.html#rack">manual work required to define it the first time</a>，持续的更新它，保持信息准确。如果机架可以自动提供Data Nodes list的Name Node，那将会很好。反过来也是，如果Data Nodes可以自动告诉Name Node它们连接的什么开关，也会很好。</p>
+<p>Even more interesting would be a <a href="http://www.bradhedlund.com/2011/04/21/data-center-scale-openflow-sdn/">OpenFlow network</a>, where the Name Node could query the OpenFlow controller about a Node’s location in the topology.</p>
+<p>甚至更有趣的是一个<a href="http://www.bradhedlund.com/2011/04/21/data-center-scale-openflow-sdn/">OpenFlow network</a>，Name Node可以在哪查询OpenFlow控制器关于一个Node的拓扑位置。</p>
 <hr>
 <p><img src="https://foreti.me/imgplace/2019/Preparing-HDFS-Writes.png" alt="Preparing-HDFS-Writes"></p>
 <p>The Client is ready to load File.txt into the cluster and breaks it up into blocks, starting with Block A. The Client consults the Name Node that it wants to write File.txt, gets permission from the Name Node, and receives a list of (3) Data Nodes for each block, a unique list for each block. The Name Node used its Rack Awareness data to influence the decision of which Data Nodes to provide in these lists. The key rule is that <strong>for every block of data, two copies will exist in one rack, another copy in a different rack.</strong> So the list provided to the Client will follow this rule.</p>
@@ -140,7 +142,7 @@
 <p><img src="https://foreti.me/imgplace/2019/Client-Writes-Span-Cluster.png" alt="Client-Writes-Span-Cluster"></p>
 <p>After the replication pipeline of each block is complete the file is successfully written to the cluster. As intended the file is spread in blocks across the cluster of machines, each machine having a relatively small part of the data. The more blocks that make up a file, the more machines the data can potentially spread. The more CPU cores and disk drives that have a piece of my data mean more parallel processing power and faster results. This is the motivation behind building large, wide clusters. To process more data, faster. When the machine count goes up and the cluster goes <strong>wide</strong>, our network needs to scale appropriately.</p>
 <p>在每个块的复制管道都完成后, 文件就成功地写入集群了. 为了文件在集群机器的块之间传播, 每个机器有相对小的一部分数据. 文件分割的块越多, 数据可能传播的机器就越多. 一块数据有更多的CPU核心和磁盘驱动意味着更好的并行处理能力和更快的获得结果. 这是建立更大更宽的集群的背后的动机. 为了更快处理更多的数据. 当机器数增长, 集群变宽, 我们的网络需要合适的规模.</p>
-<p>Another approach to scaling the cluster is to go <strong>deep</strong>. This is where you scale up the machines with more disk drives and more CPU cores. Instead of increasing the number of machines you begin to look at increasing the density of each machine. In scaling deep, you put yourself on a trajectory where more network I/O requirements may be demanded of fewer machines. In this model, <a href="http://www.bradhedlund.com/2012/03/26/considering-10ge-hadoop-clusters-and-the-network/" target="_blank" rel="noopener">how your Hadoop cluster makes the transition to 10GE nodes</a> becomes an important consideration.</p>
+<p>Another approach to scaling the cluster is to go <strong>deep</strong>. This is where you scale up the machines with more disk drives and more CPU cores. Instead of increasing the number of machines you begin to look at increasing the density of each machine. In scaling deep, you put yourself on a trajectory where more network I/O requirements may be demanded of fewer machines. In this model, <a href="http://www.bradhedlund.com/2012/03/26/considering-10ge-hadoop-clusters-and-the-network/">how your Hadoop cluster makes the transition to 10GE nodes</a> becomes an important consideration.</p>
 <p>纵向发展是规模化集群的另一种方法. 这即是你用更多的磁盘驱动和更多的CPU核数纵向扩展机器. 相对增加机器数量, 取而代之的是增加每个机器的密度. 在纵向化时, 你将趋向于更多的网络I/O需求使用更少的机器. 在这种模式下, 你的Hasoop集群怎样变迁到10GE nodes成为一个重点.</p>
 <hr>
 <p><img src="https://foreti.me/imgplace/2019/Name-Node.png" alt="Name-Node"></p>
@@ -178,7 +180,7 @@
 <hr>
 <p><img src="https://foreti.me/imgplace/2019/Reduce-Task.png" alt="Reduce-Task"></p>
 <p>The second phase of the Map Reduce framework is called, you guess it, <strong>Reduce</strong>. The Map task on the machines have completed and generated their intermediate data. Now we need to gather all of this intermediate data to combine and distill it for further processing such that we have one final result.</p>
-<p>The Job Tracker starts a Reduce task on any one of the nodes in the cluster and instructs the Reduce task to go grab the intermediate data from all of the completed Map tasks. The Map tasks may respond to the Reducer almost simultaneously, resulting in a situation where you have a number of nodes sending TCP data to a single node, all at once. This traffic condition is often referred to as <a href="http://www.bradhedlund.com/2011/05/01/tcp-incast-and-cloud-application-performance/" target="_blank" rel="noopener">TCP Incast</a> or “fan-in”. For networks handling lots of Incast conditions, it’s important the network switches have well-engineered internal traffic management capabilities, and adequate buffers (not too big, not too small). Throwing gobs of buffers at a switch may end up causing unwanted collateral damage to other traffic. But that’s a topic for another day.</p>
+<p>The Job Tracker starts a Reduce task on any one of the nodes in the cluster and instructs the Reduce task to go grab the intermediate data from all of the completed Map tasks. The Map tasks may respond to the Reducer almost simultaneously, resulting in a situation where you have a number of nodes sending TCP data to a single node, all at once. This traffic condition is often referred to as <a href="http://www.bradhedlund.com/2011/05/01/tcp-incast-and-cloud-application-performance/">TCP Incast</a> or “fan-in”. For networks handling lots of Incast conditions, it’s important the network switches have well-engineered internal traffic management capabilities, and adequate buffers (not too big, not too small). Throwing gobs of buffers at a switch may end up causing unwanted collateral damage to other traffic. But that’s a topic for another day.</p>
 <p>The Reducer task has now collected all of the intermediate data from the Map tasks and can begin the final computation phase. In this case, we are simply adding up the sum total occurrences of the word “Refund” and writing the result to a file called Results.txt</p>
 <p>The output from the job is a file called Results.txt that is written to HDFS following all of the processes we have covered already; splitting the file up into blocks, pipeline replication of those blocks, etc. When complete, the Client machine can read the Results.txt file from HDFS, and the job is considered complete.</p>
 <p>Our simple word count job did not result in a lot of intermediate data to transfer over the network. Other jobs however may produce a lot of intermediate data – such as sorting a terabyte of data. Where the output of the Map Reduce job is a new set of data equal to the size of data you started with. How much traffic you see on the network in the Map Reduce process is entirely dependent on the type job you are running at that given time.</p>
@@ -195,8 +197,8 @@
 <p>The amount of network traffic balancer can use is very low, with a default setting of 1MB/s. This setting can be changed with the <strong>dfs.balance.bandwidthPerSec</strong> parameter in the file <strong>hdfs-site.xml</strong></p>
 <p>The Balancer is good housekeeping for your cluster. It should definitely be used any time new machines are added, and perhaps even run once a week for good measure. Given the balancers low default bandwidth setting it can take a long time to finish its work, perhaps days or weeks. Wouldn’t it be cool if cluster balancing was a core part of Hadoop, and not just a utility? I think so.</p>
 <hr>
-<p>This material is based on studies, <a href="http://www.cloudera.com/hadoop-training/" target="_blank" rel="noopener">training from Cloudera</a>, and observations from my own virtual Hadoop lab of six nodes. Everything discussed here is based on the <a href="https://ccp.cloudera.com/display/SUPPORT/Downloads" target="_blank" rel="noopener">latest stable release of Cloudera’s CDH3 distribution of Hadoop</a>. There are new and interesting technologies coming to Hadoop such as <a href="http://hadoop.apache.org/common/docs/r0.21.0/hod_scheduler.html#Introduction" target="_blank" rel="noopener">Hadoop on Demand (HOD)</a> and <a href="http://www.hortonworks.com/an-introduction-to-hdfs-federation/" target="_blank" rel="noopener">HDFS Federations</a>, not discussed here, but worth investigating on your own if so inclined.</p>
-<p><strong>Download:</strong> <a href="http://pic.yanss.top/Understanding_Hadoop_Clusters_and_the_Network-bradhedlund_com.pdf" target="_blank" rel="noopener">Slides - PDF</a> <a href="http://pic.yanss.top/Understanding_Hadoop_Clusters_and_the_Network-slides_and_text_bradhedlund_com.pdf" target="_blank" rel="noopener">Slides and Text - PDF</a></p>
+<p>This material is based on studies, <a href="http://www.cloudera.com/hadoop-training/">training from Cloudera</a>, and observations from my own virtual Hadoop lab of six nodes. Everything discussed here is based on the <a href="https://ccp.cloudera.com/display/SUPPORT/Downloads">latest stable release of Cloudera’s CDH3 distribution of Hadoop</a>. There are new and interesting technologies coming to Hadoop such as <a href="http://hadoop.apache.org/common/docs/r0.21.0/hod_scheduler.html#Introduction">Hadoop on Demand (HOD)</a> and <a href="http://www.hortonworks.com/an-introduction-to-hdfs-federation/">HDFS Federations</a>, not discussed here, but worth investigating on your own if so inclined.</p>
+<p><strong>Download:</strong> <a href="http://pic.yanss.top/Understanding_Hadoop_Clusters_and_the_Network-bradhedlund_com.pdf">Slides - PDF</a> <a href="http://pic.yanss.top/Understanding_Hadoop_Clusters_and_the_Network-slides_and_text_bradhedlund_com.pdf">Slides and Text - PDF</a></p>
 <p>Cheers, Brad</p>
 
 

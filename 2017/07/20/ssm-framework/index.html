@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 
 <!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,12 +25,14 @@
     <link href="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/blog/css/style.css">
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
 
     <!-- Custom Fonts -->
     <link href="//cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- jQuery -->
     <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
@@ -43,7 +45,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
+<meta name="generator" content="Hexo 7.0.0-rc1"></head>
 
 
 <body>
@@ -77,7 +79,7 @@
                     <!-- Post Main Content -->
                     <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <p>SSM包含持久层Dao和Model，业务层Service和ServiceImpl，表现层Controller和View，本文讲述这些不同层的作用和关系。</p>
-<a id="more"></a>
+<span id="more"></span>
 <hr>
 <h2 id="持久层：Dao层（mapper）"><a href="#持久层：Dao层（mapper）" class="headerlink" title="持久层：Dao层（mapper）"></a>持久层：Dao层（mapper）</h2><blockquote>
 <p>DAO层主要是做数据持久层的工作，负责与数据库进行联络的一些任务都封装在此</p>
@@ -117,7 +119,7 @@
 <p>service层：业务操作实现类，调用dao接口</p>
 <p>dao层：数据业务处理，持久化操作</p>
 <p>model层：pojo， or mapping，持久层</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[View]--&gt;B[Controller]</span><br><span class="line">B--&gt;C[Service]</span><br><span class="line">C--&gt;D[ServiceImpl]</span><br><span class="line">D--&gt;E[Dao]</span><br><span class="line">E--&gt;F[Mapping]</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">graph TD</span><br><span class="line">A[View]--&gt;B[Controller]</span><br><span class="line">B--&gt;C[Service]</span><br><span class="line">C--&gt;D[ServiceImpl]</span><br><span class="line">D--&gt;E[Dao]</span><br><span class="line">E--&gt;F[Mapping]</span><br></pre></td></tr></table></figure>
 
 
                             <!-- Meta -->
@@ -215,7 +217,7 @@
 
     <aside id="article-toc" role="navigation" class="fixed">
         <div id="article-toc-inner">
-            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#持久层：Dao层（mapper）"><span class="toc-text">持久层：Dao层（mapper）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#业务层：Service层"><span class="toc-text">业务层：Service层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表现层：Controller层（Handler）"><span class="toc-text">表现层：Controller层（Handler）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#View层"><span class="toc-text">View层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#各层联系"><span class="toc-text">各层联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#总结："><span class="toc-text">总结：</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%81%E4%B9%85%E5%B1%82%EF%BC%9ADao%E5%B1%82%EF%BC%88mapper%EF%BC%89"><span class="toc-text">持久层：Dao层（mapper）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%9A%E5%8A%A1%E5%B1%82%EF%BC%9AService%E5%B1%82"><span class="toc-text">业务层：Service层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A1%A8%E7%8E%B0%E5%B1%82%EF%BC%9AController%E5%B1%82%EF%BC%88Handler%EF%BC%89"><span class="toc-text">表现层：Controller层（Handler）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#View%E5%B1%82"><span class="toc-text">View层</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%84%E5%B1%82%E8%81%94%E7%B3%BB"><span class="toc-text">各层联系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%EF%BC%9A"><span class="toc-text">总结：</span></a></li></ol>
         </div>
     </aside>
 

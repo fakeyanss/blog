@@ -2,7 +2,7 @@
 <html lang="zh-Hans">
 
 <!-- Head tag -->
-<head><meta name="generator" content="Hexo 3.9.0">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -25,12 +25,14 @@
     <link href="//cdn.jsdelivr.net/npm/bootstrap@3.3.6/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/blog/css/style.css">
+    
+<link rel="stylesheet" href="/blog/css/style.css">
+
 
     <!-- Custom Fonts -->
     <link href="//cdn.jsdelivr.net/npm/font-awesome@4.5.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Noto+Serif:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 
     <!-- jQuery -->
     <script src="//cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
@@ -43,7 +45,7 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-</head>
+<meta name="generator" content="Hexo 7.0.0-rc1"></head>
 
 
 <body>
@@ -77,14 +79,12 @@
                     <!-- Post Main Content -->
                     <div class="post-content col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                         <p>Java中打印数组时不想用for遍历数组，可以试试下面几种方法</p>
-<a id="more"></a>
+<span id="more"></span>
 <hr>
-<h1 id="ArrayList直接打印"><a href="#ArrayList直接打印" class="headerlink" title="ArrayList直接打印"></a>ArrayList直接打印</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">list.add(<span class="number">1</span>);</span><br><span class="line">list.add(<span class="number">2</span>);</span><br><span class="line">list.add(<span class="number">3</span>);</span><br><span class="line">list.add(<span class="number">4</span>);</span><br><span class="line">System.out.println(list);</span><br></pre></td></tr></table></figure>
-<p>输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4]</span><br></pre></td></tr></table></figure></p>
-<h1 id="Arrays类打印数组"><a href="#Arrays类打印数组" class="headerlink" title="Arrays类打印数组"></a>Arrays类打印数组</h1><p>java.util.Arrays的toString()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(Arrays.toString(<span class="keyword">new</span> <span class="keyword">int</span>[] &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;));</span><br></pre></td></tr></table></figure></p>
-<p>输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4]</span><br></pre></td></tr></table></figure></p>
-<h1 id="Arrays类打印二维数组"><a href="#Arrays类打印二维数组" class="headerlink" title="Arrays类打印二维数组"></a>Arrays类打印二维数组</h1><p>java.util.Arrays的deeptoString()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(Arrays.deepToString(<span class="keyword">new</span> <span class="keyword">int</span>[][] &#123;&#123;<span class="number">1</span>, <span class="number">2</span>&#125;, &#123;<span class="number">3</span>, <span class="number">4</span>&#125;&#125;));</span><br></pre></td></tr></table></figure></p>
-<p>输出<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[1, 2], [3, 4]]</span><br></pre></td></tr></table></figure></p>
+<h1 id="ArrayList直接打印"><a href="#ArrayList直接打印" class="headerlink" title="ArrayList直接打印"></a>ArrayList直接打印</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Integer&gt; list = <span class="keyword">new</span> <span class="title class_">ArrayList</span>&lt;&gt;();</span><br><span class="line">list.add(<span class="number">1</span>);</span><br><span class="line">list.add(<span class="number">2</span>);</span><br><span class="line">list.add(<span class="number">3</span>);</span><br><span class="line">list.add(<span class="number">4</span>);</span><br><span class="line">System.out.println(list);</span><br></pre></td></tr></table></figure>
+<p>输出<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4]</span><br></pre></td></tr></table></figure></p>
+<h1 id="Arrays类打印数组"><a href="#Arrays类打印数组" class="headerlink" title="Arrays类打印数组"></a>Arrays类打印数组</h1><p>java.util.Arrays的toString()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(Arrays.toString(<span class="keyword">new</span> <span class="title class_">int</span>[] &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;));</span><br></pre></td></tr></table></figure><br>输出<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[1, 2, 3, 4]</span><br></pre></td></tr></table></figure></p>
+<h1 id="Arrays类打印二维数组"><a href="#Arrays类打印二维数组" class="headerlink" title="Arrays类打印二维数组"></a>Arrays类打印二维数组</h1><p>java.util.Arrays的deeptoString()方法<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(Arrays.deepToString(<span class="keyword">new</span> <span class="title class_">int</span>[][] &#123;&#123;<span class="number">1</span>, <span class="number">2</span>&#125;, &#123;<span class="number">3</span>, <span class="number">4</span>&#125;&#125;));</span><br></pre></td></tr></table></figure><br>输出<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[[1, 2], [3, 4]]</span><br></pre></td></tr></table></figure></p>
 
 
                             <!-- Meta -->
@@ -176,7 +176,7 @@
 
     <aside id="article-toc" role="navigation" class="fixed">
         <div id="article-toc-inner">
-            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ArrayList直接打印"><span class="toc-text">ArrayList直接打印</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Arrays类打印数组"><span class="toc-text">Arrays类打印数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Arrays类打印二维数组"><span class="toc-text">Arrays类打印二维数组</span></a></li></ol>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ArrayList%E7%9B%B4%E6%8E%A5%E6%89%93%E5%8D%B0"><span class="toc-text">ArrayList直接打印</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Arrays%E7%B1%BB%E6%89%93%E5%8D%B0%E6%95%B0%E7%BB%84"><span class="toc-text">Arrays类打印数组</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Arrays%E7%B1%BB%E6%89%93%E5%8D%B0%E4%BA%8C%E7%BB%B4%E6%95%B0%E7%BB%84"><span class="toc-text">Arrays类打印二维数组</span></a></li></ol>
         </div>
     </aside>
 
