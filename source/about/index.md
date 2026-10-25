@@ -3,9 +3,9 @@ type: "about"
 date: 2019-05-12
 ---
 
-我是 fakeyanss，后端工程师，目前在 Baidu 工作，主要做音视频服务端的业务。
+我是 fakeyanss，后端工程师，~~目前在 Baidu 工作，主要做音视频服务端的业务。~~
 
-熟悉 Web 开发相关的技术栈，日常写 Java，业余写 Go，也会一些 Bash/Python/Lua/JavaScript，推崇自动化。
+~~熟悉 Web 开发相关的技术栈，日常写 Java，业余写 Go，也会一些 Bash/Python/Lua/JavaScript，推崇自动化。~~
 
 希望在这里，写一点仅有的趣味。
 
@@ -27,7 +27,7 @@ date: 2019-05-12
 
 ---
 
-欢迎订阅我的博客：[atom.xml](https://foreti.me/blog/atom.xml)
+~~欢迎订阅我的博客：[atom.xml](https://foreti.me/blog/atom.xml)~~
 
 以下是可以找到我的方式：
 
@@ -36,5 +36,3 @@ date: 2019-05-12
 - [Github](https://github.com/fakeYanss)
 - [LinkedIn](https://www.linkedin.com/in/foretime/)
 - [Twitter](https://twitter.com/fakeYanss)
-
-
