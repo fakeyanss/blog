@@ -5,6 +5,9 @@ on:
     branches:
       - source
 
+permissions:
+  contents: write
+
 env:
   TZ: Asia/Shanghai
 
@@ -14,34 +17,28 @@ jobs:
     name: deploy blog.
     steps:
     - name: Checkout
-      uses: actions/checkout@v1
+      uses: actions/checkout@v7
       with:
-        submodules: true
         ref: source
     - name: Setup Node.js
-      uses: actions/setup-node@v1
+      uses: actions/setup-node@v7
       with:
-        node-version: '12'
-    - name: Install dependecies
+        node-version: '22'
+        cache: npm
+    - name: Install dependencies
       run: |
         npm install
         npm install hexo-cli -g
     - name: Build page
       run: |
-        hexo clean & hexo g
-    - name: GitHub Pages
-      uses: crazy-max/ghaction-github-pages@v2.2.0
+        hexo clean
+        hexo generate
+    - name: Deploy to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v4
       with:
+        # Use the workflow's built-in token instead of a personal access token
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         # Git branch where site will be deployed
-        target_branch: master
-        # Create incremental commit instead of doing push force
-        keep_history: true
+        publish_branch: master
         # Build directory to deploy
-        build_dir: public
-        # Write the given domain name to the CNAME file
-        # fqdn: custom.domain.name # optional
-        # Prevent Jekyll from building the site
-        jekyll: false
-      env:
-        GITHUB_TOKEN: ${{ secrets.HEXO_DEPLOY }}
-        
+        publish_dir: ./public
